@@ -1,0 +1,4 @@
+<contentpackage name="VGM" modversion="0.0.1" gameversion="0.17.8.0" corepackage="false">
+    <Item file="%ModDir%/testSubject2.xml" />
+    <Item file="%ModDir%/template.xml" />
+</contentpackage>
