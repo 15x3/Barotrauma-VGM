@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+
+<!-- 枪管 -->
+<!-- <StatusEffect type="OnRemoved" target="This" barrelpos="75,10" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" /> -->
+
+<!-- 消焰器，伤害增加10%，可以加装在小型武器上 -->
+  <Item name="消焰器" identifier="flashHiderMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" depth="0.55" origin="0.0,0.5" />
+    <Body width="16" height="8" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+      <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+  </StatusEffect> -->
+
+<!-- 延长枪管,延长枪管位置60单位,并增加10%伤害,增加10%穿甲 -->
+  <Item name="延长枪管" identifier="longBarrelMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" depth="0.55" origin="0.0,0.5" />
+    <Body width="64" height="8" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="1.05" penetration="1.05" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+</StatusEffect>
+<StatusEffect type="OnInserted" target="This" barrelpos="105,-15" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 长枪消音器，减少噪声，增加15%伤害，延长枪管位置60单位，需要高级材料制作 -->
+  <Item name="长枪消音器" identifier="longSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" depth="0.55" origin="0.0,0.5" />
+    <Body width="60" height="12" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- 紧凑消音器，减少噪声，增加5%伤害，延长枪管位置30单位 -->
+  <Item name="紧凑消音器" identifier="shortSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
+    <Body width="36" height="12" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- 握把 -->
+<!-- <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" /> -->
+
+<!-- 直角握把,将持握角度变为20度 -->
+  <Item name="直角握把" identifier="angleGripVGM" category="Equipment" Tags="smallitem,tool,bigAccessoryVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,47,60,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,47,60,24" depth="0.55" origin="0.5,0.0" />
+    <Body width="60" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="angleGripVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 垂直握把,将持握角度变为-15度 -->
+  <Item name="垂直握把" identifier="verticalGripVGM" category="Equipment" Tags="smallitem,tool,bigAccessoryVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,102,16,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,102,16,32" depth="0.55" origin="0.5,0.0" />
+    <Body width="16" height="32" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <!-- <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+      <RequiredItem items="verticalGripVGM" type="Contained" />
+  </StatusEffect> -->
+
+<!-- 枪托,注意,有枪托选项的默认为无枪托,增加10%移速,增加10%散布(也就是出场就有这种加成),安装时默认该buff消失(也就是按照原版数值来计算) -->
+
+<!-- 减少20%散布,但是减少10%移动速度 -->
+  <Item name="射手重枪托" identifier="sniperStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" depth="0.55" origin="1.0,0.5" />
+    <Body width="96" height="44" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="sniperStockVGM" type="Contained" />
+</StatusEffect> -->
+          <!-- 写在⬇Holdable -->
+<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" >
+    <RequiredItem items="sniperStockVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 减少10%散布,减少5%移动速度 -->
+  <Item name="重型枪托" identifier="heavyStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,180,88,52" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,180,88,52" depth="0.55" origin="1.0,0.5" />
+    <Body width="88" height="52" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-2" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="heavyStockVGM" type="Contained" />
+</StatusEffect> -->
+          <!-- 写在⬇Holdable -->
+<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" >
+    <RequiredItem items="heavyStockVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 轻型枪托，通常用于还原武器的散布、后坐、移动速度 -->
+  <Item name="轻型枪托" identifier="lightStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="4,142,80,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="4,142,80,44" depth="0.55" origin="1.0,0.5" />
+    <Body width="80" height="44" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- 手枪枪托，大幅度减少散布与后坐，但是会严重影响移动速度，只可以装在手枪上 -->
+  <Item name="手枪枪托" identifier="pistolStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" depth="0.55" origin="1.0,0.5" />
+    <Body width="64" height="32" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- 瞄准镜，默认最远可视为0，但是实测得设置为250起步才开始有效，建议250-700范围，超过该范围可能无法正常射击 -->
+<!-- <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" disabledeltatime="true" /> -->
+
+<!-- 全息瞄准镜:设置武器的最远可视（cameraaimoffset）300单位,缩小准心为0.4 -->
+  <Item name="紧凑全息瞄准镜" identifier="holoGraphicScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,24,28,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,24,28,24" depth="0.55" origin="0.5,1.0" />
+    <Body width="28" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
+  <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 红点瞄准镜：设置武器的最远可视为300单位，缩小准心为0.1 -->
+  <Item name="紧凑红点瞄准镜" identifier="dotScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,27,20,16" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,27,20,16" depth="0.55" origin="0.5,1.0" />
+    <Body width="20" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- ACOG瞄准镜:设置武器的最远可视（cameraaimoffset）距离450单位,缩小准心为0.3 -->
+  <Item name="ACOG瞄准镜" identifier="acogScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,73,44,28" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,73,44,28" depth="0.55" origin="0.5,1.0" />
+    <Body width="52" height="28" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+<!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.3" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="acogScopeVGM" type="Contained" />
+</StatusEffect> -->
+
+<!-- 狙击瞄准镜:设置武器的最远可视距离为800单位,缩小准星为0.2 -->
+  <Item name="狙击瞄准镜" identifier="sniperScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" depth="0.55" origin="0.5,1.0" />
+    <Body width="72" height="32" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+<!-- 其他 -->
+  <Item name="红色大功率镭射" identifier="redLazerVGM" category="Equipment" Tags="smallitem,tool,light,provocative" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="divingcab" minamount="1" maxamount="2" spawnprobability="0.1" notcampaign="true" notpvp="true"/>
+    <Price baseprice="200" minavailable="2">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" />
+      <Price storeidentifier="merchantmine" />
+    </Price>
+    <Fabricate suitablefabricators="fabricatorVGM" requiredtime="10">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredItem identifier="aluminium" amount="2" />
+      <RequiredItem tag="lightcomponent" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="aluminium" />
+      <Item identifier="lightcomponent" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" depth="0.55" origin="0.5,0.5" />
+    <Body width="48" height="16" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" targettype="Contained" Condition="-0.1">
+        <RequiredItem items="mobilebattery" type="Contained" />
+      </StatusEffect>
+      <!-- the child LightComponent is only active when the Holdable is active, i.e. when the item is being held -->
+      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" Flicker="0.02" range="2000" powerconsumption="10" IsOn="true">
+        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
+        <IsActive targetcontaineditem="true" condition="gt 1.0"/>
+      </LightComponent>
+      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" range="2000" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
+        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
+        <IsActive targetcontaineditem="true" condition="lte 1.0"/>
+      </LightComponent>
+    </Holdable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+      </Containable>
+    </ItemContainer>
+    <AiTarget sightrange="3000" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+
+</Items>

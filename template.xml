@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 <!-- 枪械模板 -->
-  <Item name="长枪模板" identifier="templateSmg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="长枪模板" identifier="templateSmg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" description="哇哦!一把能装载所有模组的枪!就是安装位置有点奇怪...(你不应该在正常游戏中看到这把武器,如果看到了,说明它是不正常刷出来的)">
   <!-- 中意的容器 -->
     <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
     <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
@@ -130,4 +130,6 @@
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
   <!-- 下挂件模板请直接参考原游戏的手电筒 -->
+
+  <!-- 既然你看到了这里,最后一个重要提示: 导出贴图时一定要选"二次平方(锐利)"!一定要锐利的!不然倒进游戏会糊 -->
 </Items>
