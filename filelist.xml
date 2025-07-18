@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="VGM" modversion="0.0.3" corepackage="False" gameversion="1.9.8.0">
+<contentpackage name="VGM" modversion="0.0.7" corepackage="False" gameversion="1.9.8.0">
   <Item file="%ModDir%/testSubject2.xml" />
   <Item file="%ModDir%/testSubject3.xml" />
   <Item file="%ModDir%/Fabicator/FabVGM.xml" />

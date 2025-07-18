@@ -2,18 +2,55 @@
 <Items>
 
 <!-- 枪管 -->
+<!-- 将枪械默认camerashake设置为20，range不要碰 -->
 <!-- <StatusEffect type="OnRemoved" target="This" barrelpos="75,10" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" /> -->
 
-<!-- 消焰器，伤害增加10%，可以加装在小型武器上 -->
+<!-- 声音控制逻辑，如果能装消音器的话 -->
+<!-- <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+    <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+    <Conditional HasStatusTag="neq suppressed" />
+</StatusEffect>
+<StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="3000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="3000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="3000" />
+    <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="3000" />
+    <Conditional HasStatusTag="suppressed" />
+</StatusEffect> -->
+
+<!-- 无任何改造时候的屏幕晃动 -->
+<!-- <StatusEffect type="OnUse" target="This" conditional="and">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
+    <Conditional HasStatusTag="neq suppressed" />
+    <Conditional HasStatusTag="neq flashHided" />
+</StatusEffect> -->
+
+<!-- 消焰器，伤害增加5%，可以加装在小型武器上，有效减少屏幕晃动 -->
   <Item name="消焰器" identifier="flashHiderMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" depth="0.55" origin="0.0,0.5" />
     <Body width="16" height="8" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
-  <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
-      <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
-  </StatusEffect> -->
+        <!-- 物品栏逻辑 -->
+<!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+        <!-- tag触发，写在holdable下面 -->
+<!-- <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+        <!-- 晃动控制，写在rangedweapon下面 -->
+<!-- <StatusEffect type="OnUse" target="This">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+    <Conditional HasStatusTag="flashHided" />
+</StatusEffect> -->
+
 
 <!-- 延长枪管,延长枪管位置60单位,并增加10%伤害,增加10%穿甲 -->
   <Item name="延长枪管" identifier="longBarrelMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
@@ -22,28 +59,51 @@
     <Body width="64" height="8" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
-<!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="1.05" penetration="1.05" stackable="true" setvalue="false" disabledeltatime="true" >
+<!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.10" stackable="true" setvalue="false" disabledeltatime="true" >
     <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
 </StatusEffect>
 <StatusEffect type="OnInserted" target="This" barrelpos="105,-15" setvalue="true" disabledeltatime="true" >
     <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
 </StatusEffect> -->
 
-<!-- 长枪消音器，减少噪声，增加15%伤害，延长枪管位置60单位，需要高级材料制作 -->
+<!-- 长枪消音器，减少噪声，增加15%伤害，延长枪管位置70单位，一定程度减少屏幕晃动，需要高级材料制作 -->
   <Item name="长枪消音器" identifier="longSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" depth="0.55" origin="0.0,0.5" />
     <Body width="60" height="12" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
+<!-- 物品栏逻辑 -->
+<!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.15" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+</StatusEffect>
+<StatusEffect type="OnInserted" target="This" barrelpos="145,12" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+<!-- tag激活 -->
+<!-- <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
+<!-- 晃动控制 -->
+<!-- <StatusEffect type="OnUse" target="This">
+    <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+    <Conditional HasStatusTag="suppressed" />
+</StatusEffect> -->
 
-<!-- 紧凑消音器，减少噪声，增加5%伤害，延长枪管位置30单位 -->
+<!-- 紧凑消音器，减少噪声，增加5%伤害，一定程度减少屏幕晃动，延长枪管位置30单位 -->
   <Item name="紧凑消音器" identifier="shortSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
     <Body width="36" height="12" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
+  <!-- 物品栏逻辑，tag激活和晃动控制见上 -->
+<!-- <StatusEffect type="OnInserted" target="This" barrelpos="105,12" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+</StatusEffect>
+<StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+    <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+</StatusEffect> -->
 
 <!-- 握把 -->
 <!-- <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" /> -->
@@ -51,7 +111,7 @@
 <!-- 直角握把,将持握角度变为20度 -->
   <Item name="直角握把" identifier="angleGripVGM" category="Equipment" Tags="smallitem,tool,bigAccessoryVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,47,60,24" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,47,60,24" depth="0.55" origin="0.5,0.0" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,49,60,24" depth="0.55" origin="0.5,0.0" />
     <Body width="60" height="24" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
@@ -71,7 +131,9 @@
   </StatusEffect> -->
 
 <!-- 枪托,注意,有枪托选项的默认为无枪托,增加10%移速,增加10%散布(也就是出场就有这种加成),安装时默认该buff消失(也就是按照原版数值来计算) -->
+            <!-- <Holdable SpeedMultiplier="1.1" > -->
 
+<!-- <StatusEffect type="OnRemoved" target="This" spread="0" unskilledspread="8" setvalue="true" disabledeltatime="true" /> -->
 <!-- 减少20%散布,但是减少10%移动速度 -->
   <Item name="射手重枪托" identifier="sniperStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" origin="0.5,0.5" />
@@ -98,7 +160,7 @@
     <RequiredItem items="heavyStockVGM" type="Contained" />
 </StatusEffect> -->
           <!-- 写在⬇Holdable -->
-<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" >
+<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.95" setvalue="true" >
     <RequiredItem items="heavyStockVGM" type="Contained" />
 </StatusEffect> -->
 
@@ -109,17 +171,35 @@
     <Body width="80" height="44" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
+<!-- <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="lightStockVGM" type="Contained" />
+</StatusEffect> -->
+<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
+    <RequiredItem items="lightStockVGM" type="Contained" />
+</StatusEffect> -->
 
-<!-- 手枪枪托，大幅度减少散布与后坐，但是会严重影响移动速度，只可以装在手枪上 -->
-  <Item name="手枪枪托" identifier="pistolStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+<!-- 手枪枪托，大幅度减少散布与后坐，但是会严重影响移动速度（15%），只可以装在手枪上 -->
+  <Item name="手枪枪托" identifier="pistolStockVGM" category="Equipment" Tags="smallitem,tool,smallStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" depth="0.55" origin="1.0,0.5" />
     <Body width="64" height="32" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
+<!-- <StatusEffect type="OnInserted" target="This" spread="0" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
+    <RequiredItem items="pistolStockVGM" type="Contained" />
+</StatusEffect> -->
+        <!-- 移速控制，写在Holdable里面 -->
+<!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" >
+    <RequiredItem items="pistolStockVGM" type="Contained" />
+</StatusEffect> -->
+
 
 <!-- 瞄准镜，默认最远可视为0，但是实测得设置为250起步才开始有效，建议250-700范围，超过该范围可能无法正常射击 -->
-<!-- <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" disabledeltatime="true" /> -->
+<!-- <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" /> -->
+<!-- 给所有的瞄准镜栏增加下面这一行，当手电筒、镭射等物安装在上面时不显示准星 -->
+<!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="provocative" type="Contained" />
+</StatusEffect> -->
 
 <!-- 全息瞄准镜:设置武器的最远可视（cameraaimoffset）300单位,缩小准心为0.4 -->
   <Item name="紧凑全息瞄准镜" identifier="holoGraphicScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
@@ -139,7 +219,9 @@
     <Body width="20" height="24" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
-
+<!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
+    <RequiredItem items="dotScopeVGM" type="Contained" />
+</StatusEffect> -->
 <!-- ACOG瞄准镜:设置武器的最远可视（cameraaimoffset）距离450单位,缩小准心为0.3 -->
   <Item name="ACOG瞄准镜" identifier="acogScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,73,44,28" origin="0.5,0.5" />
@@ -158,6 +240,9 @@
     <Body width="72" height="32" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
+<!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="800" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+  <RequiredItem items="sniperScopeVGM" type="Contained" />
+</StatusEffect> -->
 
 <!-- 其他 -->
   <Item name="红色大功率镭射" identifier="redLazerVGM" category="Equipment" Tags="smallitem,tool,light,provocative" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
@@ -205,4 +290,139 @@
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
 
+  <Item name="冲锋枪延长弹匣" identifier="smgLongmagVGM" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo,handheldammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="smg,smgunique,machinepistol" amount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+    <PreferredContainer secondary="secarmcab" />
+    <Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" requiredtime="25" >
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" amount="2"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+      <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/GunMods/mags_alphadev.png" sourcerect="63,2,22,73" />
+    <Sprite texture="%ModDir%/GunMods/mags_alphadev.png" depth="0.54" sourcerect="63,2,22,73" origin="0.5,0.5" />
+    <Body width="22" height="70" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="smground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="smground" />
+      <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+      <!-- -2.4 -> 42shots，-1.6 -> 63shots -->
+      <StatusEffect type="OnUse" target="This" condition="-2.4" disabledeltatime="true">
+        <SpawnItem identifiers="smground" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <!--Magazines can be combined to raise condition.-->
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+
+  <Item name="冲锋枪弹鼓" identifier="smgDrummagVGM" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,smgammo,handheldammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="smg,smgunique,machinepistol" amount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+    <PreferredContainer secondary="secarmcab" />
+    <Price baseprice="250" displaynonempty="true" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" requiredtime="25" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="3"/>
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" amount="3"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="3"/>
+      <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <InventoryIcon texture="%ModDir%/GunMods/mags_alphadev.png" sourcerect="19,1,23,58" />
+    <Sprite texture="%ModDir%/GunMods/mags_alphadev.png" depth="0.54" sourcerect="19,1,23,58" origin="0.5,0.5" />
+    <Body width="23" height="58" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="smground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="smground" />
+      <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+      <!-- -2.4 -> 42shots，-1.6 -> 63shots -->
+      <StatusEffect type="OnUse" target="This" condition="-1.6" disabledeltatime="true">
+        <SpawnItem identifiers="smground" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <!--Magazines can be combined to raise condition.-->
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+
+  <Item name="贫化燃料冲锋枪长弹匣" identifier="smgDFuelLongMagVAM" variantof="smgLongmagVGM" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+    <PreferredContainer primary="smg,smgunique" spawnprobability="0"/>
+    <PreferredContainer primary="secarmcab" spawnprobability="0"/>
+    <PreferredContainer primary="outpostsecarmcab" spawnprobability="0"/>
+    <PreferredContainer primary="wrecksecarmcab" spawnprobability="0"/>
+    <PreferredContainer secondary="secarmcab" spawnprobability="0" />
+    <PreferredContainer secondary="respawncontainer_kingofthehull" spawnprobability="0"/>
+    <Price baseprice="160" sold="false" />
+    <Fabricate suitablefabricators="fabricator,fabricatorVAM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+      <RequiredItem identifier="depletedfuel" amount="2"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+      <RequiredItem identifier="smgmagazinedepletedfuel" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="depletedfuel" mincondition="0.95" amount="2"/>
+      <Item identifier="steel" />
+    </Deconstruct>
+    <ItemContainer SpawnWithId="smgrounddepletedfuel">
+      <Containable items="smgrounddepletedfuel" />
+      <StatusEffect type="OnUse" target="This" condition="-2.4" disabledeltatime="true">
+        <SpawnItem identifiers="smgrounddepletedfuel" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
+
+  <Item name="贫化燃料冲锋枪弹鼓" identifier="smgDFuelDrumMagVAM" variantof="smgDrummagVGM" allowasextracargo="true" inventoryiconcolor="110,120,110,255" spritecolor="110,120,110">
+    <PreferredContainer primary="smg,smgunique" spawnprobability="0"/>
+    <PreferredContainer primary="secarmcab" spawnprobability="0"/>
+    <PreferredContainer primary="outpostsecarmcab" spawnprobability="0"/>
+    <PreferredContainer primary="wrecksecarmcab" spawnprobability="0"/>
+    <PreferredContainer secondary="secarmcab" spawnprobability="0" />
+    <PreferredContainer secondary="respawncontainer_kingofthehull" spawnprobability="0"/>
+    <Price baseprice="260" sold="false" />
+    <Fabricate suitablefabricators="fabricator,fabricatorVAM" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="60" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="3"/>
+      <RequiredItem identifier="depletedfuel" amount="3"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="3"/>
+      <RequiredItem identifier="smgmagazinedepletedfuel" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="depletedfuel" mincondition="0.95" amount="3"/>
+      <Item identifier="steel" />
+    </Deconstruct>
+    <ItemContainer SpawnWithId="smgrounddepletedfuel">
+      <Containable items="smgrounddepletedfuel" />
+      <StatusEffect type="OnUse" target="This" condition="-1.6" disabledeltatime="true">
+        <SpawnItem identifiers="smgrounddepletedfuel" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+  </Item>
 </Items>

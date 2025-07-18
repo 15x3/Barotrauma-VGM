@@ -192,6 +192,8 @@
                     <input type="text" id="subcategory" placeholder="例如：LightWeapon">
                     <label for="impactSoundTag">冲击音效标签 (ImpactSoundTag):</label>
                     <input type="text" id="impactSoundTag" value="impact_metal_light">
+                    <label for="itemScale">物品整体缩放 (Scale): <small>(float, item level)</small></label>
+                    <input type="number" id="itemScale" step="0.01" value="1.0">
                 </div>
 
                 <div class="attribute-group">
@@ -217,8 +219,6 @@
                         <option value="false">false</option>
                         <option value="true">true</option>
                     </select>
-                    <label for="scaleItem">物品整体缩放 (Scale): <small>(float, item level)</small></label>
-                    <input type="number" id="scaleItem" step="0.01" value="1.0">
                     <label for="spriteColor">精灵颜色 (SpriteColor): <small>(R,G,B,A 例如: 1.0,1.0,1.0,1.0)</small></label>
                     <input type="text" id="spriteColor" value="1.0,1.0,1.0,1.0">
                 </div>
@@ -390,7 +390,7 @@
                         <option value="false">false</option>
                     </select>
                     <label for="barrelPos">枪管位置 (barrelpos, x,y):</label>
-                    <input type="text" id="barrelPos" value="75,-20" readonly>
+                    <input type="text" id="barrelPos" value="75,20" readonly>
                     <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('barrelPos')">点选</button>
                     <label for="spread">散布 (spread):</label>
                     <input type="number" id="spread" value="6">
@@ -450,7 +450,7 @@
                             <h4>下挂件 (SubContainer - LowerAccessory)</h4>
                             <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallAccessoryVGM,bigAccessoryVGM,light"></label>
                             <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-loweraccessory" value="22,-1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-loweraccessory" value="22,1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-loweraccessory')">点选</button>
                             <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
                         </div>
@@ -459,7 +459,7 @@
                             <h4>握把 (SubContainer - Grip)</h4>
                             <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallHandVGM,bigHandVGM"></label>
                             <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-grip" value="22,-1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-grip" value="22,1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-grip')">点选</button>
                             <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
                         </div>
@@ -468,7 +468,7 @@
                             <h4>枪口 (SubContainer - Muzzle)</h4>
                             <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallMuzzleVGM,bigMuzzleVGM"></label>
                             <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-muzzle" value="22,-1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-muzzle" value="22,1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-muzzle')">点选</button>
                             <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
                         </div>
@@ -477,7 +477,7 @@
                             <h4>枪托 (SubContainer - Stock)</h4>
                             <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallStockVGM,bigStockVGM"></label>
                             <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-stock" value="22,-1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-stock" value="22,1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-stock')">点选</button>
                             <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
                         </div>
@@ -486,7 +486,7 @@
                             <h4>上挂件 (SubContainer - Scope)</h4>
                             <label>可容纳物品 (items, 逗号分隔): <input type="text" class="sub-containable-items" value="smallScopeVGM,bigScopeVGM"></label>
                             <label>隐藏 (hide): <select class="sub-containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-scope" value="22,-1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="sub-containable-itempos" id="subContainableItemPos-scope" value="22,1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('subContainableItemPos-scope')">点选</button>
                             <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
                         </div>
@@ -507,7 +507,7 @@
                             <button type="button" class="remove-btn" onclick="this.parentElement.remove(); renderCanvas();">移除</button>
                             <label>物品标识符 (items, 逗号分隔): <input type="text" class="containable-items" value="smgammo,smallMagVGM,bigMagVGM,drumMagVGM"></label>
                             <label>隐藏 (hide): <select class="containable-hide"><option value="false">false</option><option value="true">true</option></select></label>
-                            <label>物品位置 (itempos, x,y): <input type="text" class="containable-itempos" id="mainContainableItemPos-0" value="-19,1" readonly></label>
+                            <label>物品位置 (itempos, x,y): <input type="text" class="containable-itempos" id="mainContainableItemPos-0" value="-19,-1" readonly></label>
                             <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('mainContainableItemPos-0')">点选</button>
                             <label>旋转 (rotation): <input type="number" class="containable-rotation" value="-30"></label>
                         </div>
@@ -536,8 +536,6 @@
                 <label for="spriteOrigin">原点 (origin, x,y):</label>
                 <input type="text" id="spriteOrigin" value="0.5,0.5">
                 <p style="font-size: 0.9em; color: #777;">通常为 0.5,0.5 (中心点)。持握点坐标会相对于此原点计算。</p>
-                <label for="spriteScale">精灵缩放 (scale): <small>(float, sprite level)</small></label>
-                <input type="number" id="spriteScale" step="0.01" value="0.5">
                 <h3>背包图标 (InventoryIcon)</h3>
                 <label for="inventoryIconTexture">纹理路径 (texture):</label>
                 <input type="text" id="inventoryIconTexture" value="Content/Items/InventoryIconAtlas.png">
@@ -563,10 +561,10 @@
                     <label for="aimPos">瞄准位置 (aimpos, x,y):</label>
                     <input type="text" id="aimPos" value="45,-10">
                     <label for="handle1Pos">持握点1 (handle1, dx,dy):</label>
-                    <input type="text" id="handle1Pos" value="-30,-15" readonly>
+                    <input type="text" id="handle1Pos" value="-30,15" readonly>
                     <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('handle1Pos')">点选</button>
                     <label for="handle2Pos">持握点2 (handle2, dx,dy):</label>
-                    <input type="text" id="handle2Pos" value="26,5" readonly>
+                    <input type="text" id="handle2Pos" value="26,-5" readonly>
                     <button type="button" class="coordinate-picker-btn" onclick="setPointSelectionMode('handle2Pos')">点选</button>
                     <label for="holdAngle">持握角度 (holdangle):</label>
                     <input type="number" id="holdAngle" value="-35">
@@ -579,6 +577,7 @@
                 <h2>生成的XML</h2>
                 <pre id="xmlOutput"></pre>
                 <button onclick="generateXml()" style="margin-top: 20px;">生成XML</button>
+                <p style="color: red; font-weight: bold; margin-top: 15px;">警告：持握点位和容器位置通常不准确，需要根据游戏内表现重新微调</p>
             </div>
         </div>
     </div>
@@ -607,18 +606,18 @@
         let startY_canvas_screen = 0; // Mouse down Y on canvas (client coordinates relative to canvas element)
         let currentDrawingRect_canvas_transformed = null; // Temporary rect while drawing (in canvas-transformed image coordinates)
 
-        // Stored values for persistent drawing (in original image pixels)
+        // Stored values for persistent drawing (in original image pixels) - These are Barotrauma-style coordinates (Y-up is positive)
         let selectedSourcerect = { x: 94, y: 8, width: 161, height: 59 }; // Initial values from user's example
-        let selectedHandle1 = { x: -30, y: -15 };
-        let selectedHandle2 = { x: 26, y: 5 };
-        let selectedBarrelPos = { x: 75, y: -20 };
-        let selectedItemPos = { // Initial values from user's example
-            "mainContainableItemPos-0": {x: -19, y: 1},
-            "subContainableItemPos-loweraccessory": {x: 22, y: -1},
-            "subContainableItemPos-grip": {x: 22, y: -1},
-            "subContainableItemPos-muzzle": {x: 22, y: -1},
-            "subContainableItemPos-stock": {x: 22, y: -1},
-            "subContainableItemPos-scope": {x: 22, y: -1}
+        let selectedHandle1 = { x: -30, y: 15 }; // Barotrauma-style (Y-up is positive)
+        let selectedHandle2 = { x: 26, y: -5 }; // Barotrauma-style (Y-up is positive)
+        let selectedBarrelPos = { x: 75, y: 20 }; // Barotrauma-style (Y-up is positive)
+        let selectedItemPos = { // Initial values from user's example - Barotrauma-style (Y-up is positive)
+            "mainContainableItemPos-0": {x: -19, y: -1},
+            "subContainableItemPos-loweraccessory": {x: 22, y: 1},
+            "subContainableItemPos-grip": {x: 22, y: 1},
+            "subContainableItemPos-muzzle": {x: 22, y: 1},
+            "subContainableItemPos-stock": {x: 22, y: 1},
+            "subContainableItemPos-scope": {x: 22, y: 1}
         };
 
         // --- Canvas Setup ---
@@ -639,8 +638,6 @@
 
         // Initial setup for existing coordinate inputs
         document.addEventListener('DOMContentLoaded', () => {
-            // No need to update handle/barrelpos fields explicitly here if they are already set in JS global state
-            // and HTML input values match. Just ensure renderCanvas picks them up.
             renderCanvas();
         });
 
@@ -700,16 +697,19 @@
                     );
                 }
 
-                // Draw handle points (already in sprite-relative coords, adjusted to global image coords by drawPoint)
-                drawPoint(selectedHandle1.x, selectedHandle1.y, 'handle1Pos', 'red', 'red');
-                drawPoint(selectedHandle2.x, selectedHandle2.y, 'handle2Pos', 'green', 'green');
-                drawPoint(selectedBarrelPos.x, selectedBarrelPos.y, 'barrelPos', 'purple', 'purple');
+                // Get itemScale for drawing points
+                const itemScaleVal = parseFloat(document.getElementById('itemScale').value) || 1.0;
+
+                // Draw handle points (x, y are Barotrauma-style, so y needs to be inverted for canvas drawing)
+                // The stored points are already scaled.
+                drawPoint(selectedHandle1.x, selectedHandle1.y, 'handle1Pos', 'red', 'red', itemScaleVal);
+                drawPoint(selectedHandle2.x, selectedHandle2.y, 'handle2Pos', 'green', 'green', itemScaleVal);
+                drawPoint(selectedBarrelPos.x, selectedBarrelPos.y, 'barrelPos', 'purple', 'purple', itemScaleVal);
 
                 // Draw dynamic itempos points
                 for (const id in selectedItemPos) {
                     const pos = selectedItemPos[id];
-                    // Pass the input ID to drawPoint so it can retrieve sprite info
-                    drawPoint(pos.x, pos.y, id, 'orange', 'orange');
+                    drawPoint(pos.x, pos.y, id, 'orange', 'orange', itemScaleVal);
                 }
 
                 // Restore the transformation matrix
@@ -717,14 +717,12 @@
             }
         }
 
-        function drawPoint(x, y, inputId, strokeColor, fillColor) {
+        function drawPoint(x, y, inputId, strokeColor, fillColor, itemScaleVal) {
             if (!uploadedImage.src) return;
 
-            // Get spriteOrigin for offset calculation
             const spriteOriginInput = document.getElementById('spriteOrigin').value || "0.5,0.5";
             const [originXRatio, originYRatio] = spriteOriginInput.split(',').map(Number);
             
-            // Get spriteSourceRect for width/height
             const spriteSourceRectInput = document.getElementById('spriteSourceRect').value;
             let spriteWidth = uploadedImage.width;
             let spriteHeight = uploadedImage.height;
@@ -741,19 +739,24 @@
                 }
             }
             
+            // Unscale the point for drawing on the base image, as the visual representation should be scaled
+            // The stored x,y values are already scaled, so we divide by itemScaleVal to get the unscaled position
+            // relative to the item's unscaled dimensions. This unscaled position is then offset by the origin
+            // and spriteRect to get the global image coordinate for drawing.
+            const unscaledX = x / itemScaleVal;
+            const unscaledY = y / itemScaleVal;
+
             // Calculate origin pixel coordinates relative to the *top-left of the original image/sourcerect*
-            // The canvas context is already scaled and translated for the full image.
-            // Points (x,y) are in pixels relative to the origin of the *sprite's sourcerect*.
-            // Need to convert them to global image coordinates.
-            const globalX = spriteRectX + (originXRatio * spriteWidth) + x;
-            const globalY = spriteRectY + (originYRatio * spriteHeight) + y;
+            // globalX and globalY are coordinates on the image itself.
+            const globalX = spriteRectX + (originXRatio * spriteWidth) + unscaledX;
+            // Y is Barotrauma-style (up is positive), so to draw on canvas (down is positive), invert Y
+            const globalY_for_drawing = spriteRectY + (originYRatio * spriteHeight) - unscaledY;
 
 
             // Draw the circle - ctx is already transformed by pan and zoom
             ctx.beginPath();
-            // Radius should be adjusted by inverse scale to appear consistent size on screen
-            const radius = 5 / scale;
-            ctx.arc(globalX, globalY, radius, 0, Math.PI * 2);
+            const radius = 5 / scale; // Adjust radius for zoom
+            ctx.arc(globalX, globalY_for_drawing, radius, 0, Math.PI * 2);
             ctx.strokeStyle = strokeColor;
             ctx.lineWidth = 2 / scale;
             ctx.stroke();
@@ -763,14 +766,14 @@
             // Draw label
             ctx.font = `${12 / scale}px Arial`;
             ctx.fillStyle = 'black';
-            // Offset label slightly so it doesn't overlap the point
+            // Offset label slightly
             let labelText = inputId.replace('Pos', '');
             if (inputId.startsWith('mainContainableItemPos-')) {
                 labelText = `MainItemPos ${inputId.split('-')[1]}`;
             } else if (inputId.startsWith('subContainableItemPos-')) {
                 labelText = `${inputId.split('-')[1]} ItemPos`;
             }
-            ctx.fillText(labelText, globalX + radius + (2 / scale), globalY + radius + (2 / scale));
+            ctx.fillText(labelText, globalX + radius + (2 / scale), globalY_for_drawing + radius + (2 / scale));
         }
 
 
@@ -780,7 +783,7 @@
             const mouseX_screen = e.clientX - rect.left;
             const mouseY_screen = e.clientY - rect.top;
 
-            // Convert screen coordinates to canvas-transformed image coordinates
+            // Convert screen coordinates to canvas-transformed image coordinates (x right, y down)
             const mouseX_transformed = (mouseX_screen - panX) / scale;
             const mouseY_transformed = (mouseY_screen - panY) / scale;
             return { x: mouseX_transformed, y: mouseY_transformed };
@@ -824,12 +827,22 @@
                         }
                     }
 
-                    // Calculate point relative to sprite origin
-                    const pointX = Math.round(mouseX_transformed - (spriteRectX + originXRatio * spriteWidth));
-                    const pointY = Math.round(mouseY_transformed - (spriteRectY + originYRatio * spriteHeight));
+                    // Calculate point relative to sprite origin (Canvas style: X right, Y down from origin)
+                    const tempPointX_canvasStyle = mouseX_transformed - (spriteRectX + originXRatio * spriteWidth);
+                    const tempPointY_canvasStyle = mouseY_transformed - (spriteRectY + originYRatio * spriteHeight);
 
-                    activeCoordinateInput.value = `${pointX},${pointY}`;
-                    updateCoordinate(activeCoordinateInput.id, pointX, pointY);
+                    // Convert to Barotrauma style (X right, Y up from origin)
+                    let pointX_barotraumaStyle = tempPointX_canvasStyle;
+                    let pointY_barotraumaStyle = -tempPointY_canvasStyle;
+
+                    // Get itemScale and apply it
+                    const itemScaleVal = parseFloat(document.getElementById('itemScale').value) || 1.0;
+                    pointX_barotraumaStyle = Math.round(pointX_barotraumaStyle * itemScaleVal);
+                    pointY_barotraumaStyle = Math.round(pointY_barotraumaStyle * itemScaleVal);
+
+
+                    activeCoordinateInput.value = `${pointX_barotraumaStyle},${pointY_barotraumaStyle}`;
+                    updateCoordinate(activeCoordinateInput.id, pointX_barotraumaStyle, pointY_barotraumaStyle);
                     setMode('none'); // Exit point selection mode
                 }
             } else { // Panning mode
@@ -1024,7 +1037,7 @@
                 <label>旋转 (rotation): <input type="number" class="containable-rotation" value="0"></label>
             `;
             container.appendChild(div);
-            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point
+            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point for rendering (Barotrauma style)
             renderCanvas();
         }
 
@@ -1070,7 +1083,7 @@
                 <label>激活 (setactive): <select class="sub-containable-setactive"><option value="true">true</option><option value="false">false</option></select></label>
             `;
             containerGroups.appendChild(newGroup);
-            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point for rendering
+            selectedItemPos[itemPosId] = {x:0, y:0}; // Initialize new point for rendering (Barotrauma style)
             renderCanvas();
         }
 
@@ -1082,15 +1095,14 @@
             const itemCategory = document.getElementById('itemCategory').value;
             const subcategory = document.getElementById('subcategory').value;
             const impactSoundTag = document.getElementById('impactSoundTag').value;
+            const itemScale = document.getElementById('itemScale').value; // New item-level scale
 
-            // These were previously commented out, now re-enabled
             const interactDistance = document.getElementById('interactDistance').value;
             const interactPriority = document.getElementById('interactPriority').value;
             const interactThroughWalls = document.getElementById('interactThroughWalls').value;
             const focusOnSelected = document.getElementById('focusOnSelected').value;
             const offsetOnSelected = document.getElementById('offsetOnSelected').value;
             const showContentsInTooltip = document.getElementById('showContentsInTooltip').value;
-            const scaleItem = document.getElementById('scaleItem').value; // This was the problematic line
             const spriteColor = document.getElementById('spriteColor').value;
 
             const health = document.getElementById('health').value;
@@ -1104,7 +1116,6 @@
             const cargoContainerIdentifier = document.getElementById('cargoContainerIdentifier').value;
             const allowRotatingInEditor = document.getElementById('allowRotatingInEditor').value;
             const linkable = document.getElementById('linkable').value;
-            // End of previously commented out variables
 
             const basePrice = document.getElementById('basePrice').value;
 
@@ -1148,7 +1159,7 @@
             const spriteSourceRect = document.getElementById('spriteSourceRect').value;
             const spriteDepth = document.getElementById('spriteDepth').value;
             const spriteOrigin = document.getElementById('spriteOrigin').value;
-            const spriteScale = document.getElementById('spriteScale').value;
+            // const spriteScale = document.getElementById('spriteScale').value; // Removed
 
             const inventoryIconTexture = document.getElementById('inventoryIconTexture').value;
             const inventoryIconSourceRect = document.getElementById('inventoryIconSourceRect').value;
@@ -1169,10 +1180,9 @@
             if (tags) xml += ` tags="${tags}"`;
             if (itemCategory) xml += ` category="${itemCategory}"`;
             if (subcategory) xml += ` subcategory="${subcategory}"`;
-            xml += ` scale="${scaleItem}"`; 
+            xml += ` scale="${itemScale}"`; // Use new item-level scale
             if (impactSoundTag) xml += ` impactsoundtag="${impactSoundTag}"`;
 
-            // Adding back previously "removed" attributes
             xml += ` interactdistance="${interactDistance}"`;
             xml += ` interactpriority="${interactPriority}"`;
             xml += ` interactthroughwalls="${interactThroughWalls}"`;
@@ -1236,6 +1246,10 @@
 
             // Body
             xml += `  <Body width="${bodyWidth}" height="${bodyHeight}" density="${bodyDensity}" />\n`;
+            
+            // Holdable - Moved before RangedWeapon
+            xml += `  <Holdable slots="${holdableSlots}" controlpose="${controlPose}" holdpos="${holdPos}" aimpos="${aimPos}" handle1="${handle1Pos}" handle2="${handle2Pos}" holdangle="${holdAngle}" msg="${holdableMsg}" />\n`;
+
 
             // RangedWeapon (if reloadTime is provided, assume it's a ranged weapon)
             if (reloadTime) {
@@ -1299,7 +1313,7 @@
             xml += `  </ItemContainer>\n`;
 
             // Sprite
-            xml += `  <Sprite texture="${spriteTexture}" sourcerect="${spriteSourceRect}" depth="${spriteDepth}" origin="${spriteOrigin}" scale="${spriteScale}" `;
+            xml += `  <Sprite texture="${spriteTexture}" sourcerect="${spriteSourceRect}" depth="${spriteDepth}" origin="${spriteOrigin}" scale="1.0" `; // Fixed scale to 1.0
             // Add SpriteColor if it's set
             if (spriteColor) {
                 xml += `color="${spriteColor}"`;
@@ -1309,9 +1323,6 @@
 
             // InventoryIcon
             xml += `  <InventoryIcon texture="${inventoryIconTexture}" sourcerect="${inventoryIconSourceRect}" origin="${inventoryIconOrigin}" />\n`;
-
-            // Holdable
-            xml += `  <Holdable slots="${holdableSlots}" controlpose="${controlPose}" holdpos="${holdPos}" aimpos="${aimPos}" handle1="${handle1Pos}" handle2="${handle2Pos}" holdangle="${holdAngle}" msg="${holdableMsg}" />\n`;
 
             xml += `</Item>`;
             

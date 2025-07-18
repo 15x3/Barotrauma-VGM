@@ -57,7 +57,7 @@
         <Affliction identifier="stun" strength="4" />
       </StatusEffect>
     </Repairable>
-    <ItemContainer capacity="4" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
 </Items>

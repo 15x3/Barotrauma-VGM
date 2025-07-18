@@ -3,22 +3,27 @@
     <Item identifier="tacAssaultRifleVGM" name="战术突击步枪" tags="smallitem,weapon" category="Weapon" interactdistance="50" interactpriority="1.0" interactthroughwalls="false" focusonselected="false" offsetonselected="0" showcontentsintooltip="false" scale="0.5" spritecolor="1.0,1.0,1.0,1.0" health="100" indestructible="false" fireproof="false" waterproof="false" impacttolerance="10.0" maxstacksize="1" allowasextracargo="false" allowrotatingineditor="true" linkable="false">
         <Sprite texture="%ModDir%/Guns/tacAssaultRifleVGM.png" sourcerect="94,8,161,59" depth="0.55" origin="0.5,0.5" />
         <InventoryIcon texture="%ModDir%/Guns/tacAssaultRifleVGM.png" sourcerect="94,8,161,59" origin="0.5,0.5" />
-        <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="55,-20" aimpos="70,-5" handle1="-60,2" handle2="24,-10" holdangle="-35" msg="ItemMsgPickUpSelect" >
-            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
-                <RequiredItem items="sniperStockVGM" type="Contained" isfalse="true"/>
-            </StatusEffect>
+        <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="55,-20" aimpos="70,-5" handle1="-60,2" handle2="24,-10" holdangle="-35" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1">
             <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" >
                 <RequiredItem items="sniperStockVGM" type="Contained" />
             </StatusEffect>
-            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" >
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.95" setvalue="true" >
                 <RequiredItem items="heavyStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
+                <RequiredItem items="lightStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+                <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
+                <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
             </StatusEffect>
         </Holdable>
         <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
             <sprite name="Tac Assault Rifle Worn" texture="%ModDir%/Guns/tacAssaultRifleVGM.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="94,8,161,59" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
         </Wearable>
-        <Price baseprice="666">
-        </Price>
+        <Price baseprice="666" sold="false" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
             <RequiredItem identifier="assaultrifle" amount="1" mincondition="0" />
             <RequiredItem identifier="steel" amount="3" mincondition="0" />
@@ -26,19 +31,45 @@
         <Deconstruct time="10">
         </Deconstruct>
         <Body width="160" height="60" density="25" />
-        <RangedWeapon reload="0.24" weapondamagemodifier="1.0" holdtrigger="true" barrelpos="75,10" spread="6" unskilledspread="20" combatpriority="80" drawhudwhenequipped="true" crosshairscale="0.5">
+        <RangedWeapon reload="0.24" weapondamagemodifier="1.0" holdtrigger="true" barrelpos="75,12" spread="6" unskilledspread="20" combatpriority="80" drawhudwhenequipped="true" crosshairscale="0.5">
             <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
             <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+            
             <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,200" />
-            <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-            <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
-            <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
-            <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
-            <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="neq suppressed" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+            <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+            <StatusEffect type="OnUse" target="This" conditional="and">
+                <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
+                <Conditional HasStatusTag="neq suppressed" />
+                <Conditional HasStatusTag="neq flashHided" />
+            </StatusEffect>
+
             <StatusEffect type="OnUse" target="This">
-                <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
                 <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
-                </StatusEffect>
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+
+            <StatusEffect type="OnUse" target="This">
+                <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+                <Conditional HasStatusTag="flashHided" />
+            </StatusEffect>
+
             <StatusEffect type="OnUse" target="Contained">
                 <Use />
             </StatusEffect>
@@ -49,11 +80,11 @@
             <Containable items="assaultrifleammo" hide="false" itempos="-10,-10" rotation="0" />
             <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
             <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
-            <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
-            <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
+            <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
+            <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
             <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
             <SubContainer capacity="1" maxstacksize="1">
-                <Containable items="bigAccessoryVGM,light" hideitems="false" itempos="13,4" setactive="true" >
+                <Containable items="bigAccessoryVGM,provocative" hideitems="false" itempos="13,4" setactive="true" >
                     <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="angleGripVGM" type="Contained" />
                     </StatusEffect>
@@ -64,22 +95,6 @@
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
-                <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="35,10" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
-
-                        <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
-                    </StatusEffect>
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
-                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
-                    </StatusEffect>
-                    <StatusEffect type="OnInserted" target="This" barrelpos="135,10" setvalue="true" disabledeltatime="true" >
-                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
-                    </StatusEffect>
-                    <StatusEffect type="OnRemoved" target="This" barrelpos="75,10" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
-
-                </Containable>
-            </SubContainer>
-            <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigStockVGM" hideitems="false" itempos="-20,2" setactive="true" >
                     <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-4" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
@@ -87,19 +102,56 @@
                     <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-2" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="heavyStockVGM" type="Contained" />
                     </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-1" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="lightStockVGM" type="Contained" />
+                    </StatusEffect>
                     <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" setvalue="true" disabledeltatime="true" />
-
+                </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="35,10" setactive="true" >
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="115,12" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="145,12" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.15" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="105,12" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" barrelpos="75,12" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1" >
-                <Containable items="smallScopeVGM,bigScopeVGM" hide="false" itempos="-19,11" setactive="true" >
+                <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-19,11" setactive="true" >
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="dotScopeVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.3" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="acogScopeVGM" type="Contained" />
                     </StatusEffect>
-                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" disabledeltatime="true" />
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="800" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="provocative" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
         </ItemContainer>
@@ -107,6 +159,14 @@
         <QualityStat stattype="FirepowerMultiplier" value="0.1" />
         </Quality>
         <SkillRequirementHint identifier="weapons" level="60" />
+        <aitarget sightrange="3000" soundrange="4000" fadeouttime="2">
+            <StatusEffect type="OnActive" target="This" sightrange="30" soundrange="40" stackable="false" setvalue="true">
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="This" sightrange="3000" soundrange="4000" stackable="false" setvalue="true">
+                <Conditional HasStatusTag="neq suppressed" />
+            </StatusEffect>
+        </aitarget>
     </Item>
 
     <Item name="战术手炮" identifier="tacHandCannonVAM" tags="smallitem,weapon,gun,pistolitem,mountableweapon,provocativetohumanai" category="Weapon" maxstacksize="1" Scale="0.5">
@@ -114,8 +174,7 @@
         <PreferredContainer secondary="outpostsecarmcab" spawnprobability="0.5" />
         <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" spawnprobability="0.25" />
         <PreferredContainer secondary="armcab,weaponholder" />
-        <Price baseprice="390">
-        </Price>
+        <Price baseprice="390" sold="false" />
         <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35" requiresrecipe="true">
             <RequiredItem identifier="handcannon" />
             <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
@@ -127,7 +186,11 @@
         </Deconstruct>
         <Sprite texture="%ModDir%/Guns/tacHandCannonVGM.png" sourcerect="0,0,116,48" depth="0.55" origin="0.5,0.5" />
         <Body width="114" height="49" density="25" />
-        <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="90,10" handle1="-40,-3" handle2="-40,-5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+        <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="90,10" handle1="-40,-3" handle2="-40,-5" holdangle="-35" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" >
+                <RequiredItem items="pistolStockVGM" type="Contained" />
+            </StatusEffect>
+        </Holdable>
         <RangedWeapon reload="1" spread="0" unskilledspread="8" combatPriority="90" drawhudwhenequipped="true" crosshairscale="0.2">
             <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
             <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
@@ -143,24 +206,42 @@
             <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
             <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
             <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
             <Containable items="handcannonammo" hide="true" itempos="0,0" rotation="-30" />
             <SubContainer capacity="1" maxstacksize="1">
-                <Containable items="verticalGripVGM,light" hide="false" itempos="15,2" setactive="true">
-                    <StatusEffect type="OnInserted" target="This" holdangle="-15" holdpos="55,-20" aimpos="50,10" handle1="-35,-8" handle2="50,-5" setvalue="true" disabledeltatime="true" >
+                <Containable items="verticalGripVGM,provocative" hide="false" itempos="15,2" setactive="true">
+                    <StatusEffect type="OnInserted" target="This" holdangle="-15" holdpos="55,-20" aimpos="50,0" handle1="-35,-8" handle2="50,-5" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="verticalGripVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnRemoved" target="This" holdangle="0" holdpos="0.0,0.0" aimpos="90,10" handle1="-40,-3" handle2="-40,-5" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
-                <Containable items="smallScopeVGM,bigScopeVGM,light" hide="false" itempos="0,8" setactive="true">
-                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" disabledeltatime="true" />
+                <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="0,8" setactive="true">
+                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" drawhudwhenequipped="true" setvalue="true" disabledeltatime="true" />
+                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="provocative" type="Contained" />
+                    </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.3" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="acogScopeVGM" type="Contained" />
                     </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="800" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="dotScopeVGM" type="Contained" />
+                    </StatusEffect>
+                </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallStockVGM" hideitems="false" itempos="-15,2" setactive="true" >
+                    <StatusEffect type="OnInserted" target="This" spread="0" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
+                        <RequiredItem items="pistolStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" spread="0" unskilledspread="8" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
         </ItemContainer>
@@ -169,4 +250,324 @@
         </Quality>
         <SkillRequirementHint identifier="weapons" level="70" />
     </Item>
+
+    <Item identifier="tacDeadEyeVAM" name="战术死眼步枪" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" category="Weapon" scale="0.5" impactsoundtag="impact_metal_light" >
+        <Price baseprice="666" sold="false" />
+        <PreferredContainer primary="secarmcab" />
+        <PreferredContainer secondary="armcab,weaponholder" />
+        <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
+            <RequiredItem identifier="smgunique" amount="1" mincondition="0" />
+            <RequiredItem identifier="steel" amount="3" mincondition="0" />
+        </Fabricate>
+        <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="plastic" />
+        </Deconstruct>
+        <Sprite texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="0,2,116,56" depth="0.55" origin="0.5,0.5" scale="0.5" color="1.0,1.0,1.0,1.0"/>
+        <InventoryIcon texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="0,2,116,56" origin="0.5,0.5" />
+        <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="55,-20" aimpos="70,-5" handle1="-42,-2" handle2="22,6" holdangle="-35" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1">
+            <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+                <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
+                <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" >
+                <RequiredItem items="sniperStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.95" setvalue="true" >
+                <RequiredItem items="heavyStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
+                <RequiredItem items="lightStockVGM" type="Contained" />
+            </StatusEffect>
+        </Holdable>
+        <Body width="116" height="56" density="25" />
+        <RangedWeapon reload="0.1" weapondamagemodifier="1.5" penetration="0.3" holdtrigger="true" barrelpos="57,17" spread="5" unskilledspread="13" combatpriority="80" drawhudwhenequipped="true">
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="Content/Items/Weapons/SMGsingleShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="Content/Items/Weapons/SMGsingleShot2.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/Weapons/SMGsingleShot3.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/Weapons/SMGsingleShot4.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/Weapons/SMGsingleShot5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="neq suppressed" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+            <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" scale="0.2" />
+            <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+            <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+            <RequiredSkill identifier="weapons" level="60" />
+            <StatusEffect type="OnUse" target="This">
+                <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+            </StatusEffect>
+            
+            <StatusEffect type="OnUse" target="This" conditional="and">
+                <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
+                <Conditional HasStatusTag="neq suppressed" />
+                <Conditional HasStatusTag="neq flashHided" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This">
+                <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+                <Conditional HasStatusTag="flashHided" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This">
+                <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="Contained">
+                <Use />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" reload="0.7" setvalue="true" delay="0.2" />
+            <StatusEffect type="OnUse" target="This" reload="0.1" setvalue="true" delay="0.7" />
+            <RequiredSkill identifier="weapons" level="50" />
+        </RangedWeapon>
+        <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+            <Containable items="smgammo" hide="false" itempos="-4,-4" rotation="-25" />
+            <SubContainer capacity="1" maxstacksize="1">
+            <Containable items="smallAccessoryVGM,bigAccessoryVGM,provocative" hide="false" itempos="15,5" setactive="true" >
+                <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="verticalGripVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="angleGripVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
+            </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallStockVGM,bigStockVGM" hide="false" itempos="-20,0" setactive="true" >
+                    <StatusEffect type="OnInserted" target="This" spread="-5" unskilledspread="-13" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-8" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="heavyStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="lightStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" spread="5" unskilledspread="13" setvalue="true" disabledeltatime="true" /> 
+                </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+            <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="25,9" setactive="true" >
+                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.1" penetration="0.1" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" barrelpos="127,17" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" barrelpos="127,17" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.15" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" barrelpos="87,17" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnRemoved" target="This" barrelpos="57,17" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+            </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-9,12" setactive="true" >
+                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="provocative" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="dotScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.3" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="acogScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="800" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperScopeVGM" type="Contained" />
+                    </StatusEffect>
+                </Containable>
+            </SubContainer>
+            <!-- 似乎Container的坐标弄反了，而且忘记除以2 -->
+        </ItemContainer>
+    </Item>
+    <Item identifier="tacRifleVGM" name="战术步枪" tags="mediumitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" category="Weapon" scale="0.5" impactsoundtag="impact_metal_light" >
+        <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+        <PreferredContainer secondary="armcab" />
+        <Price baseprice="500" sold="false" />
+        <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
+            <RequiredItem identifier="rifle" amount="1" mincondition="0" />
+            <RequiredItem identifier="steel" amount="2" mincondition="0" />
+            <RequiredItem identifier="plastic" amount="1" mincondition="0" />
+        </Fabricate>
+        <Deconstruct time="10">
+            <Item identifier="steel" />
+            <Item identifier="titaniumaluminiumalloy" />
+            <Item identifier="plastic" />
+        </Deconstruct>
+        <Sprite texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="65,62,161,31" depth="0.55" origin="0.5,0.5" scale="1.0" color="1.0,1.0,1.0,1.0"/>
+        <InventoryIcon texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="65,62,161,31" origin="0.5,0.5" />
+        <Body width="160" height="32" density="25" />
+        <Holdable SpeedMultiplier="1.1" slots="Any,RightHand+LeftHand" controlpose="true" holdpos="50,-10" aimpos="85,5" handle1="-35,-9" handle2="19,-5" holdangle="-35" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+                <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" >
+                <RequiredItem items="sniperStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.95" setvalue="true" >
+                <RequiredItem items="heavyStockVGM" type="Contained" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
+                <RequiredItem items="lightStockVGM" type="Contained" />
+            </StatusEffect>
+        </Holdable>
+        <RangedWeapon launchimpulse="-10.0" reload="2" unskilledspread="8" reloadnoskill="5" reloadskillrequirement="40" weapondamagemodifier="1.0" penetration="0.0" holdtrigger="true" barrelpos="70,4" combatpriority="80" drawhudwhenequipped="true" crosshairscale="0.15">
+            <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" scale="0.2" />
+            <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+            <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+            <RequiredItems items="rifleammo" type="Contained" msg="ItemMsgAmmoRequired" />
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+                <Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="neq suppressed" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_2.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_3.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_4.ogg" type="OnUse" range="3000" />
+                <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="3000" />
+                <Conditional HasStatusTag="suppressed" />
+            </StatusEffect>
+            <!-- 考虑到这是一把单发武器，就不写屏幕晃动了 -->
+            <StatusEffect type="OnUse" delay="1" target="Character" forceplaysounds="true">
+                <Conditional skillrequirement="true" weapons="gte 50" />
+                <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload50-_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload50-_2.ogg" type="OnUse" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" delay="1" target="Character" comparison="and" forceplaysounds="true">
+                <Conditional skillrequirement="true" weapons="lt 50" />
+                <Conditional skillrequirement="true" weapons="gte 20" />
+                <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload20-50_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload20-50_2.ogg" type="OnUse" range="500" />
+            </StatusEffect>
+            <StatusEffect type="OnUse" delay="1" target="Character" forceplaysounds="true">
+                <Conditional skillrequirement="true" weapons="lt 20" />
+                <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_1.ogg" type="OnUse" range="500" selectionmode="Random" />
+                <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_2.ogg" type="OnUse" range="500" />
+            </StatusEffect>
+            <RequiredItems items="rifleammo" type="Contained" msg="ItemMsgAmmoRequired" />
+            <RequiredSkill identifier="weapons" level="60" />
+        </RangedWeapon>
+        <ItemContainer capacity="1" maxstacksize="9" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+            <Containable items="rifleammo" hide="true" />
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" origin="0.5,0.5" />
+            <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+            <SubContainer capacity="1" maxstacksize="1">
+            <Containable items="smallAccessoryVGM,bigAccessoryVGM,provocative" hide="false" itempos="23,-3" setactive="true" >
+                <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="angleGripVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+                    <RequiredItem items="verticalGripVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" /> 
+            </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="bigStockVGM" hide="false" itempos="-30,-7" setactive="true" >
+                    <StatusEffect type="OnInserted" target="This" unskilledspread="-6" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="heavyStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" unskilledspread="-2" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="lightStockVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" unskilledspread="8" setvalue="true" disabledeltatime="true" />
+                </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="38,4" setactive="true" >
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.1" penetration="0.1" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="130,4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.15" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="140,4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="longSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" barrelpos="100,4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                        <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnRemoved" target="This" weapondamagemodifier="1.0" barrelpos="70,4" setvalue="true" disabledeltatime="true" />
+                </Containable>
+            </SubContainer>
+            <SubContainer capacity="1" maxstacksize="1">
+                <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-9,3" setactive="true" >
+                    <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="provocative" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="dotScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.3" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="acogScopeVGM" type="Contained" />
+                    </StatusEffect>
+                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="800" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+                        <RequiredItem items="sniperScopeVGM" type="Contained" />
+                    </StatusEffect>
+                </Containable>
+            </SubContainer>
+        </ItemContainer>
+        <aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+        <Quality>
+            <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+        </Quality>
+        <SkillRequirementHint identifier="weapons" level="60" />
+    </Item>
+
 </Items>
