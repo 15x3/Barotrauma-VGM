@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文(简体)">
+  <entityname.fabricatorVGM>武器改造加工台</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>曾随处可见的自组装型老式加工台,已不适合生产大部分产品,不过稍加改造可用于提供武器改件.当然,它还是得通电的.使用撬棍拆卸,长按右键后按"E"放置</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>消焰器</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>有效减少连射晃动并提供少量伤害提升，通常是连射武器的首选，兼容大多数武器，多种口径通用</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>延长枪管</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>提高枪口初速，增加武器伤害能力和穿甲性能。不适用于紧凑武器。注意：过长的枪管可不适合贴身近战</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>长枪消音器</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>这种使用异星材料制作的消音器能够在减少射击噪声的同时有效提高枪口初速，以带来显著的伤害提升，不适用于紧凑武器</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>紧凑消音器</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>基础款消音器，能减少射击噪声并提供少量伤害提升，并一定程度减少射击晃动，兼容大多数武器</entitydescription.shortSilencerMuzzleVGM>
+  <!-- <entityname.highPressureMuzzleVGM>高压枪管</entityname.highPressureMuzzleVGM>
+  <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
+  <!-- 我没有高压枪管这个东西啊，哈吉米哈气了 -->
+  <entityname.lightStockVGM>轻型枪托</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>突击步枪的主要枪托，一定程度减少瞄准散布</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>重型枪托</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>重机枪的主要枪托，有效减少瞄准散布，但是会影响机动性</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>狙击枪托</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>符合人体工程学的狙击枪托，能够最大程度减少瞄准散布，但是会严重影响武器机动性</entitydescription.sniperStockVGM>
+  <entityname.pistolStockVGM>手枪枪托</entityname.pistolStockVGM>
+  <entitydescription.pistolStockVGM>左轮手枪、机关手枪等紧凑武器专用的小型枪托，能够有效减少瞄准散布，但是会影响携带武器时的机动性</entitydescription.pistolStockVGM>
+  <entityname.holoGraphicScopeVGM>紧凑全息瞄准镜</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>紧凑全息瞄准镜，适用于大多数武器</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>紧凑红点瞄准镜</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>紧凑红点瞄准镜，适用于大多数武器</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>四倍瞄准镜</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>ACOG四倍瞄准镜，有些设计到了太空殖民时代也不过时，有效延展武器可视距离</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>狙击瞄准镜</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>狙击八倍瞄准镜，可最大程度延展武器可视距离，不适用于紧凑武器。注意：过大的放大倍率会影响武器的近身表现</entitydescription.sniperScopeVGM>
+  <entityname.verticalGripVGM>垂直握把</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>垂直握把有助于使用者长时间保持战术姿势，以减少抬枪反应时间</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>直角握把</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>直角握把有助于使用者长时间保持枪口向上的战术姿势，以减少抬枪反应时间</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>冲锋枪弹鼓</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>三倍弹容，不易携带</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>冲锋枪延长弹匣</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>双倍弹容</entitydescription.smgLongmagVGM>
+  <entityname.smgDFuelLongMagVGM>贫化燃料弹冲锋枪延长弹匣</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <entityname.smgDFuelDrumMagVGM>贫化燃料弹冲锋枪弹鼓</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <entityname.smgLongmagVGM>冲锋枪延长弹匣</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>双倍弹容</entitydescription.smgLongmagVGM>
+  <entityname.redLazerVGM>镭射指示器</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>红色镭射指示器，经典款式</entitydescription.redLazerVGM>
+  <!-- <entityname.tacticalLightVGM>战术手电筒</entityname.tacticalLightVGM>
+  <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
+  <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>
+  <entitydescription.tacAssaultRifleVGM>千禧年文化常客</entitydescription.tacAssaultRifleVGM>
+  <entityname.tacHandCannonVGM>战术手炮</entityname.tacHandCannonVGM>
+  <entitydescription.tacHandCannonVGM>大口径手炮就该配狙击镜。没人立这个规矩，但是大家都喜欢这么做</entitydescription.tacHandCannonVGM>
+  <entityname.tacRifleVGM>战术步枪</entityname.tacRifleVGM>
+  <entitydescription.tacRifleVGM>并不是全自动的</entitydescription.tacRifleVGM>
+  <entityname.tacShotgunVGM>战术霰弹枪</entityname.tacShotgunVGM>
+  <entitydescription.tacShotgunVGM>对于42种锯断其枪管的尝试均以失败告终</entitydescription.tacShotgunVGM>
+  <entityname.tacKnifeVGM>“战术”潜水刀</entityname.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>你不知道给刀加装战术配件有什么意义，但你还是这么做了。也许现在可以称呼您“百级老鹰”了？</entitydescription.tacKnifeVGM>
+  <entityname.tacMachinePistolVGM>战术机关手枪</entityname.tacMachinePistolVGM>
+  <entitydescription.tacMachinePistolVGM>就算是欧罗巴的OG也需要战术范儿</entitydescription.tacMachinePistolVGM>
+  <entityname.tacRevolverVGM>战术左轮手枪</entityname.tacRevolverVGM>
+  <entitydescription.tacRevolverVGM>过于稳固的结构让它能够装载部分长枪配件</entitydescription.tacRevolverVGM>
+  <entityname.tacSmgVGM>战术冲锋枪</entityname.tacSmgVGM>
+  <entitydescription.tacSmgVGM>大多数潜水员用一辈子的武器</entitydescription.tacSmgVGM>
+  <entityname.tacDeadEyeVGM>战术死眼步枪</entityname.tacDeadEyeVGM>
+  <entitydescription.tacDeadEyeVGM>死眼步枪本来就不好找，能加装配件的死眼步枪就更不好获得了，好好保管她</entitydescription.tacDeadEyeVGM>
+  <entityname.tacHmgVGM>战术重机枪</entityname.tacHmgVGM>
+  <entitydescription.tacHmgVGM>最好给它加个枪托，除非你打算Cosplay星际战士，或者真有星际战士般的体格</entitydescription.tacHmgVGM>
+</infotexts>

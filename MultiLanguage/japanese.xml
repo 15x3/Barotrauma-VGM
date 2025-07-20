@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Japanese" nowhitespace="true" translatedname="日本語">
+  <entityname.fabricatorVGM>武器改造ファブリケーター</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>かつてどこにでもあった自己組立式の旧型製造台。ほとんどの製品の生産には適さないが、武器改造パーツの提供用に改造可能。もちろん電源は必要だ。</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>フラッシュハイダー</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>連射時の反動を効果的に軽減し、わずかにダメージを向上させる。通常は連射武器の第一選択肢で、ほとんどの武器と口径に対応。</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>ロングバレル</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>初速を上げ、武器のダメージ能力と貫通性能を向上させる。コンパクト武器には不向き。注：長すぎるバレルは接近戦には向かない。</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>ロングサプレッサー</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>異星素材を使用したこのサプレッサーは射撃音を低減すると同時に初速を上げ、顕著なダメージ向上をもたらす。コンパクト武器には不向き。</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>コンパクトサプレッサー</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>基本型サプレッサーで、射撃音を低減し、わずかにダメージを向上させ、反動をある程度軽減する。ほとんどの武器に対応。</entitydescription.shortSilencerMuzzleVGM>
+  <!-- <entityname.highPressureMuzzleVGM>高圧バレル</entityname.highPressureMuzzleVGM>
+  <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
+  <!-- 高圧バレルなんて持ってないよ、猫が怒ってる -->
+  <entityname.lightStockVGM>ライトストック</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>アサルトライフルの主要ストックで、照準時の散布をある程度軽減する。</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>ヘビーストック</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>重機関銃の主要ストックで、照準時の散布を効果的に軽減するが、機動性に影響する。</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>スナイパーストック</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>人間工学に基づいたスナイパーストックで、照準時の散布を最大限に軽減するが、武器の機動性に深刻な影響を与える。</entitydescription.sniperStockVGM>
+  <entityname.pistolStockVGM>ピストルストック</entityname.pistolStockVGM>
+  <entitydescription.pistolStockVGM>リボルバーやマシンピストルなどのコンパクト武器専用の小型ストックで、照準時の散布を効果的に軽減するが、携行時の機動性に影響する。</entitydescription.pistolStockVGM>
+  <entityname.holoGraphicScopeVGM>コンパクトホロサイト</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>コンパクトホログラフィックサイトで、ほとんどの武器に適している。</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>コンパクトレッドドットサイト</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>コンパクトレッドドットサイトで、ほとんどの武器に適している。</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>4倍ACOGスコープ</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>ACOG4倍スコープ。宇宙殖民時代になっても廃れないデザインもあり、武器の視認距離を効果的に延伸する。</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>スナイパースコープ</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>8倍スナイパースコープで、武器の視認距離を最大限に延伸する。コンパクト武器には不向き。注：過大な倍率は至近距離での性能に影響する。</entitydescription.sniperScopeVGM>
+  <entityname.verticalGripVGM>バーティカルグリップ</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>使用者が長時間戦術姿勢を維持するのに役立ち、構え時間を短縮する。</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>アングルグリップ</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>使用者が長時間銃口を上に向けた戦術姿勢を維持するのに役立ち、構え時間を短縮する。</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>SMGドラムマガジン</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>3倍の装弾数だが携行性に劣る。</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>SMG拡張マガジン</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>2倍の装弾数。</entitydescription.smgLongmagVGM>
+  <entityname.smgDFuelLongMagVGM>劣化燃料弾SMG拡張マガジン</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <entityname.smgDFuelDrumMagVGM>劣化燃料弾SMGドラムマガジン</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <entityname.smgLongmagVGM>SMG拡張マガジン</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>2倍の装弾数。</entitydescription.smgLongmagVGM>
+  <entityname.redLazerVGM>レーザーサイト</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>赤色レーザーサイト、クラシックモデル。</entitydescription.redLazerVGM>
+  <!-- <entityname.tacticalLightVGM>タクティカルライト</entityname.tacticalLightVGM>
+  <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
+  <entityname.tacAssaultRifleVGM>タクティカルアサルトライフル</entityname.tacAssaultRifleVGM>
+  <entitydescription.tacAssaultRifleVGM>ミレニアム文化の定番。</entitydescription.tacAssaultRifleVGM>
+  <entityname.tacHandCannonVGM>タクティカルハンドキャノン</entityname.tacHandCannonVGM>
+  <entitydescription.tacHandCannonVGM>大口径ハンドキャノンにはスナイパースコープが似合う。誰もルールにしていないが、皆そうしたがる。</entitydescription.tacHandCannonVGM>
+  <entityname.tacRifleVGM>タクティカルライフル</entityname.tacRifleVGM>
+  <entitydescription.tacRifleVGM>フルオートではない。</entitydescription.tacRifleVGM>
+  <entityname.tacShotgunVGM>タクティカルショットガン</entityname.tacShotgunVGM>
+  <entitydescription.tacShotgunVGM>バレルを切断しようとした42回の試みは全て失敗に終わった。</entitydescription.tacShotgunVGM>
+  <entityname.tacKnifeVGM>「タクティカル」ダイバーナイフ</entityname.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>ナイフにタクティカルアクセサリーを装着する意味がわからないが、とにかくやってしまった。これで「レベル100イーグル」と呼べるだろうか？</entitydescription.tacKnifeVGM>
+  <entityname.tacMachinePistolVGM>タクティカルマシンピストル</entityname.tacMachinePistolVGM>
+  <entitydescription.tacMachinePistolVGM>ヨーロッパのOGだってタクティカルスタイルが欲しい。</entitydescription.tacMachinePistolVGM>
+  <entityname.tacRevolverVGM>タクティカルリボルバー</entityname.tacRevolverVGM>
+  <entitydescription.tacRevolverVGM>極めて頑丈な構造のため、一部の長銃用アクセサリーが装着可能。</entitydescription.tacRevolverVGM>
+  <entityname.tacSmgVGM>タクティカルSMG</entityname.tacSmgVGM>
+  <entitydescription.tacSmgVGM>ほとんどのダイバーが一生使い続ける武器。</entitydescription.tacSmgVGM>
+  <entityname.tacDeadEyeVGM>タクティカルデッドアイライフル</entityname.tacDeadEyeVGM>
+  <entitydescription.tacDeadEyeVGM>デッドアイライフル自体が珍しいが、アクセサリー装着可能なものはさらに貴重。大切に扱うこと。</entitydescription.tacDeadEyeVGM>
+  <entityname.tacHmgVGM>タクティカル重機関銃</entityname.tacHmgVGM>
+  <entitydescription.tacHmgVGM>スペースマリーンのコスプレをするか、実際にそれ並みの体格を持っていない限り、ストックは付けた方がいい。</entitydescription.tacHmgVGM>
+</infotexts>

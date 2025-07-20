@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="English" nowhitespace="true" translatedname="English">
+  <entityname.fabricatorVGM>Weapon Modification Fabricator</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>An old-style Self-assembling Fababricator™ once commonly seen everywhere. While no longer suitable for producing most products, it can be modified to provide weapon attachments. Of course, it still needs power.Use a crowbar to dismantle, long press the right button and then press “E” to place.</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>Flash Hider</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Effectively reduces recoil during sustained fire and provides a slight damage boost. Typically the first choice for automatic weapons, compatible with most firearms in various calibers.</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>Extended Barrel</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Increases muzzle velocity, enhancing damage and armor-piercing capabilities. Not suitable for compact weapons. Note: Excessively long barrels aren't ideal for close-quarters combat.</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>Lancer Suppressor</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>This suppressor made with alien materials reduces firing noise while significantly increasing muzzle velocity for notable damage improvement. Not suitable for compact weapons.</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>Compact Suppressor</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>Basic suppressor that reduces firing noise while providing slight damage boost and some recoil reduction. Compatible with most weapons.</entitydescription.shortSilencerMuzzleVGM>
+  <!-- <entityname.highPressureMuzzleVGM>High-Pressure Barrel</entityname.highPressureMuzzleVGM>
+  <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
+  <!-- I don't have a high-pressure barrel, the cat is angry -->
+  <entityname.lightStockVGM>Light Stock</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>The primary stock for assault rifles, moderately reduces aim spread.</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>Heavy Stock</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>The primary stock for HMGs, significantly reduces aim spread at the cost of mobility.</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>Sniper Stock</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>An ergonomic sniper stock that minimizes aim spread but severely impacts weapon mobility.</entitydescription.sniperStockVGM>
+  <entityname.pistolStockVGM>Pistol Stock</entityname.pistolStockVGM>
+  <entitydescription.pistolStockVGM>A compact stock designed for revolvers and machine pistols that effectively reduces aim spread but affects mobility when carrying the weapon.</entitydescription.pistolStockVGM>
+  <entityname.holoGraphicScopeVGM>Compact Holographic Sight</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>Suitable for most weapons.</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>Compact Red Dot Sight</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>Suitable for most weapons.</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>4x ACOG Scope</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>Some designs never go out of style, even in the space colonization era. Effectively extends weapon visibility range.</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>Sniper Scope</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>8x sniper scope that maximally extends weapon visibility range. Not suitable for compact weapons. Note: Excessive magnification affects close-quarters performance.</entitydescription.sniperScopeVGM>
+  <entityname.verticalGripVGM>Vertical Foregrip</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>Helps maintain tactical stance for extended periods, reducing weapon raise time.</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>Angled Foregrip</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>Helps maintain muzzle-up tactical stance for extended periods, reducing weapon raise time.</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>SMG Drum Magazine</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>Triple ammo capacity, less portable.</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>SMG Extended Magazine</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Double ammo capacity.</entitydescription.smgLongmagVGM>
+  <entityname.smgDFuelLongMagVGM>Depleted Fuel SMG Extended Magazine</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <entityname.smgDFuelDrumMagVGM>Depleted Fuel SMG Drum Magazine</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <entityname.smgLongmagVGM>SMG Extended Magazine</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Double ammo capacity.</entitydescription.smgLongmagVGM>
+  <entityname.redLazerVGM>Laser Sight</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>Red laser sight, classic model.</entitydescription.redLazerVGM>
+  <!-- <entityname.tacticalLightVGM>Tactical Flashlight</entityname.tacticalLightVGM>
+  <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
+  <entityname.tacAssaultRifleVGM>Tactical Assault Rifle</entityname.tacAssaultRifleVGM>
+  <entitydescription.tacAssaultRifleVGM>A staple of millennium culture.</entitydescription.tacAssaultRifleVGM>
+  <entityname.tacHandCannonVGM>Tactical Hand Cannon</entityname.tacHandCannonVGM>
+  <entitydescription.tacHandCannonVGM>Large-caliber hand cannons deserve sniper scopes. No one made this a rule, but everyone loves doing it.</entitydescription.tacHandCannonVGM>
+  <entityname.tacRifleVGM>Tactical Rifle</entityname.tacRifleVGM>
+  <entitydescription.tacRifleVGM>Not fully automatic.</entitydescription.tacRifleVGM>
+  <entityname.tacShotgunVGM>Tactical Shotgun</entityname.tacShotgunVGM>
+  <entitydescription.tacShotgunVGM>All 42 attempts to saw off its barrel ended in failure.</entitydescription.tacShotgunVGM>
+  <entityname.tacKnifeVGM>"Tactical" Diving Knife</entityname.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>You don't know why you'd add tactical attachments to a knife, but you did it anyway. Maybe now you can call yourself "Colonel 100"?</entitydescription.tacKnifeVGM>
+  <entityname.tacMachinePistolVGM>Tactical Machine Pistol</entityname.tacMachinePistolVGM>
+  <entitydescription.tacMachinePistolVGM>Even Europa's OGs need tactical style.</entitydescription.tacMachinePistolVGM>
+  <entityname.tacRevolverVGM>Tactical Revolver</entityname.tacRevolverVGM>
+  <entitydescription.tacRevolverVGM>Its exceptionally sturdy construction allows mounting some rifle attachments.</entitydescription.tacRevolverVGM>
+  <entityname.tacSmgVGM>Tactical SMG</entityname.tacSmgVGM>
+  <entitydescription.tacSmgVGM>The weapon most divers use for a lifetime.</entitydescription.tacSmgVGM>
+  <entityname.tacDeadEyeVGM>Tactical DeadEye Rifle</entityname.tacDeadEyeVGM>
+  <entitydescription.tacDeadEyeVGM>DeadEye rifles are already hard to find, and one that can mount attachments is even rarer. Take good care of her.</entitydescription.tacDeadEyeVGM>
+  <entityname.tacHmgVGM>Tactical Heavy Machine Gun</entityname.tacHmgVGM>
+  <entitydescription.tacHmgVGM>Better add a stock unless you plan to cosplay as a Space Marine or actually have Space Marine-level physique.</entitydescription.tacHmgVGM>
+</infotexts>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Russian" nowhitespace="true" translatedname="Русский">
+  <entityname.fabricatorVGM>Станок для модификации оружия</entityname.fabricatorVGM>
+  <entitydescription.fabricatorVGM>Устаревший самосборный производственный стол, некогда повсеместно распространённый. Хотя он уже не подходит для производства большинства изделий, его можно переоборудовать для изготовления оружейных модулей. Разумеется, ему всё ещё требуется питание.С помощью лома демонтируйте, нажмите и удерживайте правую кнопку мыши, затем нажмите «E» для размещения.</entitydescription.fabricatorVGM>
+  <entityname.flashHiderMuzzleVGM>Пламегаситель</entityname.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Эффективно уменьшает отдачу при стрельбе очередями и немного увеличивает урон. Обычно первый выбор для автоматического оружия, совместим с большинством видов оружия различных калибров.</entitydescription.flashHiderMuzzleVGM>
+  <entityname.longBarrelMuzzleVGM>Удлинённый ствол</entityname.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Увеличивает начальную скорость пули, повышая урон и бронепробиваемость. Не подходит для компактного оружия. Примечание: Слишком длинный ствол неудобен в ближнем бою.</entitydescription.longBarrelMuzzleVGM>
+  <entityname.longSilencerMuzzleVGM>Длинный глушитель</entityname.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>Этот глушитель из инопланетных материалов снижает шум выстрела и значительно увеличивает начальную скорость пули для заметного повышения урона. Не подходит для компактного оружия.</entitydescription.longSilencerMuzzleVGM>
+  <entityname.shortSilencerMuzzleVGM>Компактный глушитель</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>Базовый глушитель, снижающий шум выстрела, немного увеличивающий урон и уменьшающий отдачу. Совместим с большинством видов оружия.</entitydescription.shortSilencerMuzzleVGM>
+  <!-- <entityname.highPressureMuzzleVGM>Высоконапорный ствол</entityname.highPressureMuzzleVGM>
+  <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
+  <!-- У меня нет высоконапорного ствола, котик рассердился -->
+  <entityname.lightStockVGM>Лёгкий приклад</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>Основной приклад для штурмовых винтовок, умеренно уменьшает разброс при прицеливании.</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>Тяжёлый приклад</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>Основной приклад для пулемётов, значительно уменьшает разброс при прицеливании за счёт мобильности.</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>Снайперский приклад</entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>Эргономичный снайперский приклад, сводящий к минимуму разброс при прицеливании, но серьёзно ухудшающий мобильность оружия.</entitydescription.sniperStockVGM>
+  <entityname.pistolStockVGM>Пистолетный приклад</entityname.pistolStockVGM>
+  <entitydescription.pistolStockVGM>Компактный приклад для револьверов и автоматических пистолетов, эффективно уменьшающий разброс при прицеливании, но ухудшающий мобильность при переноске оружия.</entitydescription.pistolStockVGM>
+  <entityname.holoGraphicScopeVGM>Компактный голографический прицел</entityname.holoGraphicScopeVGM>
+  <entitydescription.holoGraphicScopeVGM>Компактный голографический прицел, подходящий для большинства видов оружия.</entitydescription.holoGraphicScopeVGM>
+  <entityname.dotScopeVGM>Компактный коллиматор</entityname.dotScopeVGM>
+  <entitydescription.dotScopeVGM>Компактный коллиматорный прицел, подходящий для большинства видов оружия.</entitydescription.dotScopeVGM>
+  <entityname.acogScopeVGM>4-кратный прицел ACOG</entityname.acogScopeVGM>
+  <entitydescription.acogScopeVGM>4-кратный прицел ACOG — некоторые дизайны никогда не выходят из моды, даже в эпоху космической колонизации. Эффективно увеличивает дистанцию видимости оружия.</entitydescription.acogScopeVGM>
+  <entityname.sniperScopeVGM>Снайперский прицел</entityname.sniperScopeVGM>
+  <entitydescription.sniperScopeVGM>8-кратный снайперский прицел, максимально увеличивающий дистанцию видимости оружия. Не подходит для компактного оружия. Примечание: Слишком большое увеличение ухудшает эффективность в ближнем бою.</entitydescription.sniperScopeVGM>
+  <entityname.verticalGripVGM>Вертикальная рукоятка</entityname.verticalGripVGM>
+  <entitydescription.verticalGripVGM>Помогает дольше сохранять тактическую стойку, уменьшая время поднятия оружия.</entitydescription.verticalGripVGM>
+  <entityname.angleGripVGM>Угловая рукоятка</entityname.angleGripVGM>
+  <entitydescription.angleGripVGM>Помогает дольше сохранять стойку с поднятым стволом, уменьшая время поднятия оружия.</entitydescription.angleGripVGM>
+  <entityname.smgDrummagVGM>Барабанный магазин ПП</entityname.smgDrummagVGM>
+  <entitydescription.smgDrummagVGM>Утроенная ёмкость, менее портативный.</entitydescription.smgDrummagVGM>
+  <entityname.smgLongmagVGM>Удлинённый магазин ПП</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Удвоенная ёмкость.</entitydescription.smgLongmagVGM>
+  <entityname.smgDFuelLongMagVGM>Удлинённый магазин ПП с обеднённым топливом</entityname.smgDFuelLongMagVGM>
+  <entitydescription.smgDFuelLongMagVGM></entitydescription.smgDFuelLongMagVGM>
+  <entityname.smgDFuelDrumMagVGM>Барабанный магазин ПП с обеднённым топливом</entityname.smgDFuelDrumMagVGM>
+  <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
+  <entityname.smgLongmagVGM>Удлинённый магазин ПП</entityname.smgLongmagVGM>
+  <entitydescription.smgLongmagVGM>Удвоенная ёмкость.</entitydescription.smgLongmagVGM>
+  <entityname.redLazerVGM>Лазерный целеуказатель</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>Красный лазерный целеуказатель, классическая модель.</entitydescription.redLazerVGM>
+  <!-- <entityname.tacticalLightVGM>Тактический фонарь</entityname.tacticalLightVGM>
+  <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
+  <entityname.tacAssaultRifleVGM>Тактическая штурмовая винтовка</entityname.tacAssaultRifleVGM>
+  <entitydescription.tacAssaultRifleVGM>Неизменный атрибут культуры тысячелетия.</entitydescription.tacAssaultRifleVGM>
+  <entityname.tacHandCannonVGM>Тактический ручная пушка</entityname.tacHandCannonVGM>
+  <entitydescription.tacHandCannonVGM>Крупнокалиберные ручные пушки заслуживают снайперских прицелов. Никто не устанавливал это правило, но все любят так делать.</entitydescription.tacHandCannonVGM>
+  <entityname.tacRifleVGM>Тактическая винтовка</entityname.tacRifleVGM>
+  <entitydescription.tacRifleVGM>Не полностью автоматическая.</entitydescription.tacRifleVGM>
+  <entityname.tacShotgunVGM>Тактическое дробовик</entityname.tacShotgunVGM>
+  <entitydescription.tacShotgunVGM>Все 42 попытки укоротить его ствол закончились неудачей.</entitydescription.tacShotgunVGM>
+  <entityname.tacKnifeVGM>"Тактический" водолазный нож</entityname.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>Вы не понимаете, зачем добавлять тактические аксессуары к ножу, но всё равно это сделали. Может, теперь вы можете называть себя "Орёл 100-го уровня"?</entitydescription.tacKnifeVGM>
+  <entityname.tacMachinePistolVGM>Тактический автоматический пистолет</entityname.tacMachinePistolVGM>
+  <entitydescription.tacMachinePistolVGM>Даже оригинальным обитателям Европы нужен тактический стиль.</entitydescription.tacMachinePistolVGM>
+  <entityname.tacRevolverVGM>Тактический револьвер</entityname.tacRevolverVGM>
+  <entitydescription.tacRevolverVGM>Исключительно прочная конструкция позволяет устанавливать некоторые винтовочные аксессуары.</entitydescription.tacRevolverVGM>
+  <entityname.tacSmgVGM>Тактический ПП</entityname.tacSmgVGM>
+  <entitydescription.tacSmgVGM>Оружие, которое большинство водолазов используют всю жизнь.</entitydescription.tacSmgVGM>
+  <entityname.tacDeadEyeVGM>Тактическая винтовка "Мёртвый глаз"</entityname.tacDeadEyeVGM>
+  <entitydescription.tacDeadEyeVGM>Винтовки "Мёртвый глаз" и так редки, а с возможностью установки аксессуаров — тем более. Берегите её.</entitydescription.tacDeadEyeVGM>
+  <entityname.tacHmgVGM>Тактический пулемёт</entityname.tacHmgVGM>
+  <entitydescription.tacHmgVGM>Лучше добавьте приклад, если только вы не планируете косплеить Космодесантника или действительно обладаете телосложением уровня Космодесантника.</entitydescription.tacHmgVGM>
+</infotexts>
