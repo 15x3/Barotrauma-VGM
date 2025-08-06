@@ -6,6 +6,7 @@
   <entitydescription.flashHiderMuzzleVGM>Effectively reduces recoil during sustained fire and provides a slight damage boost. Typically the first choice for automatic weapons, compatible with most firearms in various calibers.</entitydescription.flashHiderMuzzleVGM>
   <entityname.longBarrelMuzzleVGM>Extended Barrel</entityname.longBarrelMuzzleVGM>
   <entitydescription.longBarrelMuzzleVGM>Increases muzzle velocity, enhancing damage and armor-piercing capabilities. Not suitable for compact weapons. Note: Excessively long barrels aren't ideal for close-quarters combat.</entitydescription.longBarrelMuzzleVGM>
+  <entitydescription.scope>Long-range weapons use a sixfold scope, not suitable for compact weapons</entitydescription.scope>
   <entityname.longSilencerMuzzleVGM>Lancer Suppressor</entityname.longSilencerMuzzleVGM>
   <entitydescription.longSilencerMuzzleVGM>This suppressor made with alien materials reduces firing noise while significantly increasing muzzle velocity for notable damage improvement. Not suitable for compact weapons.</entitydescription.longSilencerMuzzleVGM>
   <entityname.shortSilencerMuzzleVGM>Compact Suppressor</entityname.shortSilencerMuzzleVGM>

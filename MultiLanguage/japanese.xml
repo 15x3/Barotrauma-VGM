@@ -56,7 +56,8 @@
   <entityname.tacShotgunVGM>タクティカルショットガン</entityname.tacShotgunVGM>
   <entitydescription.tacShotgunVGM>バレルを切断しようとした42回の試みは全て失敗に終わった。</entitydescription.tacShotgunVGM>
   <entityname.tacKnifeVGM>「タクティカル」ダイバーナイフ</entityname.tacKnifeVGM>
-  <entitydescription.tacKnifeVGM>ナイフにタクティカルアクセサリーを装着する意味がわからないが、とにかくやってしまった。これで「レベル100イーグル」と呼べるだろうか？</entitydescription.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>ナイフにタクティカルアクセサリーを装着する意味がわからないが、とにかくやってしまった。これで「Colonel 100」と呼べるだろうか？</entitydescription.tacKnifeVGM>
+  <entitydescription.scope>長距離武器は6倍スコープを使用し、コンパクト武器には適していません</entitydescription.scope>
   <entityname.tacMachinePistolVGM>タクティカルマシンピストル</entityname.tacMachinePistolVGM>
   <entitydescription.tacMachinePistolVGM>ヨーロッパのOGだってタクティカルスタイルが欲しい。</entitydescription.tacMachinePistolVGM>
   <entityname.tacRevolverVGM>タクティカルリボルバー</entityname.tacRevolverVGM>

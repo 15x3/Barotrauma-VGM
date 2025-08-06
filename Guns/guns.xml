@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-    <Item identifier="tacAssaultRifleVGM" name="" tags="smallitem,weapon" category="Weapon" interactdistance="50" interactpriority="1.0" interactthroughwalls="false" focusonselected="false" offsetonselected="0" showcontentsintooltip="false" scale="0.5" spritecolor="1.0,1.0,1.0,1.0" health="100" indestructible="false" fireproof="false" waterproof="false" impacttolerance="10.0" maxstacksize="1" allowasextracargo="false" allowrotatingineditor="true" linkable="false">
+    <Item identifier="tacAssaultRifleVGM" name="" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai" category="Weapon" interactdistance="50" interactpriority="1.0" interactthroughwalls="false" focusonselected="false" offsetonselected="0" showcontentsintooltip="false" scale="0.5" spritecolor="1.0,1.0,1.0,1.0" health="100" indestructible="false" fireproof="false" waterproof="false" impacttolerance="10.0" maxstacksize="1" allowasextracargo="false" allowrotatingineditor="true" linkable="false">
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Sprite texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="94,498,160,60" depth="0.55" origin="0.5,0.5" />
         <InventoryIcon texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="94,498,160,60" origin="0.5,0.5" />
@@ -22,12 +22,13 @@
             </StatusEffect>
         </Holdable>
         <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-            <sprite name="Tac Assault Rifle Worn" texture="%ModDir%/Guns/tacAssaultRifleVGM.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="94,8,161,59" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
+            <sprite name="Tac Assault Rifle Worn" texture="%ModDir%/Guns/guns_alphadev.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="94,8,161,59" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
         </Wearable>
         <Price baseprice="666" sold="false" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="assaultrifle" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="3" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="70" />
+            <RequiredItem identifier="assaultrifle" amount="1"  />
+            <RequiredItem identifier="steel" amount="3"  />
         </Fabricate>
         <Deconstruct time="10">
         </Deconstruct>
@@ -173,10 +174,11 @@
         </aitarget>
     </Item>
 
-    <Item name="" identifier="tacHandCannonVGM" tags="smallitem,weapon,gun,pistolitem,mountableweapon,provocativetohumanai" category="Weapon" maxstacksize="1" Scale="0.5">
+    <Item name="" identifier="tacHandCannonVGM" tags="smallitem,gunsmith,weapon,gun,pistolitem,mountableweapon,provocativetohumanai" category="Weapon" maxstacksize="1" Scale="0.5">
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="390" sold="false" />
         <Fabricate suitablefabricators="fabricatorVGM" requiredtime="35">
+            <RequiredSkill identifier="weapons" level="70" />
             <RequiredItem identifier="handcannon" />
             <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
             <RequiredItem identifier="plastic" />
@@ -259,8 +261,9 @@
         <Price baseprice="666" sold="false" />
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="smgunique" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="3" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="60" />
+            <RequiredItem identifier="smgunique" amount="1"  />
+            <RequiredItem identifier="steel" amount="3"  />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="steel" />
@@ -431,9 +434,10 @@
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="500" sold="false" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="rifle" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="2" mincondition="0" />
-            <RequiredItem identifier="plastic" amount="1" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <RequiredItem identifier="rifle" amount="1"  />
+            <RequiredItem identifier="steel" amount="2"  />
+            <RequiredItem identifier="plastic" amount="1"  />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="steel" />
@@ -601,9 +605,10 @@
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="600" sold="false"/>
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="shotgun" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="2" mincondition="0" />
-            <RequiredItem identifier="plastic" amount="1" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <RequiredItem identifier="shotgun" amount="1" />
+            <RequiredItem identifier="steel" amount="2" />
+            <RequiredItem identifier="plastic" amount="1" />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="steel" />
@@ -637,9 +642,6 @@
             <StatusEffect type="OnUse" target="This">
                 <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
                 <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
-            </StatusEffect>
-            <StatusEffect type="OnUse" target="Contained" >
-                <Use />
             </StatusEffect>
         </RangedWeapon>
         <ItemContainer itempos="-19,-1" capacity="1" maxstacksize="6" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepths="0.560" >
@@ -713,9 +715,9 @@
         <Item identifier="iron" />
         </Deconstruct>
         <Fabricate suitablefabricators="fabricatorVGM" requiredtime="10">
-        <RequiredSkill identifier="weapons" level="30" />
-        <RequiredItem identifier="divingknife" />
-        <RequiredItem identifier="iron" amount="2" />
+            <RequiredSkill identifier="weapons" level="30" />
+            <RequiredItem identifier="divingknife" />
+            <RequiredItem identifier="iron" amount="2" />
         </Fabricate>
         <InventoryIcon texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="0,255,88,36" origin="0.5,0.5" />
         <Sprite texture="%ModDir%/Guns/guns_alphadev.png" sourcerect="0,255,88,36" depth="0.55" origin="0.5,0.5" />
@@ -751,9 +753,10 @@
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="600" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="machinepistol" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="2" mincondition="0" />
-            <RequiredItem identifier="plastic" amount="1" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <RequiredItem identifier="machinepistol" amount="1"  />
+            <RequiredItem identifier="steel" amount="2"  />
+            <RequiredItem identifier="plastic" amount="1"  />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="steel" />
@@ -881,8 +884,9 @@
         <PreferredContainer secondary="secarmcab" />
         <Price baseprice="100" sold="false" />
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="revolver" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="2" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <RequiredItem identifier="revolver" amount="1" />
+            <RequiredItem identifier="steel" amount="2" />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="plastic" />
@@ -1037,8 +1041,9 @@
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="400" sold="false"/>
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="smg" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="2" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="50" />
+            <RequiredItem identifier="smg" amount="1"  />
+            <RequiredItem identifier="steel" amount="2"  />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="plastic" />
@@ -1177,8 +1182,9 @@
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
         <Price baseprice="900" sold="false"/>
         <Fabricate requiredtime="35" suitablefabricators="fabricatorVGM">
-            <RequiredItem identifier="hmg" amount="1" mincondition="0" />
-            <RequiredItem identifier="steel" amount="3" mincondition="0" />
+            <RequiredSkill identifier="weapons" level="70" />
+            <RequiredItem identifier="hmg" amount="1"  />
+            <RequiredItem identifier="steel" amount="3"  />
         </Fabricate>
         <Deconstruct time="10">
             <Item identifier="physicorium" amount="2"/>

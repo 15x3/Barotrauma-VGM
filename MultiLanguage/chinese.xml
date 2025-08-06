@@ -29,6 +29,7 @@
   <entitydescription.acogScopeVGM>ACOG四倍瞄准镜，有些设计到了太空殖民时代也不过时，有效延展武器可视距离</entitydescription.acogScopeVGM>
   <entityname.sniperScopeVGM>狙击瞄准镜</entityname.sniperScopeVGM>
   <entitydescription.sniperScopeVGM>狙击八倍瞄准镜，可最大程度延展武器可视距离，不适用于紧凑武器。注意：过大的放大倍率会影响武器的近身表现</entitydescription.sniperScopeVGM>
+  <entitydescription.scope>长枪用六倍瞄准镜，不适用于紧凑武器</entitydescription.scope>
   <entityname.verticalGripVGM>垂直握把</entityname.verticalGripVGM>
   <entitydescription.verticalGripVGM>垂直握把有助于使用者长时间保持战术姿势，以减少抬枪反应时间</entitydescription.verticalGripVGM>
   <entityname.angleGripVGM>直角握把</entityname.angleGripVGM>

@@ -28,5 +28,6 @@
             </Deconstruct>
             <Holdable slots="Any,LeftHand,RightHand" controlpose="true" usehandrotationforholdangle="true" aimpos="37,24" handle1="0,0" cameraaimoffset="500" msg="ItemMsgPickUpSelect"/>
         </Item>
+
     </Override>
 </Items>

@@ -9,6 +9,7 @@
   <entityname.longSilencerMuzzleVGM>Длинный глушитель</entityname.longSilencerMuzzleVGM>
   <entitydescription.longSilencerMuzzleVGM>Этот глушитель из инопланетных материалов снижает шум выстрела и значительно увеличивает начальную скорость пули для заметного повышения урона. Не подходит для компактного оружия.</entitydescription.longSilencerMuzzleVGM>
   <entityname.shortSilencerMuzzleVGM>Компактный глушитель</entityname.shortSilencerMuzzleVGM>
+  <entitydescription.scope>Длинные оружия с использованием 6-кратного прицела, не подходят для компактного оружия</entitydescription.scope>
   <entitydescription.shortSilencerMuzzleVGM>Базовый глушитель, снижающий шум выстрела, немного увеличивающий урон и уменьшающий отдачу. Совместим с большинством видов оружия.</entitydescription.shortSilencerMuzzleVGM>
   <!-- <entityname.highPressureMuzzleVGM>Высоконапорный ствол</entityname.highPressureMuzzleVGM>
   <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
@@ -56,7 +57,7 @@
   <entityname.tacShotgunVGM>Тактическое дробовик</entityname.tacShotgunVGM>
   <entitydescription.tacShotgunVGM>Все 42 попытки укоротить его ствол закончились неудачей.</entitydescription.tacShotgunVGM>
   <entityname.tacKnifeVGM>"Тактический" водолазный нож</entityname.tacKnifeVGM>
-  <entitydescription.tacKnifeVGM>Вы не понимаете, зачем добавлять тактические аксессуары к ножу, но всё равно это сделали. Может, теперь вы можете называть себя "Орёл 100-го уровня"?</entitydescription.tacKnifeVGM>
+  <entitydescription.tacKnifeVGM>Вы не понимаете, зачем добавлять тактические аксессуары к ножу, но всё равно это сделали. Может, теперь вы можете называть себя "Colonel 100"?</entitydescription.tacKnifeVGM>
   <entityname.tacMachinePistolVGM>Тактический автоматический пистолет</entityname.tacMachinePistolVGM>
   <entitydescription.tacMachinePistolVGM>Даже оригинальным обитателям Европы нужен тактический стиль.</entitydescription.tacMachinePistolVGM>
   <entityname.tacRevolverVGM>Тактический револьвер</entityname.tacRevolverVGM>
