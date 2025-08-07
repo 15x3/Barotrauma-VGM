@@ -4,7 +4,7 @@
   <Item file="%ModDir%/GunMods/gunmods.xml" />
   <Item file="%ModDir%/GunMods/overrideVanillaMods.xml" />
   <Item file="%ModDir%/Guns/guns.xml" />
-  <!-- <Item file="%ModDir%/test.xml" /> -->
+  <Item file="%ModDir%/test.xml" />
   <Text file="%ModDir%/MultiLanguage/chinese.xml" />
   <Text file="%ModDir%/MultiLanguage/english.xml" />
   <Text file="%ModDir%/MultiLanguage/japanese.xml" />

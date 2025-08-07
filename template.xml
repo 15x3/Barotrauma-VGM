@@ -41,8 +41,11 @@
   <!-- 我参考了COR使用标签的写法，但是发现COR当前的写法存在两个问题：
   1 一部分OnUse可以改成OnSecondaryUse，毕竟这游戏的枪必须得举起来瞄准才能射击
   2 少部分使用了always，不过我好像看的是比较老版本的，刚刚查了一下新版本的基本都去掉了
-  性能优化嘛，能少点不必要的性能负担就少点，所以我这边只在枪管上使用了标签的方式去触发（说实话一开始是打算全都用OnInsert和OnRemove的，但是后来放弃了，也许后面可以再尝试以下究竟行不行）
-  
+  性能优化嘛，能少点不必要的性能负担就少点，所以我这边只在枪管上使用了标签的方式去触发（说实话一开始是打算全都用OnInsert和OnRemove的,连标签都不用，但是后来放弃了，也许后面可以再尝试以下究竟行不行）
+
+  8月6号更新：诶呦，看来只使用OnInsert和OnRemove看来不行，本身是没问题的，而且只会触发一次，但是问题在于，每次重新加载地图时，数值全会变回去。
+         解决方案：后面你看到的OnInsert，全部改成OnContaining。24年刚加入的时候是可以的，但是今年2月修复了，具体参考https://github.com/FakeFishGames/Barotrauma/discussions/15372
+
   所以，所有涉及到给予标签的配件，都得在Holdable里面多写个触发标签的逻辑，我用的很谨慎，只做了两个标签-->
         <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" >
             <RequiredItem items="sniperStockVGM" type="Contained" />
@@ -86,11 +89,11 @@
         <!-- 必须要写OnRemoved，并且写在枪里，我试过把OnInserted和OnRemoved写在配件上，但是很遗憾，这两个新加的条件都只能再ItemContainer，而且，虽然支持Parent这种写法，但是Parent好像指代的就是插件自身，所以没办法，你只能写在枪里面 -->
                    <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
         <!-- 不过这倒是有个额外好处：那就是你可以顺带定好每把武器能有什么配件，以及相同配件在不同枪上的效果了！这个对于这种2D游戏来说可能没啥明显区别，但是对于部分需要精修枪械手感（射击反馈）的FPS来说倒是挺关键的 -->
-                    <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+                    <StatusEffect type="OnContaining" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="angleGripVGM" type="Contained" />
                     </StatusEffect>
         <!-- 所以你也看到了：一把枪对应一个StatusEffect，不用担心性能问题，OnInserted和OnRemoved只会在物品移除/插入时触发一次，比写always要好得多，就是xml可能会写得又臭又长 -->
-                    <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+                    <StatusEffect type="OnContaining" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="verticalGripVGM" type="Contained" />
                     </StatusEffect>
         <!-- 另外，我在考虑使用xslt这样的工具进一步加快制作效率，我一有突破就会加到XML Generator里面的 -->

@@ -87,18 +87,18 @@
             <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigAccessoryVGM,provocative" hideitems="false" itempos="13,4" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnContaining" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="angleGripVGM" type="Contained" />
                     </StatusEffect>
-                    <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+                    <StatusEffect type="OnContaining" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="verticalGripVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigStockVGM" hideitems="false" itempos="-20,2" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-4" setvalue="false" stackable="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-4" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-2" setvalue="false" stackable="true" disabledeltatime="true" >
@@ -106,13 +106,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-1" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="lightStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="35,10" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -132,13 +132,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" barrelpos="75,12" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1" >
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-19,11" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
@@ -155,7 +155,7 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
@@ -222,7 +222,7 @@
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="0,8" setactive="true">
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" drawhudwhenequipped="true" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
@@ -239,14 +239,14 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallStockVGM" hideitems="false" itempos="-15,2" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" spread="0" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="0" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="pistolStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" spread="0" unskilledspread="8" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
@@ -344,18 +344,18 @@
             <Containable items="smgammo" hide="false" itempos="-4,-4" rotation="-25" />
             <SubContainer capacity="1" maxstacksize="1">
             <Containable items="smallAccessoryVGM,bigAccessoryVGM,provocative" hide="false" itempos="15,5" setactive="true" >
-                <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
+                <!-- <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="verticalGripVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="angleGripVGM" type="Contained" />
-                </StatusEffect>
+                </StatusEffect> -->
                 <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
             </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallStockVGM,bigStockVGM" hide="false" itempos="-20,0" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" spread="-5" unskilledspread="-13" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-5" unskilledspread="-13" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-2" unskilledspread="-8" setvalue="true" disabledeltatime="true" >
@@ -363,13 +363,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="lightStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" spread="5" unskilledspread="13" setvalue="true" disabledeltatime="true" /> 
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
             <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="25,9" setactive="true" >
-                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.1" penetration="0.1" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -389,14 +389,14 @@
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                     <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                </StatusEffect>
+                </StatusEffect> -->
                 <StatusEffect type="OnRemoved" target="This" barrelpos="57,17" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
             </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-9,12" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.4" setvalue="true" disabledeltatime="true" >
@@ -413,7 +413,7 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <!-- 似乎Container的坐标弄反了，而且忘记除以2 -->
@@ -526,7 +526,7 @@
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigStockVGM" hide="false" itempos="-30,-7" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" unskilledspread="-6" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" unskilledspread="-6" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
@@ -534,13 +534,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" unskilledspread="-2" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="lightStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" unskilledspread="8" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="38,4" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.1" penetration="0.1" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -560,14 +560,14 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" weapondamagemodifier="1.0" barrelpos="70,4" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-9,3" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.5" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.15" setvalue="true" disabledeltatime="true" >
@@ -584,7 +584,7 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
         </ItemContainer>
@@ -668,7 +668,7 @@
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigStockVGM" hide="false" itempos="-20,-10" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="10" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" target="This" spread="-6" unskilledspread="-10" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-6" unskilledspread="-10" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-6" unskilledspread="-6" setvalue="true" disabledeltatime="true" >
@@ -676,12 +676,12 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-3" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="lightStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="-1,5" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
@@ -695,11 +695,11 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
         </ItemContainer>
@@ -833,7 +833,7 @@
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallMuzzleVGM" hide="false" itempos="29,7" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" barrelpos="100,10" setvalue="true" disabledeltatime="true" >
@@ -841,20 +841,20 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                    </StatusEffect>   
+                    </StatusEffect>    -->
                     <StatusEffect type="OnRemoved" target="This" barrelpos="60,10" weapondamagemodifier="0.9" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallStockVGM" hide="false" itempos="-18,0" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" spread="-4" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-4" unskilledspread="-8" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="pistolStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
             <Containable items="smallScopeVGM,provocative" hide="false" itempos="1,9" setactive="true" >
-                <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="provocative" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.15" setvalue="true" disabledeltatime="true" >
@@ -862,7 +862,7 @@
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="dotScopeVGM" type="Contained" />
-                </StatusEffect>
+                </StatusEffect> -->
                 <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
             </Containable>
             </SubContainer>
@@ -942,10 +942,6 @@
             <StatusEffect type="OnUse" target="This">
                 <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
             </StatusEffect>
-            <!-- 这一段不需要 -->
-            <!-- <StatusEffect type="OnSecondaryUse" target="This" Condition="-0.1" stackable="true" disabledeltatime="true" setvalue="false" >
-            <RequiredItem items="flashlight" type="Contained" />
-            </StatusEffect> -->
         </RangedWeapon>
         <ItemContainer capacity="1" maxstacksize="6" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
             <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
@@ -967,7 +963,7 @@
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="21,6" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" barrelpos="42,12" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.10" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -987,21 +983,21 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallStockVGM" hide="false" itempos="-12,-3" setactive="true" >
-                    <StatusEffect type="OnInserted" target="This" spread="-2" setvalue="false" stackable="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-2" setvalue="false" stackable="true" disabledeltatime="true" >
                         <RequiredItem items="pistolStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                     <StatusEffect type="OnRemoved" target="This" spread="2" setvalue="true" disabledeltatime="true" />
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="5,4" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
@@ -1018,7 +1014,7 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
         </ItemContainer>
@@ -1113,18 +1109,18 @@
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallAccessoryVGM,bigAccessoryVGM,provocative" hide="false" itempos="23,-1" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" holdangle="-35" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" holdangle="20" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="angleGripVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" holdangle="-15" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="verticalGripVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
             <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="33,5" setactive="true" >
                 <StatusEffect type="OnRemoved" target="This" barrelpos="35,5" weapondamagemodifier="1.3" penetration="0.15" setvalue="true" disabledeltatime="true" />
-                <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.10" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -1144,13 +1140,13 @@
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                     <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                </StatusEffect>
+                </StatusEffect> -->
             </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
             <Containable items="smallScopeVGM,provocative" hide="false" itempos="6,10" setactive="true" >
                 <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="provocative" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
@@ -1161,7 +1157,7 @@
                 </StatusEffect>
                 <StatusEffect type="OnInserted" target="This" cameraaimoffset="450" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
                     <RequiredItem items="acogScopeVGM" type="Contained" />
-                </StatusEffect>
+                </StatusEffect> -->
             </Containable>
             </SubContainer>
         </ItemContainer>
@@ -1293,7 +1289,7 @@
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="46,6" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" barrelpos="46,6" weapondamagemodifier="1.0" penetration="0.0" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.10" penetration="0.10" stackable="true" setvalue="false" disabledeltatime="true" >
@@ -1313,13 +1309,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" weapondamagemodifier="0.05" stackable="true" setvalue="false" disabledeltatime="true" >
                         <RequiredItem items="shortSilencerMuzzleVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="bigStockVGM" hide="false" itempos="-27,3" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" spread="15" unskilledspread="70" setvalue="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" target="This" spread="-13" unskilledspread="-40" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" target="This" spread="-13" unskilledspread="-40" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="sniperStockVGM" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-5" unskilledspread="-15" setvalue="true" disabledeltatime="true" >
@@ -1327,13 +1323,13 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" spread="-8" unskilledspread="-30" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="heavyStockVGM" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
             <SubContainer capacity="1" maxstacksize="1">
                 <Containable items="smallScopeVGM,bigScopeVGM,provocative" hide="false" itempos="0,15" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.22" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
+                    <!-- <StatusEffect type="OnInserted" drawhudwhenequipped="false" target="This" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="provocative" type="Contained" />
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.2" setvalue="true" disabledeltatime="true" >
@@ -1350,7 +1346,7 @@
                     </StatusEffect>
                     <StatusEffect type="OnInserted" target="This" cameraaimoffset="500" setvalue="true" disabledeltatime="true" >
                         <RequiredItem items="scope" type="Contained" />
-                    </StatusEffect>
+                    </StatusEffect> -->
                 </Containable>
             </SubContainer>
         </ItemContainer>
