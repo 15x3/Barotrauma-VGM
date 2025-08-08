@@ -343,18 +343,14 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" depth="0.55" origin="0.5,0.5" />
     <Body width="48" height="16" density="15" />
-    <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" MsgWhenDropped="ItemMsgPickupSelect" PickingTime="1.0" aimpos="60,0" handle1="-20,0" holdpos="30,-50" attachable="true" aimable="true">
       <StatusEffect type="OnActive" targettype="Contained" Condition="-0.1">
         <RequiredItem items="mobilebattery" type="Contained" />
       </StatusEffect>
       <!-- the child LightComponent is only active when the Holdable is active, i.e. when the item is being held -->
-      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" Flicker="0.02" range="2000" powerconsumption="10" IsOn="true">
-        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
+      <LightComponent canbeselected="true" LightColor="0.5,0.5,0.5,1.0" directional="true" Flicker="0.02" range="800" powerconsumption="10" IsOn="true">
+        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.15,0.3" />
         <IsActive targetcontaineditem="true" condition="gt 1.0"/>
-      </LightComponent>
-      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" range="2000" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
-        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
-        <IsActive targetcontaineditem="true" condition="lte 1.0"/>
       </LightComponent>
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">

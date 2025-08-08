@@ -10,6 +10,18 @@
   <entitydescription.longSilencerMuzzleVGM>这种使用异星材料制作的消音器能够在减少射击噪声的同时有效提高枪口初速，以带来显著的伤害提升，不适用于紧凑武器</entitydescription.longSilencerMuzzleVGM>
   <entityname.shortSilencerMuzzleVGM>紧凑消音器</entityname.shortSilencerMuzzleVGM>
   <entitydescription.shortSilencerMuzzleVGM>基础款消音器，能减少射击噪声并提供少量伤害提升，并一定程度减少射击晃动，兼容大多数武器</entitydescription.shortSilencerMuzzleVGM>
+  <entityname.deadeyeStockVGM>死眼步枪原装枪托</entityname.deadeyeStockVGM>
+  <entitydescription.deadeyeStockVGM></entitydescription.deadeyeStockVGM>
+  <entityname.boomStickStockVGM>爆鸣原装枪托</entityname.boomStickStockVGM>
+  <entitydescription.boomStickStockVGM></entitydescription.boomStickStockVGM>
+  <entityname.rifleStockVGM>步枪原装枪托</entityname.rifleStockVGM>
+  <entitydescription.rifleStockVGM></entitydescription.rifleStockVGM>
+  <entityname.shotgunStockVGM>防爆霰弹枪原装枪托</entityname.shotgunStockVGM>
+  <entitydescription.shotgunStockVGM></entitydescription.shotgunStockVGM>
+  <entityname.assaultRifleStockVGM>突击步枪原装枪托</entityname.assaultRifleStockVGM>
+  <entitydescription.assaultRifleStockVGM></entitydescription.assaultRifleStockVGM>
+  <entityname.hmgStockVGM>重机枪原装枪托</entityname.hmgStockVGM>
+  <entitydescription.hmgStockVGM></entitydescription.hmgStockVGM>
   <!-- <entityname.highPressureMuzzleVGM>高压枪管</entityname.highPressureMuzzleVGM>
   <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
   <!-- 我没有高压枪管这个东西啊，哈吉米哈气了 -->
@@ -44,8 +56,8 @@
   <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
   <entityname.smgLongmagVGM>冲锋枪延长弹匣</entityname.smgLongmagVGM>
   <entitydescription.smgLongmagVGM>双倍弹容</entitydescription.smgLongmagVGM>
-  <entityname.redLazerVGM>镭射指示器</entityname.redLazerVGM>
-  <entitydescription.redLazerVGM>红色镭射指示器，经典款式</entitydescription.redLazerVGM>
+  <entityname.redLazerVGM>万彩镭射指示器</entityname.redLazerVGM>
+  <entitydescription.redLazerVGM>可以修改激光颜色的镭射指示器，如需修改，请长按右键+E将其放置在墙上,之后左键交互。\n推荐颜色:科幻蓝(23,150,214,127);质子紫(138,43,226,127);塑料粉(255,20,147,127),经典红(255,0,0,127),辐射绿(0,255,5,127)</entitydescription.redLazerVGM>
   <!-- <entityname.tacticalLightVGM>战术手电筒</entityname.tacticalLightVGM>
   <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
   <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>

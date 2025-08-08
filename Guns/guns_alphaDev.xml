@@ -11,13 +11,10 @@
             <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.95" setvalue="true" >
                 <RequiredItem items="heavyStockVGM" type="Contained" />
             </StatusEffect>
-            <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.0" setvalue="true" >
-                <RequiredItem items="lightStockVGM" type="Contained" />
-            </StatusEffect>
-            <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+            <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.5" setvalue="true">
                 <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
             </StatusEffect>
-            <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
+            <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.5" setvalue="true">
                 <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
             </StatusEffect>
         </Holdable>
