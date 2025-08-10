@@ -3,7 +3,7 @@
     <Override>
         <Item identifier="scope" category="Equipment" Tags="smallitem,bigScopeVGM" cargocontaineridentifier="metalcrate" allowasextracargo="true" scale="0.5" impactsoundtag="impact_metal_light">
             <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="512,384,64,64"/>
-            <Sprite texture="Content/Items/Tools/tools.png" sourcerect="80,256,64,16" depth="0.55"/>
+            <Sprite texture="Content/Items/Tools/tools.png" sourcerect="80,256,64,16" depth="0.55" origin="0.5,1.0"/>
             <Body width="64" height="16" density="20"/>
             <PreferredContainer primary="armcab" secondary="secarmcab"/>
             <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.1"/>
@@ -28,6 +28,5 @@
             </Deconstruct>
             <Holdable slots="Any,LeftHand,RightHand" controlpose="true" usehandrotationforholdangle="true" aimpos="37,24" handle1="0,0" cameraaimoffset="500" msg="ItemMsgPickUpSelect"/>
         </Item>
-
     </Override>
 </Items>

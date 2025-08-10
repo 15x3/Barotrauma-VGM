@@ -4,7 +4,7 @@
   <Item file="%ModDir%/GunMods/gunmods_alphaDev.xml" />
   <Item file="%ModDir%/GunMods/gunmods_betaDev.xml" />
   <Item file="%ModDir%/GunMods/overrideVanillaMods.xml" />
-  <Item file="%ModDir%/Guns/guns_alphaDev.xml" />
+  <!-- <Item file="%ModDir%/Guns/guns_alphaDev.xml" /> -->
   <Item file="%ModDir%/Guns/guns_betaDev.xml" />
   <Item file="%ModDir%/test.xml" />
   <Text file="%ModDir%/MultiLanguage/chinese.xml" />

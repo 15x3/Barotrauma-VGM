@@ -43,8 +43,26 @@
   <entitydescription.smgDFuelDrumMagVGM></entitydescription.smgDFuelDrumMagVGM>
   <entityname.smgLongmagVGM>SMG拡張マガジン</entityname.smgLongmagVGM>
   <entitydescription.smgLongmagVGM>2倍の装弾数。</entitydescription.smgLongmagVGM>
+  <entityname.assaultrifleLongmagVGM>突击步枪延长弹匣</entityname.assaultrifleLongmagVGM>
+  <entitydescription.assaultrifleLongmagVGM>双倍弹容</entitydescription.assaultrifleLongmagVGM>
+  <entityname.assaultrifleDrumMagVGM>突击步枪弹鼓</entityname.assaultrifleDrumMagVGM>
+  <entitydescription.assaultrifleDrumMagVGM>三倍弹容，不易携带</entitydescription.assaultrifleDrumMagVGM>
+  <entityname.hmgDrumMagVGM>重机枪弹鼓</entityname.hmgDrumMagVGM>
+  <entitydescription.hmgDrumMagVGM>这个超大弹鼓装载了200多发556子弹，保证持续火力输出</entitydescription.hmgDrumMagVGM>
   <entityname.redLazerVGM>レーザーサイト</entityname.redLazerVGM>
   <entitydescription.redLazerVGM>赤色レーザーサイト、クラシックモデル。</entitydescription.redLazerVGM>
+  <entityname.deadeyeStockVGM>死眼步枪原装枪托</entityname.deadeyeStockVGM>
+  <entitydescription.deadeyeStockVGM>死眼步枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.deadeyeStockVGM>
+  <entityname.boomStickStockVGM>爆鸣原装枪托</entityname.boomStickStockVGM>
+  <entitydescription.boomStickStockVGM>爆鸣的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.boomStickStockVGM>
+  <entityname.rifleStockVGM>步枪原装枪托</entityname.rifleStockVGM>
+  <entitydescription.rifleStockVGM>步枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.rifleStockVGM>
+  <entityname.shotgunStockVGM>防爆霰弹枪原装枪托</entityname.shotgunStockVGM>
+  <entitydescription.shotgunStockVGM>防爆霰弹枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.shotgunStockVGM>
+  <entityname.assaultRifleStockVGM>突击步枪原装枪托</entityname.assaultRifleStockVGM>
+  <entitydescription.assaultRifleStockVGM>突击步枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，去除默认移速惩罚</entitydescription.assaultRifleStockVGM>
+  <entityname.hmgStockVGM>重机枪原装枪托</entityname.hmgStockVGM>
+  <entitydescription.hmgStockVGM>重机枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，抵消默认移速惩罚50%（不过真的没人会敢把机枪的枪托卸掉吧？星际战士除外）</entitydescription.hmgStockVGM>
   <!-- <entityname.tacticalLightVGM>タクティカルライト</entityname.tacticalLightVGM>
   <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
   <entityname.tacAssaultRifleVGM>タクティカルアサルトライフル</entityname.tacAssaultRifleVGM>
