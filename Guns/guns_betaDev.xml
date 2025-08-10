@@ -1031,10 +1031,11 @@
                 <Item identifier="titaniumaluminiumalloy" />
             </Deconstruct>
             <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="320,320,64,64" origin="0.5,0.5" />
-            <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="262,70,184,51" depth="0.55" origin="0.5,0.25" />
+            <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="262,70,184,51" depth="0.55" origin="0.5,0.25" />
             <Body width="180" height="30" density="25" />
-            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-20,-11" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" />
-            <RangedWeapon barrelpos="85,10" spread="1" unskilledspread="4" combatPriority="80" reload="0.1" drawhudwhenequipped="true" crosshairscale="0.2">
+            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-20,-11" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1" />
+            <!-- 1,4 -->
+            <RangedWeapon barrelpos="85,10" spread="2" unskilledspread="6" combatPriority="80" reload="0.1" drawhudwhenequipped="true" crosshairscale="0.2">
                 <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
                 <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
                 <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
@@ -1065,31 +1066,19 @@
                 <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
-                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
-                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
-                <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="28,3" setactive="true" >
                         <StatusEffect type="OnRemoved" target="This" holdangle="-40" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="bigStockVGM,hmgStockVGM" hideitems="false" itempos="-13,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="56,10" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" barrelpos="100,16" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+                    <Containable items="smallStockVGM,boomStickStockVGM" hideitems="false" itempos="-19,-8" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="6" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="11,16" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.22" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="scannerVGM" hide="false" itempos="20,16" setactive="true" >
+                    <Containable items="scannerVGM" hide="false" itempos="10,10" setactive="true" >
                     </Containable>
                 </SubContainer>
             </ItemContainer>
@@ -1125,6 +1114,16 @@
             <Body width="150" height="40" density="25" />
             <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="40,-20" aimpos="48,-5" handle1="-12,-15" handle2="20,5" holdangle="-20" msg="ItemMsgPickUpSelect">
                 <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
+                <!-- 扫描器逻辑 -->
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="healthScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" thermalgoggles="true" showdeadcharacters="false" showtexts="false" overlaycolor="176,0,0,120" range="3000"  TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="thermalScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="This" drawhudwhenequipped="false" showdeadcharacters="false" showtexts="false" setvalue="true" interval="1.0" TargetItemComponent="StatusHUD">
+                    <Conditional HasStatusTag="neq aiming" />
+                </StatusEffect>
             </Holdable>
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Autoshogun Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="308,1,152,61" limb="Torso" depthlimb="LeftArm" ignorelimbscale="true" scale="0.62" origin="0.5,0.9" />
@@ -1149,32 +1148,20 @@
                 <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
-                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
-                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
-                <SlotIcon slotindex="5" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
-                <SlotIcon slotindex="6" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="28,3" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="bigStockVGM,hmgStockVGM" hideitems="false" itempos="-13,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="56,10" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" barrelpos="100,16" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" holdangle="-20" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="11,16" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.22" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="8,8" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="scannerVGM" hide="false" itempos="20,16" setactive="true" >
+                    <Containable items="scannerVGM" hide="false" itempos="25,11" setactive="true" >
                     </Containable>
                 </SubContainer>
             </ItemContainer>
@@ -1210,13 +1197,25 @@
                 <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
                 <RequiredItem identifier="fulgurium" amount="2" />
             </Fabricate>
-            <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="271,127,240,66" depth="0.55" origin="0.5,0.5" />
+            <Sprite texture="%ModDir%/Guns/TalentGear.png" sourcerect="271,127,240,66" depth="0.55" origin="0.5,0.5" />
             <Body width="238" height="63" density="25" />
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" />
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" SpeedMultiplier="1.1">
+                <!-- 扫描器逻辑 -->
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="healthScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" thermalgoggles="true" showdeadcharacters="false" showtexts="false" overlaycolor="176,0,0,120" range="3000"  TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="thermalScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="This" drawhudwhenequipped="false" showdeadcharacters="false" showtexts="false" setvalue="true" interval="1.0" TargetItemComponent="StatusHUD">
+                    <Conditional HasStatusTag="neq aiming" />
+                </StatusEffect>
+            </Holdable>
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Nuclear Gun Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="270,127,240,66" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
             </Wearable>
-            <RangedWeapon reload="0.5" holdtrigger="true" barrelpos="118,14" spread="0" unskilledspread="10" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2" maxchargetime="0.75" ChargeSoundWindupPitchSlide="0.5,1.5">
+            <!-- 0,10 -->
+            <RangedWeapon reload="0.5" holdtrigger="true" barrelpos="118,14" spread="2" unskilledspread="14" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2" maxchargetime="0.75" ChargeSoundWindupPitchSlide="0.5,1.5">
                 <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
                 <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
                 <ParticleEmitter particle="FlareBubbles" scalemin="1.4" scalemax="1.8" particleamount="14" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50" />
@@ -1242,31 +1241,25 @@
                 <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
-                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
-                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
-                <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+                <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="28,3" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" holdangle="-25" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="bigStockVGM,hmgStockVGM" hideitems="false" itempos="-13,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="56,10" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" barrelpos="100,16" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+                    <Containable items="bigStockVGM,nuclearGunStockVGM" hideitems="false" itempos="-26,1" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="14" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="11,16" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.22" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="-15,10" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="scannerVGM" hide="false" itempos="20,16" setactive="true" >
+                    <Containable items="scannerVGM" hide="false" itempos="-5,13" setactive="true" >
                     </Containable>
                 </SubContainer>
             </ItemContainer>
@@ -1302,13 +1295,25 @@
                 <RequiredItem identifier="lead" amount="2"/>
                 <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
             </Fabricate>
-            <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="354,371,158,55" depth="0.55" origin="0.5,0.45" />
+            <Sprite texture="%ModDir%/Guns/TalentGear.png" sourcerect="354,371,158,55" depth="0.55" origin="0.5,0.45" />
             <Body width="158" height="40" density="25" />
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="55,4" handle1="-26,-20" handle2="10,-3" holdangle="-25" />
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="55,4" handle1="-26,-20" handle2="10,-3" holdangle="-25" SpeedMultiplier="1.1">
+                <!-- 扫描器逻辑 -->
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="healthScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" thermalgoggles="true" showdeadcharacters="false" showtexts="false" overlaycolor="176,0,0,120" range="3000"  TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
+                    <RequiredItem items="thermalScannerVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="This" drawhudwhenequipped="false" showdeadcharacters="false" showtexts="false" setvalue="true" interval="1.0" TargetItemComponent="StatusHUD">
+                    <Conditional HasStatusTag="neq aiming" />
+                </StatusEffect>
+            </Holdable>
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Scrap Cannon Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="354,371,158,55" limb="Torso" scale="0.5" origin="0.5,1.0" />
             </Wearable>
-            <RangedWeapon reload="3.0" barrelpos="67,5" spread="0" unskilledspread="4" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+            <!-- 0,4 -->
+            <RangedWeapon reload="3.0" barrelpos="67,5" spread="1" unskilledspread="6" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
                 <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
                 <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
                 <ParticleEmitter particle="explosionsmoke" particleamount="1" velocitymin="0" velocitymax="0" scalemin="0.5" scalemax="0.6" />
@@ -1326,39 +1331,33 @@
                 <RequiredSkill identifier="weapons" level="25" />
                 <RequiredSkill identifier="mechanical" level="45" />
             </RangedWeapon>
-            <ItemContainer capacity="1" maxstacksize="32" slotsperrow="3" hideitems="true" containedstateindicatorslot="1" containedstateindicatorstyle="battery">
+            <ItemContainer capacity="1" maxstacksize="32" slotsperrow="3" hideitems="false" containedstateindicatorslot="1" containedstateindicatorstyle="battery" containedspritedepth="0.56">
                 <Containable items="scrapcannonammo" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
-                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" />
-                <SlotIcon slotindex="5" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
-                <SlotIcon slotindex="6" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
+                <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
+                <SlotIcon slotindex="5" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
                 <SubContainer capacity="1"  maxstacksize="1">
                     <Containable items="mobilebattery" />
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallAccessoryVGM,bigAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="28,3" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" holdangle="-30" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" holdangle="-25" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="bigStockVGM,hmgStockVGM" hideitems="false" itempos="-13,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
-                    </Containable>
-                </SubContainer>
-                <SubContainer capacity="1" maxstacksize="1">
-                    <Containable items="smallMuzzleVGM,bigMuzzleVGM" hideitems="false" itempos="56,10" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" barrelpos="100,16" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
+                    <Containable items="bigStockVGM,scrapCannonStockVGM" hideitems="false" itempos="-7,-1" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" spread="1" unskilledspread="6" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="11,16" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.22" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
+                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="5,10" setactive="true" >
+                        <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="scannerVGM" hide="false" itempos="20,16" setactive="true" >
+                    <Containable items="scannerVGM" hide="false" itempos="25,13" setactive="true" >
                     </Containable>
                 </SubContainer>
             </ItemContainer>

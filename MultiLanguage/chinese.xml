@@ -21,7 +21,11 @@
   <entityname.assaultRifleStockVGM>突击步枪原装枪托</entityname.assaultRifleStockVGM>
   <entitydescription.assaultRifleStockVGM>突击步枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，去除默认移速惩罚</entitydescription.assaultRifleStockVGM>
   <entityname.hmgStockVGM>重机枪原装枪托</entityname.hmgStockVGM>
-  <entitydescription.hmgStockVGM>重机枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，抵消默认移速惩罚50%（不过真的没人会敢把机枪的枪托卸掉吧？星际战士除外）</entitydescription.hmgStockVGM>
+  <entitydescription.hmgStockVGM>重机枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，抵消默认移速惩罚50%</entitydescription.hmgStockVGM>
+  <entityname.nuclearGunStockVGM>裂变加速器原装枪托</entityname.nuclearGunStockVGM>
+  <entitydescription.nuclearGunStockVGM>裂变加速器的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.nuclearGunStockVGM>
+  <entityname.scrapCannonStockVGM>废铁炮原装枪托</entityname.scrapCannonStockVGM>
+  <entitydescription.scrapCannonStockVGM>废铁炮的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.scrapCannonStockVGM>
   <!-- <entityname.highPressureMuzzleVGM>高压枪管</entityname.highPressureMuzzleVGM>
   <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
   <!-- 我没有高压枪管这个东西啊，哈吉米哈气了 -->
@@ -64,7 +68,7 @@
   <entitydescription.redLazerVGM>可以修改激光颜色的镭射指示器，如需修改，请长按右键+E将其放置在墙上,之后左键交互。\n推荐颜色:科幻蓝(23,150,214,127);质子紫(138,43,226,127);塑料粉(255,20,147,127),经典红(255,0,0,127),辐射绿(0,255,5,127)</entitydescription.redLazerVGM>
   <!-- <entityname.tacticalLightVGM>战术手电筒</entityname.tacticalLightVGM>
   <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
-  <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>
+  <!-- <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>
   <entitydescription.tacAssaultRifleVGM>千禧年文化常客</entitydescription.tacAssaultRifleVGM>
   <entityname.tacHandCannonVGM>战术手炮</entityname.tacHandCannonVGM>
   <entitydescription.tacHandCannonVGM>大口径手炮就该配狙击镜。没人立这个规矩，但是大家都喜欢这么做</entitydescription.tacHandCannonVGM>
@@ -83,7 +87,7 @@
   <entityname.tacDeadEyeVGM>战术死眼步枪</entityname.tacDeadEyeVGM>
   <entitydescription.tacDeadEyeVGM>死眼步枪本来就不好找，能加装配件的死眼步枪就更不好获得了，好好保管她</entitydescription.tacDeadEyeVGM>
   <entityname.tacHmgVGM>战术重机枪</entityname.tacHmgVGM>
-  <entitydescription.tacHmgVGM>最好给它加个枪托，除非你打算Cosplay星际战士，或者真有星际战士般的体格</entitydescription.tacHmgVGM>
+  <entitydescription.tacHmgVGM>最好给它加个枪托，除非你打算Cosplay星际战士，或者真有星际战士般的体格</entitydescription.tacHmgVGM> -->
   <entityname.healthScannerVGM>紧凑型医疗扫描仪</entityname.healthScannerVGM>
   <entitydescription.healthScannerVGM>可以安装在枪械上的健康扫描仪，需要右键举起枪才能生效</entitydescription.healthScannerVGM>
   <entityname.thermalScannerVGM>紧凑型热成像仪</entityname.thermalScannerVGM>

@@ -91,8 +91,36 @@
             <RequiredItem identifier="steel" />
         </Fabricate>
     </Item>
-    
-    
+    <Item name="" identifier="nuclearGunStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,126,63,41" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,126,63,41" depth="0.55" origin="1.0,0.5" />
+        <Body width="63" height="41" density="15" />
+        <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="10" SpeedMultiplier="1.0" setvalue="true" interval="1" >
+                <Conditional HasTag="nucleargun" />
+            </StatusEffect>
+        </Holdable>
+        <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+            <RequiredSkill identifier="weapons" level="50"/>
+            <RequiredItem identifier="aluminium" />
+            <RequiredItem identifier="steel" />
+        </Fabricate>
+    </Item>
+    <Item name="" identifier="scrapCannonStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,79,64,44" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="1,79,64,44" depth="0.55" origin="1.0,0.5" />
+        <Body width="64" height="44" density="15" />
+        <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnActive" target="Parent" spread="0" unskilledspread="4" SpeedMultiplier="1.00" setvalue="true" interval="1" >
+                <Conditional HasTag="scrapcannon" />
+            </StatusEffect>
+        </Holdable>
+        <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+            <RequiredSkill identifier="weapons" level="50"/>
+            <RequiredItem identifier="aluminium" />
+            <RequiredItem identifier="steel" />
+        </Fabricate>
+    </Item>
     <!-- Mags -->
     <Item name="" identifier="assaultrifleLongMagVGM" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,assaultrifleammo,handheldammo,longMagVGM" impactsoundtag="impact_metal_light">
         <PreferredContainer primary="assaultrifle" minamount="1" maxamount="1" spawnprobability="1"/>
