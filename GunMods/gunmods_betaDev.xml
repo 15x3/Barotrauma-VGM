@@ -243,7 +243,7 @@
         <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     </Item>
     <Item name="" identifier="healthScannerVGM" scale="0.5" category="Equipment" tags="smallitem,scannerVGM" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
-        <PreferredContainer primary="armcab" amount="1" />
+        <PreferredContainer primary="armcab" />
         <Deconstruct time="20">
             <Item identifier="healthscanner" />
         </Deconstruct>
@@ -259,7 +259,7 @@
         <Body width="27" height="20" density="15" />
     </Item>
     <Item name="" identifier="thermalScannerVGM" scale="0.5" category="Equipment" tags="smallitem,scannerVGM" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_metal_light">
-        <PreferredContainer primary="armcab" amount="1" />
+        <PreferredContainer primary="armcab" />
         <Fabricate suitablefabricators="fabricatorVGM" requiredtime="10">
             <RequiredSkill identifier="mechanical" level="30" />
             <RequiredSkill identifier="medical" level="50" />
