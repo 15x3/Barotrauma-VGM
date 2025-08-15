@@ -65,7 +65,7 @@
   <entityname.hmgDrumMagVGM>重机枪弹鼓</entityname.hmgDrumMagVGM>
   <entitydescription.hmgDrumMagVGM>这个超大弹鼓装载了200多发556子弹，保证持续火力输出</entitydescription.hmgDrumMagVGM>
   <entityname.redLazerVGM>万彩镭射指示器</entityname.redLazerVGM>
-  <entitydescription.redLazerVGM>可以修改激光颜色的镭射指示器，如需修改，请长按右键+E将其放置在墙上,之后左键交互。\n推荐颜色:科幻蓝(23,150,214,127);质子紫(138,43,226,127);塑料粉(255,20,147,127),经典红(255,0,0,127),辐射绿(0,255,5,127)</entitydescription.redLazerVGM>
+  <entitydescription.redLazerVGM>可以修改激光颜色的镭射指示器，如需修改，请长按右键+E将其放置在墙上,之后左键交互。\n推荐颜色:科幻蓝(23,150,214);质子紫(138,43,226);塑料粉(255,20,147),经典红(255,0,0),辐射绿(0,255,5)</entitydescription.redLazerVGM>
   <!-- <entityname.tacticalLightVGM>战术手电筒</entityname.tacticalLightVGM>
   <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
   <!-- <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>

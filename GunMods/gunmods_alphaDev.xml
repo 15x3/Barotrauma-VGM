@@ -404,7 +404,7 @@
 </StatusEffect> -->
 
 <!-- 狙击瞄准镜:设置武器的最远可视距离为800单位,缩小准星为0.05 -->
-  <Item name="" identifier="sniperScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+  <Item name="" identifier="sniperScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.66" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" depth="0.55" origin="0.5,1.0" />
     <Body width="72" height="32" density="15" />

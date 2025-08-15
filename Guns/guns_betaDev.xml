@@ -440,8 +440,8 @@
                 <Containable items="grenade,smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="49,2" setactive="true" >
                     <StatusEffect type="OnRemoved" target="This" barrelpos="80,0" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" />
                 </Containable>
-                <SlotIcon slotindex="1" texture="%ModDir%/UI/icons_betadev.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
-                <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+                <SlotIcon slotindex="0" texture="%ModDir%/UI/icons_betadev.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+                <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" />
                 <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
@@ -460,7 +460,7 @@
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
-                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="1,1" setactive="true" >
+                    <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="6,1" setactive="true" >
                         <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.15" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
@@ -1034,6 +1034,7 @@
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="262,70,184,51" depth="0.55" origin="0.5,0.25" />
             <Body width="180" height="30" density="25" />
             <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-20,-11" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1" />
+            <StatusHUD drawhudwhenequipped="false" overlaycolor="176,0,0,120" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
             <!-- 1,4 -->
             <RangedWeapon barrelpos="85,10" spread="2" unskilledspread="6" combatPriority="80" reload="0.1" drawhudwhenequipped="true" crosshairscale="0.2">
                 <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -1125,6 +1126,7 @@
                     <Conditional HasStatusTag="neq aiming" />
                 </StatusEffect>
             </Holdable>
+            <StatusHUD drawhudwhenequipped="false" overlaycolor="176,0,0,120" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Autoshogun Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="308,1,152,61" limb="Torso" depthlimb="LeftArm" ignorelimbscale="true" scale="0.62" origin="0.5,0.9" />
             </Wearable>
@@ -1211,6 +1213,7 @@
                     <Conditional HasStatusTag="neq aiming" />
                 </StatusEffect>
             </Holdable>
+            <StatusHUD drawhudwhenequipped="false" overlaycolor="176,0,0,120" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Nuclear Gun Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="270,127,240,66" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
             </Wearable>
@@ -1309,6 +1312,7 @@
                     <Conditional HasStatusTag="neq aiming" />
                 </StatusEffect>
             </Holdable>
+            <StatusHUD drawhudwhenequipped="false" overlaycolor="176,0,0,120" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
             <Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
                 <sprite name="Scrap Cannon Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" inheritlimbdepth="false" depth="0.6" sourcerect="354,371,158,55" limb="Torso" scale="0.5" origin="0.5,1.0" />
             </Wearable>
