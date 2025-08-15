@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+<!-- 枪械模板 -->
+  <Item name="长枪模板" identifier="templateSmg" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallautoweapon,smallitem,weapon,gun,gunsmith,provocativetohumanai,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light" description="哇哦!一把能装载所有模组的枪!就是安装位置有点奇怪...(你不应该在正常游戏中看到这把武器,如果看到了,说明它是不正常刷出来的)">
+  <!-- 中意的容器 -->
+    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" notpvp="true" />
+    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab,piratesecarmcab" amount="1" spawnprobability="0.25" />
+    <PreferredContainer secondary="armcab,weaponholder" />
+  <!-- 价格设置，建议战术武器非军事站点全部设置sold="false" -->
+    <Price baseprice="390" minleveldifficulty="30">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="1" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="1" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="1" />
+    </Price>
+  <!-- 合成表 -->
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="55" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+  <!-- 拆解表 -->
+    <Deconstruct time="10">
+      <Item identifier="plastic" />
+      <Item identifier="titaniumaluminiumalloy" />
+    </Deconstruct>
+  <!-- 物品栏图标,一般可以不设置 -->
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="832,830,64,64" origin="0.5,0.5" />
+  <!-- Sprite和Body设置,最重要的贴图位置设置 -->
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,121,144,80" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="60" density="25" />
+  <!-- 可抓取物,如果希望只能带在背上吧这里的Any去掉,希望双持就将"RightHand+LeftHand"改为"RightHand,LeftHand",Any看情况 -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,-10" handle1="-30,-15" handle2="26,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+  <!-- 注意部分StatusEffect是得写在Holdable里面的 -->
+  <!-- 远程武器栏,最主要的属性之一 -->
+    <RangedWeapon reload="0.19" weapondamagemodifier="1.3" penetration="0.15" holdtrigger="true" barrelpos="64,9" spread="10" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-0.1" stackable="true" disabledeltatime="true" setvalue="false" >
+        <RequiredItem items="flashlight" type="Contained" />
+      </StatusEffect>
+      <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+  <!-- 物品栏，顺序已经准备完毕，不需要额外变动，只需要修改StatusEffect即可 -->
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="smgammo,smallMagVGM,bigMagVGM,drumMagVGM" hide="false" itempos="4,-10" rotation="-30" />
+      <!-- 你需要在这里修改SlotIcon -->
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="%ModDir%/UI/icons.png" sourcerect="192,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="256,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="4" texture="%ModDir%/UI/icons.png" sourcerect="64,0,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="5" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" origin="0.5,0.5" />
+      <!-- 下配件 -->
+      <SubContainer capacity="1" maxstacksize="1">
+      <!-- 在Containable当中修改对应的物品和位置 -->
+        <Containable items="smallAccessoryVGM,bigAccessoryVGM,light" hide="false" itempos="22,-1" setactive="true" >
+        <!-- StatusEffect可以忽略掉，这些等之后再生成，重点是“itempos”最好能照着图片点击 -->
+            <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+        </Containable>
+      </SubContainer>
+      <!-- 握把 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallHandVGM,bigHandVGM" hide="false" itempos="22,-1" setactive="true" >
+            <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+        </Containable>
+      </SubContainer>
+      <!-- 枪口 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallMuzzleVGM,bigMuzzleVGM" hide="false" itempos="22,-1" setactive="true" >
+            <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+        </Containable>
+      </SubContainer>
+      <!-- 枪托 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallStockVGM,bigStockVGM" hide="false" itempos="22,-1" setactive="true" >
+            <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+        </Containable>
+      </SubContainer>
+      <!-- 上挂件 -->
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="smallScopeVGM,bigScopeVGM" hide="false" itempos="22,-1" setactive="true" >
+            <StatusEffect type="OnInserted" target="This" reload="-0.15" disabledeltatime="true" crosshairscale="0.5" setvalue="false" />
+            <StatusEffect type="OnRemoved" target="This" reload="0.15" disabledeltatime="true" crosshairscale="-0.5" setvalue="false" />
+        </Containable>
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+<!-- 配件模板 -->
+  <Item name="测试枪管模板" identifier="muzzleTemplateVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/rifleSilencerVGM.png" sourcerect="0,0,39,8" origin="0.5,0.5" />
+    <!-- 注意这里有个细节错误:贴图长宽应该为4的倍数(我这里是39,因此游戏内有报错) -->
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/rifleSilencerVGM.png" sourcerect="0,0,39,8" depth="0.55" origin="0.0,0.5" />
+    <!-- 由于保持装配点位一致的需要，枪管的origin全部需要修改为0.0,0.5，这会导致如果未在游戏中设置原点仍为0.5,0.5 InventoryIcon的话，装备栏会图标会变得奇怪,因此对于配件来说,InventoryIcon是必须要设置的 -->
+    <Body width="39" height="8" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试枪托模板" identifier="stockTemplateVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/stockTemplateVGM.png" sourcerect="0,0,68,44" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/stockTemplateVGM.png" sourcerect="0,0,68,44" depth="0.55" origin="1.0,0.5" />
+    <!-- 由于保持装配点位一致的需要，枪管的origin全部需要修改为0.0,0.5，这会导致如果未在游戏中设置原点仍为0.5,0.5 InventoryIcon的话，装备栏会图标会变得奇怪,因此对于配件来说,InventoryIcon是必须要设置的 -->
+    <Body width="68" height="44" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试上挂件模板" identifier="scopeTemplateVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/scopeTemplateVGM.png" sourcerect="0,0,98,24" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/scopeTemplateVGM.png" sourcerect="0,0,98,24" depth="0.55" origin="0.5,1.0" />
+    <Body width="98" height="24" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="测试握把模板" identifier="handTemplateVGM" category="Equipment" Tags="smallitem,tool,bigHandVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+    <InventoryIcon texture="%ModDir%/GunMods/sprites/Template/handTemplateVGM.png" sourcerect="0,0,28,32" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/GunMods/sprites/Template/handTemplateVGM.png" sourcerect="0,0,28,32" depth="0.55" origin="1.0,0.0" />
+    <Body width="28" height="32" density="15" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <!-- 下挂件模板请直接参考原游戏的手电筒 -->
+
+  <!-- 既然你看到了这里,最后一个重要提示: 导出贴图时一定要选"二次平方(锐利)"!一定要锐利的!不然倒进游戏会糊 -->
+</Items>
