@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
+  
+<!-- 写在前面 -->
+  
+<!-- 这个游戏的引擎对于这种OOP的写法支持有限：不仅是语法上的支持，更多的是性能上的支持，后者是比较致命的。但是为了能给我在和GunEnhanced兼容时少点工作，我还是硬着头皮尝试了一下OOP写法。如果你遇到了性能问题，请附上日志联系我。我考虑一下改回文档的最佳实践 -->
+
 
 <!-- 枪管 -->
-<!-- 将枪械默认camerashake设置为20，range不要碰 -->
-<!-- <StatusEffect type="OnRemoved" target="This" barrelpos="75,10" weapondamagemodifier="1.0" setvalue="true" disabledeltatime="true" /> -->
 
 <!-- 声音控制逻辑，如果能装消音器的话 -->
 <!-- <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
@@ -35,7 +38,24 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" depth="0.55" origin="0.0,0.5" />
     <Body width="16" height="8" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.35" setvalue="true" interval="1" >
+        <Conditional HasTag="smg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" setvalue="true" interval="1" conditional="or">
+        <Conditional HasTag="rifle" />
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.85" setvalue="true" interval="1" >
+        <Conditional HasTag="machinepistol" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.55" setvalue="true" interval="1" >
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium"/>
@@ -62,7 +82,20 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="1,11,64,8" depth="0.55" origin="0.0,0.5" />
     <Body width="64" height="8" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="140,0" setvalue="true" interval="1" >
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.6" penetration="0.40" barrelpos="118,19" setvalue="true" interval="1" >
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="160,20" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.1" penetration="0.10" barrelpos="105,-20" setvalue="true" interval="1" >
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="60"/>
       <RequiredItem identifier="aluminium" amount="2"/>
@@ -76,12 +109,25 @@
     <RequiredItem items="longBarrelMuzzleVGM" type="Contained" />
 </StatusEffect> -->
 
-<!-- 长枪消音器，减少噪声，增加15%伤害，延长枪管位置70单位，一定程度减少屏幕晃动，需要高级材料制作 -->
+<!-- 长枪消音器，减少噪声，增加20%伤害，延长枪管位置70单位，一定程度减少屏幕晃动，需要高级材料制作 -->
   <Item name="" identifier="longSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" depth="0.55" origin="0.0,0.5" />
     <Body width="60" height="12" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="150,0" setvalue="true" interval="1" >
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.7" barrelpos="128,19" setvalue="true" interval="1" >
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="160,20" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="115,-20" setvalue="true" interval="1" >
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="70"/>
       <RequiredItem identifier="titaniumaluminiumalloy"/>
@@ -111,7 +157,23 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
     <Body width="36" height="12" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="94,9" setvalue="true" interval="1" >
+        <Conditional HasTag="smg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="110,0" setvalue="true" interval="1" >
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.85" barrelpos="84,9" setvalue="true" interval="1" >
+        <Conditional HasTag="machinepistol" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="75,-20" setvalue="true" interval="1" >
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.05" barrelpos="130,20" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="60"/>
       <RequiredItem identifier="titaniumaluminiumalloy"/>
@@ -134,7 +196,9 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,47,60,24" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,49,60,24" depth="0.55" origin="0.5,0.0" />
     <Body width="60" height="24" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" holdangle="20" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -149,7 +213,9 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,102,16,32" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,102,16,32" depth="0.55" origin="0.5,0.0" />
     <Body width="16" height="32" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" holdangle="-15" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -172,7 +238,14 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" depth="0.55" origin="1.0,0.5" />
     <Body width="96" height="44" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="40" SpeedMultiplier="0.7" setvalue="true" interval="1" >
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="12" SpeedMultiplier="0.8" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="70"/>
       <RequiredItem identifier="aluminium" amount="2"/>
@@ -192,7 +265,14 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,180,88,52" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,180,88,52" depth="0.55" origin="1.0,0.5" />
     <Body width="88" height="52" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" spread="5" unskilledspread="45" SpeedMultiplier="0.75" setvalue="true" interval="1" >
+        <Conditional HasTag="hmg" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="14" SpeedMultiplier="0.85" setvalue="true" interval="1" >
+        <Conditional HasTag="assaultrifle" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="60"/>
       <RequiredItem identifier="aluminium" amount="2"/>
@@ -208,7 +288,7 @@
 </StatusEffect> -->
 
 <!-- 轻型枪托，通常用于还原武器的散布、后坐、移动速度 -->
-  <Item name="" identifier="lightStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+  <!-- <Item name="" identifier="lightStockVGM" category="Equipment" Tags="smallitem,tool,bigStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="4,142,80,44" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="4,142,80,44" depth="0.55" origin="1.0,0.5" />
     <Body width="80" height="44" density="15" />
@@ -218,7 +298,7 @@
       <RequiredItem identifier="aluminium" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-  </Item>
+  </Item> -->
 <!-- <StatusEffect type="OnInserted" target="This" spread="-1" unskilledspread="-4" setvalue="true" disabledeltatime="true" >
     <RequiredItem items="lightStockVGM" type="Contained" />
 </StatusEffect> -->
@@ -226,12 +306,25 @@
     <RequiredItem items="lightStockVGM" type="Contained" />
 </StatusEffect> -->
 
-<!-- 手枪枪托，大幅度减少散布与后坐，但是会影响移动速度（10%），只可以装在手枪上 -->
-  <Item name="" identifier="pistolStockVGM" category="Equipment" Tags="smallitem,tool,smallStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+<!-- 轻型枪托,增加手持武器时移速(5%)，略微影响武器散布与后坐(10%) -->
+  <Item name="" identifier="lightStockVGM" category="Equipment" Tags="smallitem,tool,smallStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" depth="0.55" origin="1.0,0.5" />
     <Body width="64" height="32" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" spread="0.2" unskilledspread="5" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+        <Conditional HasTag="shotgun" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="0.1" unskilledspread="4" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+        <Conditional HasTag="rifle" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="9" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+        <Conditional HasTag="smgunique" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="5" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+        <Conditional HasTag="shotgununique" />
+      </StatusEffect>
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -253,12 +346,14 @@
     <RequiredItem items="provocative" type="Contained" />
 </StatusEffect> -->
 
-<!-- 全息瞄准镜:设置武器的最远可视（cameraaimoffset）300单位,缩小准心为0.4 -->
+<!-- 全息瞄准镜:设置武器的最远可视（cameraaimoffset）350单位-->
   <Item name="" identifier="holoGraphicScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,24,28,24" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,24,28,24" depth="0.55" origin="0.5,1.0" />
     <Body width="28" height="24" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" cameraaimoffset="350" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -270,12 +365,14 @@
   <RequiredItem items="holoGraphicScopeVGM" type="Contained" />
 </StatusEffect> -->
 
-<!-- 红点瞄准镜：设置武器的最远可视为300单位，缩小准心为0.1 -->
+<!-- 红点瞄准镜：设置武器的最远可视为350单位，缩小准心为0.1 -->
   <Item name="" identifier="dotScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,27,20,16" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,27,20,16" depth="0.55" origin="0.5,1.0" />
     <Body width="20" height="24" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" cameraaimoffset="350" crosshairscale="0.1" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -286,12 +383,14 @@
 <!-- <StatusEffect type="OnInserted" target="This" cameraaimoffset="300" crosshairscale="0.1" setvalue="true" disabledeltatime="true" >
     <RequiredItem items="dotScopeVGM" type="Contained" />
 </StatusEffect> -->
-<!-- ACOG瞄准镜:设置武器的最远可视（cameraaimoffset）距离450单位,缩小准心为0.3 -->
+<!-- ACOG瞄准镜:设置武器的最远可视（cameraaimoffset）距离450单位 -->
   <Item name="" identifier="acogScopeVGM" category="Equipment" Tags="smallitem,tool,smallScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,73,44,28" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,73,44,28" depth="0.55" origin="0.5,1.0" />
     <Body width="52" height="28" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" cameraaimoffset="450" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -304,12 +403,14 @@
     <RequiredItem items="acogScopeVGM" type="Contained" />
 </StatusEffect> -->
 
-<!-- 狙击瞄准镜:设置武器的最远可视距离为800单位,缩小准星为0.2 -->
-  <Item name="" identifier="sniperScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+<!-- 狙击瞄准镜:设置武器的最远可视距离为800单位,缩小准星为0.05 -->
+  <Item name="" identifier="sniperScopeVGM" category="Equipment" Tags="smallitem,tool,bigScopeVGM" cargocontaineridentifier="metalcrate" Scale="0.66" impactsoundtag="impact_metal_light" >
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,53,72,20" depth="0.55" origin="0.5,1.0" />
     <Body width="72" height="32" density="15" />
-    <Holdable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+      <StatusEffect type="OnActive" target="Parent" cameraaimoffset="800" crosshairscale="0.05" setvalue="true" interval="1" />
+    </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50"/>
       <RequiredItem identifier="aluminium" />
@@ -343,18 +444,14 @@
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" origin="0.5,0.5" />
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,89,48,16" depth="0.55" origin="0.5,0.5" />
     <Body width="48" height="16" density="15" />
-    <Holdable slots="Any,RightHand,LeftHand,Head" holdpos="30,-50" aimpos="60,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetachWrench" MsgWhenDropped="ItemMsgPickupSelect" PickingTime="1.0" aimpos="60,0" handle1="-20,0" holdpos="30,-50" attachable="true" aimable="true">
       <StatusEffect type="OnActive" targettype="Contained" Condition="-0.1">
         <RequiredItem items="mobilebattery" type="Contained" />
       </StatusEffect>
       <!-- the child LightComponent is only active when the Holdable is active, i.e. when the item is being held -->
-      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" Flicker="0.02" range="2000" powerconsumption="10" IsOn="true">
-        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
+      <LightComponent canbeselected="true" LightColor="0.5,0.5,0.5,1.0" directional="true" Flicker="0.02" range="800" powerconsumption="10" IsOn="true">
+        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.15,0.3" />
         <IsActive targetcontaineditem="true" condition="gt 1.0"/>
-      </LightComponent>
-      <LightComponent LightColor="1.0,0.0,0.0,1.0" directional="true" range="2000" powerconsumption="10" IsOn="true" flicker="0.8" flickerspeed="1.0" pulsefrequency="0.1" pulseamount="0.5">
-        <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.1,0.1" />
-        <IsActive targetcontaineditem="true" condition="lte 1.0"/>
       </LightComponent>
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
@@ -386,6 +483,13 @@
       <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
       <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" amount="2"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+      <RequiredItem identifier="smgLongMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
     <Deconstruct time="10">
       <Item identifier="steel" />
@@ -426,6 +530,13 @@
       <RequiredItem tag="smgammo" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="3"/>
+      <RequiredItem tag="munition_core" description="fabricationdescription.munition_core" amount="3"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="3"/>
+      <RequiredItem identifier="smgDrumMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
     <Deconstruct time="10">
       <Item identifier="steel" />
     </Deconstruct>
@@ -462,6 +573,22 @@
       <RequiredItem identifier="smgmagazinedepletedfuel" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
     </Fabricate>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" displayname="recycleitem" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+      <RequiredItem identifier="depletedfuel" amount="2"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+      <RequiredItem identifier="smgDFuelLongMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" displayname="recycleitem" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+      <RequiredItem identifier="depletedfuel" amount="2"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="2"/>
+      <RequiredItem identifier="smgDFuelDrumMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
     <Deconstruct time="15">
       <Item identifier="depletedfuel" mincondition="0.95" amount="2"/>
       <Item identifier="steel" />
@@ -490,6 +617,14 @@
       <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="3"/>
       <RequiredItem identifier="smgmagazinedepletedfuel" mincondition="0.0" maxcondition="0.1" usecondition="false" />
       <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator,fabricatorVGM" displayname="recycleitem" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredSkill identifier="electrical" level="30" />
+      <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="3"/>
+      <RequiredItem identifier="depletedfuel" amount="3"/>
+      <RequiredItem tag="munition_jacket" description="fabricationdescription.munition_jacket" amount="3"/>
+      <RequiredItem identifier="smgDFuelDrumMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
     <Deconstruct time="15">
       <Item identifier="depletedfuel" mincondition="0.95" amount="3"/>
