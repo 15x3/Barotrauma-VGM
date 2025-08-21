@@ -239,10 +239,10 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,135,96,44" depth="0.55" origin="1.0,0.5" />
     <Body width="96" height="44" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
-      <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="40" SpeedMultiplier="0.7" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="40" setvalue="true" interval="1" >
         <Conditional HasTag="hmg" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="12" SpeedMultiplier="0.8" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="12" setvalue="true" interval="1" >
         <Conditional HasTag="assaultrifle" />
       </StatusEffect>
     </Holdable>
@@ -266,10 +266,10 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,180,88,52" depth="0.55" origin="1.0,0.5" />
     <Body width="88" height="52" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
-      <StatusEffect type="OnActive" target="Parent" spread="5" unskilledspread="45" SpeedMultiplier="0.75" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="5" unskilledspread="45" setvalue="true" interval="1" >
         <Conditional HasTag="hmg" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="14" SpeedMultiplier="0.85" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="14" setvalue="true" interval="1" >
         <Conditional HasTag="assaultrifle" />
       </StatusEffect>
     </Holdable>
@@ -312,16 +312,16 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,106,64,32" depth="0.55" origin="1.0,0.5" />
     <Body width="64" height="32" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
-      <StatusEffect type="OnActive" target="Parent" spread="0.2" unskilledspread="5" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="0.2" unskilledspread="5" setvalue="true" interval="1" >
         <Conditional HasTag="shotgun" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" spread="0.1" unskilledspread="4" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="0.1" unskilledspread="4" setvalue="true" interval="1" >
         <Conditional HasTag="rifle" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="9" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="9" setvalue="true" interval="1" >
         <Conditional HasTag="smgunique" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="5" SpeedMultiplier="1.05" setvalue="true" interval="1" >
+      <StatusEffect type="OnActive" target="Parent" spread="2" unskilledspread="5" setvalue="true" interval="1" >
         <Conditional HasTag="shotgununique" />
       </StatusEffect>
     </Holdable>

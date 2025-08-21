@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- alphaDev内容不再使用，此处只做留档参考 -->
 <Items>
     <Item identifier="tacAssaultRifleVGM" name="" tags="mediumitem,weapon,gun,gunsmith,mountableweapon,provocativetohumanai" category="Weapon" interactdistance="50" interactpriority="1.0" interactthroughwalls="false" focusonselected="false" offsetonselected="0" showcontentsintooltip="false" scale="0.5" spritecolor="1.0,1.0,1.0,1.0" health="100" indestructible="false" fireproof="false" waterproof="false" impacttolerance="10.0" maxstacksize="1" allowasextracargo="false" allowrotatingineditor="true" linkable="false">
         <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />

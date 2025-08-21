@@ -163,9 +163,9 @@
     <!-- 复制完以后，在这里就确认一下你的这把枪准备能够安装什么插件。这里是写全的，你打算不让它装什么玩意就删对应的tag，另外，有删Subcontainer的话别忘了SlotIcon也要删，注意一下，对于步枪这种可以发射双弹药的武器，它们的逻辑可能和这里的不太一样，你可以直接去betaDev里确认我是怎么写的 -->
     
     <!-- itemcontainer和subcontainer算是这个mod的核心之一，一开始我有试过性能最优的OnInserted和OnRemoved，并且把所有的插件效果写在里面，但是很遗憾，只使用这两个会导致地图重置之后所有枪都得重新装一遍插件才能使用，另外还得考虑到其他mod的兼容工作，所以我还是选择了将枪械的插件和分离分为两部分。 -->
-    <!-- 好像这种写法叫OOP来着？我也不太清楚其中是否符合OOP，但是写起来确实顺手些，就是坏消息是你得同时调整插件和代码了 -->
+    <!-- 好像这种写法叫OOP来着？我也不太清楚其中是否符合OOP，但是写起来确实顺手些，就是坏消息是你得同时调整插件的代码了 -->
 
-    <!-- 当然了，你依旧可以选择把所有的插件效果写在枪里面：如果其他mod覆写修改了插件，你的mod不会和这类mod发生冲突（因为直接把效果写枪里面了，参考Guns/guns_alphadev） -->
+    <!-- 当然了，你依旧可以选择把所有的插件效果写在枪里面：如果其他mod覆写修改了插件，你的mod不会和这类mod发生冲突（因为直接把效果写枪里面了，参考Guns/guns_alphadev），顺带，九州武库差不多也是这样写的 -->
     <!-- 至于选择哪一个，个人意见是：如果你的mod里武器不超过10把，直接写枪里即可，如果超过10把，我建议你考虑一下覆写插件，因为有些逻辑其实是复制黏贴，频繁地复制黏贴并且确保每把武器不会出意外是我整个开发过程中最痛苦的环节，其痛苦程度超过了一开始测试架构可行性的时候——我就是TM的痛恨机械劳动，尤其写代码时，我想你也和我一样。 -->
     <!-- 把逻辑写哪里这个话题我们会在 6 再次讨论 -->
     
@@ -216,7 +216,7 @@
         <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="1000" />
         <Conditional HasStatusTag="suppressed" />
     </StatusEffect>
-    <!-- 开火声效似乎你得从VGM里复制一份，不过不用担心，不是很大。顺带，这个声效的来源是《大灾变：黑暗之日》的Otopack500音效包，你可以在Github找到，里面枪械声效很全，在此推荐一下 -->
+    <!-- 开火声效似乎你得从VGM里复制一份，不过不用担心，不是很大。顺带，这个声效的来源是《大灾变：黑暗之日》的Otopack500音效包，你可以在Github找到，里面枪械声效很全，而且是按口径来分的，在此推荐一下 -->
     <!-- AI -->
     <aitarget sightrange="3000" soundrange="4000" fadeouttime="2">
         <StatusEffect type="OnActive" target="This" sightrange="30" soundrange="40" stackable="false" setvalue="true" interval="1.0">
@@ -230,8 +230,28 @@
     
     <!-- 枪托逻辑 -->
     <!-- 首先，把Holdable的SpeedMultiplier设置为1.1，这个是无托状态的速度，对于重机枪这种天生自带0.75的可以改成0.85 -->
-    <!-- 剩下的暂时不用动，这个环节给枪托先设置默认值就行了（因为后面我们会给枪托写个默认原装枪托，用它来将武器的数值调整为原版数值） -->
+    <!-- 剩下的暂时不用动，因为接下来我们要写个原版武器的枪托。 -->
     
+    <Item name="" identifier="assaultRifleStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+        <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" depth="0.55" origin="1.0,0.5" />
+        <Body width="78" height="46" density="15" />
+        <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="16" SpeedMultiplier="1.00" setvalue="true" interval="1" >
+                <Conditional HasTag="assaultrifle" />
+            </StatusEffect>
+        </Holdable>
+        <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+            <RequiredSkill identifier="weapons" level="50"/>
+            <RequiredItem identifier="aluminium" />
+            <RequiredItem identifier="steel" />
+        </Fabricate>
+    </Item>
+    
+    <!-- 我想应该不用提醒你把原武器的贴图修改一下：枪托去掉，被去掉的枪托做成一个新贴图。枪托的核心逻辑在Holdable的StatusEffect当中：被插上时，它在被激活时会影响父容器（也就是突击步枪）的数据，对于原装枪托，我们只需要把速度和散布还原为正常值就可以了，顺带一提，其他大部分插件也是遵照这个逻辑去影响武器：通过给subcontainer增加“setactive”激活它们，然后插件被激活时会影响父容器的某些属性，顺带一提，这种影响你是可以指定哪个xml父标签的，具体请看官方文档。 -->
+    
+    <!-- 这个环节给枪托先设置默认值就行了（因为后面我们会给枪托写个默认原装枪托，用它来将武器的数值调整为原版数值） -->
+
     <!-- 4 修改贴图 -->
         <!-- 这一部分我建议你使用我之前做的XML快速生成器，里面的贴图功能是我专门为这个环节做的，能让你省事情不少 -->
         <!-- https://steamcommunity.com/sharedfiles/filedetails/?id=3529593079 -->

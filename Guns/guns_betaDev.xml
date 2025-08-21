@@ -43,7 +43,21 @@
             <Sprite texture="%ModDir%/Guns/TalentGear.png" sourcerect="276,63,233,62" depth="0.55" origin="0.5,0.5" />
             <Body width="220" height="50" density="25" />
             <!-- 0.9,aimpos="57,-5" -->
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30" SpeedMultiplier="1.0">
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="assaultRifleStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="sniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="heavyStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.0" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
+                <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.5" interval="0.4">
                     <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
@@ -128,7 +142,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" SpeedMultiplier="1.0" setvaslue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" PickingTime="-0.1" spread="6" unskilledspread="20" setvaslue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
@@ -225,7 +239,21 @@
             <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,320,64,64" origin="0.5,0.5" />
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="263,135,145,56" depth="0.55" origin="0.5,0.5" />
             <Body width="140" height="60" density="25" />
-            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-15" aimpos="45,-10" handle1="-30,-8" handle2="18,5" holdangle="-35" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1">
+            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-15" aimpos="45,-10" handle1="-30,-8" handle2="18,5" holdangle="-35" msg="ItemMsgPickUpSelect" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="deadeyeStockVGM" type="Contained" />
+                </StatusEffect> -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.05" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightSniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
+                <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
                     <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
@@ -310,7 +338,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallStockVGM,deadeyeStockVGM" hideitems="false" itempos="-18,4" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="4" unskilledspread="12" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="4" unskilledspread="12" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
@@ -361,7 +389,21 @@
             </Fabricate>
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="254,2,200,55" depth="0.55" origin="0.5,0.25" />
             <Body width="190" height="50" density="25" />
-            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1">
+            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                     <RequiredItem items="deadeyeStockVGM" type="Contained" />
+                     </StatusEffect> -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.05" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightSniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
+                <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
                     <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
@@ -456,7 +498,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallStockVGM,rifleStockVGM" hideitems="false" itempos="-20,-8" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="4" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="4" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
@@ -503,7 +545,20 @@
             <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="704,830,64,64" origin="0.5,0.5" />
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="0,65,185,54" depth="0.55" origin="0.5,0.25" />
             <Body width="180" height="30" density="25" />
-            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1">
+            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <!-- <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                     <RequiredItem items="deadeyeStockVGM" type="Contained" />
+                     </StatusEffect> -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.05" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightSniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
                     <RequiredItem items="healthScannerVGM" type="Contained" />
@@ -553,7 +608,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallStockVGM,shotgunStockVGM" hideitems="false" itempos="-17,-10" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="6" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="6" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
@@ -896,7 +951,21 @@
             </Deconstruct>
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="262,436,230,72" depth="0.55" origin="0.5,0.5" />
             <Body width="220" height="60" density="30" />
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30" SpeedMultiplier="0.9">
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="hmgStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.65" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="sniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="heavyStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
+                <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
@@ -997,7 +1066,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="bigStockVGM,hmgStockVGM" hideitems="false" itempos="-13,2" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" SpeedMultiplier="0.9" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="8" unskilledspread="60" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
@@ -1033,7 +1102,7 @@
             <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="320,320,64,64" origin="0.5,0.5" />
             <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="262,70,184,51" depth="0.55" origin="0.5,0.25" />
             <Body width="180" height="30" density="25" />
-            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-20,-11" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" SpeedMultiplier="1.1" />
+            <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-20,-11" handle2="26,7" holdangle="-40" msg="ItemMsgPickUpSelect" PickingTime="-0.1" />
             <StatusHUD drawhudwhenequipped="false" overlaycolor="176,0,0,120" range="3000" thermalgoggles="false" showdeadcharacters="false" showtexts="false" />
             <!-- 1,4 -->
             <RangedWeapon barrelpos="85,10" spread="2" unskilledspread="6" combatPriority="80" reload="0.1" drawhudwhenequipped="true" crosshairscale="0.2">
@@ -1062,7 +1131,7 @@
                 <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
                 <RequiredSkill identifier="weapons" level="50" />
             </RangedWeapon>
-            <ItemContainer capacity="1" maxstacksize="2" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+            <ItemContainer capacity="1" maxstacksize="2" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56" SpawnWithId="boomStickStockVGM">
                 <Containable items="shotgunammo" hide="true" />
                 <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -1075,7 +1144,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="smallStockVGM,boomStickStockVGM" hideitems="false" itempos="-19,-8" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="6" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="6" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
@@ -1201,7 +1270,19 @@
             </Fabricate>
             <Sprite texture="%ModDir%/Guns/TalentGear.png" sourcerect="271,127,240,66" depth="0.55" origin="0.5,0.5" />
             <Body width="238" height="63" density="25" />
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" SpeedMultiplier="1.1">
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="70,4" handle1="-50,-10" handle2="10,-3" holdangle="-25" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="heavyStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.85" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="sniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
+
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
                     <RequiredItem items="healthScannerVGM" type="Contained" />
@@ -1239,7 +1320,7 @@
                 <RequiredSkill identifier="weapons" level="25" />
                 <RequiredSkill identifier="electrical" level="45" />
             </RangedWeapon>
-            <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepths="0.562,0.561" containedstateindicatorstyle="default" containedstateindicatorslot="0">
+            <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="10,-5" containedspritedepths="0.562,0.561" containedstateindicatorstyle="default" containedstateindicatorslot="0" SpawnWithId="nuclearGunStockVGM">
                 <Containable items="reactorfuel" rotation="90"/>
                 <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -1253,7 +1334,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="bigStockVGM,nuclearGunStockVGM" hideitems="false" itempos="-26,1" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="14" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="2" unskilledspread="14" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
@@ -1300,7 +1381,17 @@
             </Fabricate>
             <Sprite texture="%ModDir%/Guns/TalentGear.png" sourcerect="354,371,158,55" depth="0.55" origin="0.5,0.45" />
             <Body width="158" height="40" density="25" />
-            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="55,4" handle1="-26,-20" handle2="10,-3" holdangle="-25" SpeedMultiplier="1.1">
+            <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="60,-15" aimpos="55,4" handle1="-26,-20" handle2="10,-3" holdangle="-25" PickingTime="-0.1">
+                <!-- 枪托逻辑 -->
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="1.05" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" duration="0.5" interval="0.4">
+                    <RequiredItem items="lightSniperStockVGM" type="Contained" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+                    <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+                </StatusEffect>
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
                     <RequiredItem items="healthScannerVGM" type="Contained" />
@@ -1335,7 +1426,7 @@
                 <RequiredSkill identifier="weapons" level="25" />
                 <RequiredSkill identifier="mechanical" level="45" />
             </RangedWeapon>
-            <ItemContainer capacity="1" maxstacksize="32" slotsperrow="3" hideitems="false" containedstateindicatorslot="1" containedstateindicatorstyle="battery" containedspritedepth="0.56">
+            <ItemContainer capacity="1" maxstacksize="32" slotsperrow="3" hideitems="false" containedstateindicatorslot="1" containedstateindicatorstyle="battery" containedspritedepth="0.56" SpawnWithId="scrapCannonStockVGM">
                 <Containable items="scrapcannonammo" />
                 <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
                 <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -1352,7 +1443,7 @@
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1">
                     <Containable items="bigStockVGM,scrapCannonStockVGM" hideitems="false" itempos="-7,-1" setactive="true" >
-                        <StatusEffect type="OnRemoved" target="This" spread="1" unskilledspread="6" SpeedMultiplier="1.1" setvalue="true" disabledeltatime="true" />
+                        <StatusEffect type="OnRemoved" target="This" spread="1" unskilledspread="6" PickingTime="-0.1" setvalue="true" disabledeltatime="true" />
                     </Containable>
                 </SubContainer>
                 <SubContainer capacity="1" maxstacksize="1" >
