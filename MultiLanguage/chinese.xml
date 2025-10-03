@@ -66,6 +66,10 @@
   <entitydescription.hmgDrumMagVGM>这个超大弹鼓装载了200多发556子弹，保证持续火力输出</entitydescription.hmgDrumMagVGM>
   <entityname.redLazerVGM>万彩镭射指示器</entityname.redLazerVGM>
   <entitydescription.redLazerVGM>可以修改激光颜色的镭射指示器，如需修改，请长按右键+E将其放置在墙上,之后左键交互。\n推荐颜色:科幻蓝(23,150,214);质子紫(138,43,226);塑料粉(255,20,147),经典红(255,0,0),辐射绿(0,255,5)</entitydescription.redLazerVGM>
+  <entityname.lightWrenchStockVGM>轻型扳手枪托</entityname.lightWrenchStockVGM>
+  <entitydescription.lightWrenchStockVGM>不要对它的人体工程学抱有多大期待，这个配件不影响你的机动已是奇迹，它唯一的用处就是在关键时刻拆下来，好充当真正的扳手。</entitydescription.lightWrenchStockVGM>
+  <entityname.simpleSilencerMuzzleVGM>气罐消音器</entityname.simpleSilencerMuzzleVGM>
+  <entitydescription.simpleSilencerMuzzleVGM>作为没得选时候的选择，它不能给武器带来任何性能提升（倒不如说，它不会影响到弹道性能已经谢天谢地了），唯一用途是给武器消音。\n当然，现在这个气罐没法储存氧气了。</entitydescription.simpleSilencerMuzzleVGM>
   <!-- <entityname.tacticalLightVGM>战术手电筒</entityname.tacticalLightVGM>
   <entitydescription.tacticalLightVGM></entitydescription.tacticalLightVGM> -->
   <!-- <entityname.tacAssaultRifleVGM>战术突击步枪</entityname.tacAssaultRifleVGM>

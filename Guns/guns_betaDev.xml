@@ -59,7 +59,7 @@
                 </StatusEffect>
                 <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.5" interval="0.4">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.5" interval="0.4">
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
@@ -255,7 +255,7 @@
                 </StatusEffect>
                 <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
@@ -405,7 +405,7 @@
                 </StatusEffect>
                 <!-- 消音器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
@@ -652,7 +652,7 @@
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
             </Holdable>
             <RangedWeapon reload="0.175" weapondamagemodifier="0.8" holdtrigger="true" barrelpos="54,9" spread="10" unskilledspread="18" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" DualWieldAccuracyPenalty="10">
@@ -833,7 +833,7 @@
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">
@@ -970,7 +970,7 @@
                     <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
-                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM" type="Contained" />
+                    <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
                 </StatusEffect>
                 <!-- 扫描器逻辑 -->
                 <StatusEffect type="OnSecondaryUse" target="This" tags="aiming" drawhudwhenequipped="true" range="500" showdeadcharacters="true" showtexts="true" overlaycolor="72,119,72,120" setvalue="true" TargetItemComponent="StatusHUD" duration="0.5" interval="0.4">

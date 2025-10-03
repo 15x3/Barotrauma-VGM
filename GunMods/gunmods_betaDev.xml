@@ -298,4 +298,66 @@
             <RequiredItem identifier="steel" amount="2"/>
         </Fabricate>
     </Item>
+    <Item name="" identifier="simpleSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,201,65,23" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,201,65,23" depth="0.55" origin="0.0,0.5" />
+        <Body width="65" height="23" density="15" />
+        <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
+            <StatusEffect type="OnActive" target="Parent" barrelpos="147,9" setvalue="true" interval="1" >
+                <Conditional HasTag="smg" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Parent" barrelpos="163,0" setvalue="true" interval="1" >
+                <Conditional HasTag="rifle" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Parent" barrelpos="137,9" setvalue="true" interval="1" >
+                <Conditional HasTag="machinepistol" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Parent" barrelpos="128,-20" setvalue="true" interval="1" >
+                <Conditional HasTag="hmg" />
+            </StatusEffect>
+            <StatusEffect type="OnActive" target="Parent" barrelpos="183,20" setvalue="true" interval="1" >
+                <Conditional HasTag="assaultrifle" />
+            </StatusEffect>
+        </Holdable>
+        <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+            <RequiredSkill identifier="weapons" level="10"/>
+            <RequiredItem identifier="oxygentank"/>
+        </Fabricate>
+    </Item>
+    <Item name="" identifier="lightWrenchStockVGM" category="Equipment" Tags="smallitem,tool,smallStockVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,167,61,32" origin="0.5,0.5" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,167,61,32" depth="0.55" origin="1.0,0.5" />
+        <Body width="61" height="32" density="15" />
+        <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="-8,0" holdangle="60" reload="1.0" range="50" combatpriority="8" msg="ItemMsgPickUpSelect">
+            <Attack structuredamage="0" itemdamage="2" targetimpulse="5">
+                <Affliction identifier="blunttrauma" strength="4" />
+                <Affliction identifier="stun" strength="0.2" />
+                <StatusEffect type="OnUse" target="UseTarget">
+                    <Conditional entitytype="eq Character"/>
+                    <Sound file="Content/Items/Weapons/Smack1.ogg" selectionmode="random" range="500"/>
+                    <Sound file="Content/Items/Weapons/Smack2.ogg" range="500" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Parent" spread="1" unskilledspread="5" setvalue="true" interval="1" >
+                    <Conditional HasTag="shotgun" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Parent" spread="0.5" unskilledspread="4" setvalue="true" interval="1" >
+                    <Conditional HasTag="rifle" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="10" setvalue="true" interval="1" >
+                    <Conditional HasTag="smgunique" />
+                </StatusEffect>
+                <StatusEffect type="OnActive" target="Parent" spread="3" unskilledspread="6" setvalue="true" interval="1" >
+                    <Conditional HasTag="shotgununique" />
+                </StatusEffect>
+            </Attack>
+        </MeleeWeapon>
+        <aitarget sightrange="500" soundrange="500" fadeouttime="1" />
+        <Quality>
+            <QualityStat stattype="RepairSpeed" value="0.1"/>
+        </Quality>
+        <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
+            <RequiredSkill identifier="weapons" level="10"/>
+            <RequiredItem identifier="wrench" />
+        </Fabricate>
+    </Item>
 </Items>

@@ -4,16 +4,16 @@
   <entitydescription.fabricatorVGM>An old, self-assembling fabrication table once found everywhere. While outdated for most production tasks, it can still be modified to provide weapon attachments. Requires power to function.\nDisassemble with a Crowbar. Press and hold RMB, then press "E" to place.</entitydescription.fabricatorVGM>
   
   <entityname.flashHiderMuzzleVGM>Flash Hider</entityname.flashHiderMuzzleVGM>
-  <entitydescription.flashHiderMuzzleVGM>Effectively reduces recoil during sustained fire and provides a minor damage increase. Often the preferred choice for automatic weapons. Compatible with most weapons and multiple calibers.</entitydescription.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Effectively reduces recoil during continuous fire and provides a small damage boost. It's often the preferred choice for automatic weapons. Can be used on any weapon with a muzzle slot.</entitydescription.flashHiderMuzzleVGM>
   
   <entityname.longBarrelMuzzleVGM>Extended Barrel</entityname.longBarrelMuzzleVGM>
-  <entitydescription.longBarrelMuzzleVGM>Increases muzzle velocity, enhancing damage potential and armor penetration. Not suitable for compact weapons. Note: Excessively long barrels are impractical for close-quarters combat.</entitydescription.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Increases muzzle velocity, boosting weapon damage and armor penetration. However, an overly long barrel isn't suited for close-quarters combat. Applicable to light and heavy weapons.</entitydescription.longBarrelMuzzleVGM>
   
   <entityname.longSilencerMuzzleVGM>Lancer Suppressor</entityname.longSilencerMuzzleVGM>
-  <entitydescription.longSilencerMuzzleVGM>This suppressor, crafted from alien materials with natural magnetism, reduces firing noise while significantly increasing muzzle velocity for a notable damage boost. Not suitable for compact weapons.</entitydescription.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>Made from alien materials, this suppressor has natural magnetism, which not only reduces the noise of firing but also effectively increases muzzle velocity, leading to a significant damage boost. Applicable to light and heavy weapons.</entitydescription.longSilencerMuzzleVGM>
   
   <entityname.shortSilencerMuzzleVGM>Compact Suppressor</entityname.shortSilencerMuzzleVGM>
-  <entitydescription.shortSilencerMuzzleVGM>A basic suppressor that reduces firing noise, provides a minor damage increase, and slightly reduces recoil. Compatible with most weapons.</entitydescription.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>A basic silencer. Reduces firing noise, provides a small damage boost, and slightly reduces recoil. Can be used on any weapon with a muzzle slot.</entitydescription.shortSilencerMuzzleVGM>
   
   <!-- Original Stock Descriptions (Common Pattern) -->
   <entityname.deadeyeStockVGM>DeadEye Rifle Stock</entityname.deadeyeStockVGM>
@@ -44,14 +44,14 @@
        <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
   <!-- I don't actually have a "High-Pressure Barrel" item, purr-fectly confused. --> <!-- (Note: Translated the playful comment "哈吉米哈气了" idiomatically) -->
   
-  <entityname.lightStockVGM>Light Stock</entityname.lightStockVGM>
-  <entitydescription.lightStockVGM>A stock crafted from pipes, installable on most light weapons. Improves mobility but hinders precise aiming, though it's still better than no stock.</entitydescription.lightStockVGM>
+  <entityname.lightStockVGM>Light Tubular Stock</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>A stock made only of tubing. It's a compromise when you want to increase movement speed but don't want to switch to a bullpup configuration. Only applicable to light weapons.</entitydescription.lightStockVGM>
   
-  <entityname.heavyStockVGM>Heavy Stock</entityname.heavyStockVGM>
-  <entitydescription.heavyStockVGM>A heavy stock with adjustable weights, only suitable for Assault Rifles and HMGs. Effectively reduces aim spread but impacts mobility.</entitydescription.heavyStockVGM>
+  <entityname.heavyStockVGM>Heavy Counterweight Stock</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>A heavy stock with adjustable counterweights. Effectively reduces aim spread but negatively affects mobility. Only applicable to heavy weapons.</entitydescription.heavyStockVGM>
   
   <entityname.sniperStockVGM>Heavy Ergonomic Stock</entityname.sniperStockVGM>
-  <entitydescription.sniperStockVGM>An ergonomically designed heavy stock, only suitable for Assault Rifles and HMGs. Minimizes aim spread to the greatest extent but significantly impacts weapon mobility.</entitydescription.sniperStockVGM>
+  <entitydescription.sniperStockVGM>A heavy stock designed for maximum ergonomics. Minimizes aim spread but severely impacts weapon mobility. Only applicable to heavy weapons.</entitydescription.sniperStockVGM>
   
   <entityname.holoGraphicScopeVGM>Compact Holographic Sight</entityname.holoGraphicScopeVGM>
   <entitydescription.holoGraphicScopeVGM>A compact holographic sight that extends the weapon's effective visual range. Suitable for most weapons.</entitydescription.holoGraphicScopeVGM>
@@ -115,4 +115,10 @@
   
   <entityname.lightSniperStockVGM>Light Marksman Stock</entityname.lightSniperStockVGM>
   <entitydescription.lightSniperStockVGM>A marksman stock designed for light weapons. Reduces aim spread at the cost of slightly reduced mobility. Not suitable for heavy weapons.</entitydescription.lightSniperStockVGM>
+     
+     <entityname.lightWrenchStockVGM>Light Wrench Stock</entityname.lightWrenchStockVGM>
+     <entitydescription.lightWrenchStockVGM>Don't expect much in the way of ergonomics; it's a miracle this attachment doesn't impact your mobility. Its sole use is being detachable in a pinch to serve as an actual wrench.</entitydescription.lightWrenchStockVGM>
+
+     <entityname.simpleSilencerMuzzleVGM>Gas Can Silencer</entityname.simpleSilencerMuzzleVGM>
+     <entitydescription.simpleSilencerMuzzleVGM>A choice you make when you have no other option. It doesn't offer any performance boost to the weapon (in fact, it's a miracle it doesn't affect bullet ballistics). Its sole function is to silence the weapon. Of course, this can no longer store oxygen.</entitydescription.simpleSilencerMuzzleVGM>
 </infotexts>
