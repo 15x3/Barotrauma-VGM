@@ -3,13 +3,13 @@
   <entityname.fabricatorVGM>武器改造加工台</entityname.fabricatorVGM>
   <entitydescription.fabricatorVGM>曾随处可见的自组装型老式加工台。随着技术换代，它已不适合生产大部分产品，不过稍加改造后依旧可用于提供武器改件。当然，还是得通电的。\n使用撬棍拆卸，长按右键后按"E"放置</entitydescription.fabricatorVGM>
   <entityname.flashHiderMuzzleVGM>消焰器</entityname.flashHiderMuzzleVGM>
-  <entitydescription.flashHiderMuzzleVGM>有效减少连射晃动并提供少量伤害提升，通常是连射武器的首选。兼容大多数武器，多种口径通用</entitydescription.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>有效减少连射晃动并提供少量伤害提升，通常是连射武器的首选。任何带有枪口槽的武器均可使用</entitydescription.flashHiderMuzzleVGM>
   <entityname.longBarrelMuzzleVGM>延长枪管</entityname.longBarrelMuzzleVGM>
-  <entitydescription.longBarrelMuzzleVGM>提高枪口初速，增加武器伤害能力和穿甲性能。不适用于紧凑武器.注意：过长的枪管可不适合贴身近战</entitydescription.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>提高枪口初速，增加武器伤害能力和穿甲性能。不过，过长的枪管可不适合贴身近战 \n 可装在轻型、重型武器上</entitydescription.longBarrelMuzzleVGM>
   <entityname.longSilencerMuzzleVGM>长枪消音器</entityname.longSilencerMuzzleVGM>
-  <entitydescription.longSilencerMuzzleVGM>这种使用异星材料制作的消音器带有天然磁性，能够在减少射击噪声的同时有效提高枪口初速，以带来显著的伤害提升，不适用于紧凑武器</entitydescription.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>这种使用异星材料制作的消音器带有天然磁性，能够在减少射击噪声的同时有效提高枪口初速，以带来显著的伤害提升。\n 可装在轻型、重型武器上</entitydescription.longSilencerMuzzleVGM>
   <entityname.shortSilencerMuzzleVGM>紧凑消音器</entityname.shortSilencerMuzzleVGM>
-  <entitydescription.shortSilencerMuzzleVGM>基础款消音器，能减少射击噪声并提供少量伤害提升，并一定程度减少射击晃动，兼容大多数武器</entitydescription.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>基础款消音器，能减少射击噪声并提供少量伤害提升，并一定程度减少射击晃动 \n 任何带有枪口槽的武器均可使用</entitydescription.shortSilencerMuzzleVGM>
   <entityname.deadeyeStockVGM>死眼步枪原装枪托</entityname.deadeyeStockVGM>
   <entitydescription.deadeyeStockVGM>死眼步枪的原装枪托，如保持枪托栏为空可将武器变为无托状态，以增加武器散射为代价，获得10%移速加成</entitydescription.deadeyeStockVGM>
   <entityname.boomStickStockVGM>爆鸣原装枪托</entityname.boomStickStockVGM>
@@ -29,12 +29,12 @@
   <!-- <entityname.highPressureMuzzleVGM>高压枪管</entityname.highPressureMuzzleVGM>
   <entitydescription.highPressureMuzzleVGM></entitydescription.highPressureMuzzleVGM> -->
   <!-- 我没有高压枪管这个东西啊，哈吉米哈气了 -->
-  <entityname.lightStockVGM>轻型枪托</entityname.lightStockVGM>
-  <entitydescription.lightStockVGM>仅使用管材制作的枪托，可安装于大多数轻型武器上。有助于提升机动性，不适合精确瞄准，但是比无托要好</entitydescription.lightStockVGM>
-  <entityname.heavyStockVGM>重型枪托</entityname.heavyStockVGM>
-  <entitydescription.heavyStockVGM>带有可调整配重的重型枪托，只适用于突击步枪和重机枪，有效减少瞄准散布，但是会影响机动性</entitydescription.heavyStockVGM>
+  <entityname.lightStockVGM>轻型管材枪托</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>仅使用管材制作的枪托，这是当你希望提升移动速度，又不希望转向无托化怀抱时的折中选择。\n 仅适用于轻型武器</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>重型配重式枪托</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>带有可调整配重的重型枪托，有效减少瞄准散布，但是会影响机动性 \n 仅适用于重型武器</entitydescription.heavyStockVGM>
   <entityname.sniperStockVGM>重型人体工程学枪托</entityname.sniperStockVGM>
-  <entitydescription.sniperStockVGM>符合人体工程学的重型枪托，只适用于突击步枪和重机枪，最大程度减少瞄准散布，但是会影响武器机动性</entitydescription.sniperStockVGM>
+  <entitydescription.sniperStockVGM>符合人体工程学的重型枪托，最大程度减少瞄准散布，但是会严重影响武器机动性 \n 仅适用于重型武器</entitydescription.sniperStockVGM>
   <entityname.holoGraphicScopeVGM>紧凑全息瞄准镜</entityname.holoGraphicScopeVGM>
   <entitydescription.holoGraphicScopeVGM>紧凑全息瞄准镜，可延展武器可视距离，适用于大多数武器</entitydescription.holoGraphicScopeVGM>
   <entityname.dotScopeVGM>紧凑红点瞄准镜</entityname.dotScopeVGM>
@@ -42,12 +42,12 @@
   <entityname.acogScopeVGM>四倍瞄准镜</entityname.acogScopeVGM>
   <entitydescription.acogScopeVGM>ACOG四倍瞄准镜，有些设计到了太空殖民时代也不过时，有效延展武器可视距离，适用于大多数武器</entitydescription.acogScopeVGM>
   <entityname.sniperScopeVGM>狙击瞄准镜</entityname.sniperScopeVGM>
-  <entitydescription.sniperScopeVGM>狙击八倍瞄准镜，可最大程度延展武器可视距离，不适用于紧凑武器。注意：过大的放大倍率会影响武器的近身表现</entitydescription.sniperScopeVGM>
-  <entitydescription.scope>长枪用六倍瞄准镜，不适用于紧凑武器</entitydescription.scope>
+  <entitydescription.sniperScopeVGM>狙击八倍瞄准镜，可最大程度延展武器可视距离。注意：过大的放大倍率会影响武器的近身表现 \n 仅适用于轻型、重型武器</entitydescription.sniperScopeVGM>
+  <entitydescription.scope>长枪用六倍瞄准镜，四倍瞄准镜和八倍瞄准镜之间的折中方案 \n 仅适用于轻型、重型武器</entitydescription.scope>
   <entityname.verticalGripVGM>垂直握把</entityname.verticalGripVGM>
-  <entitydescription.verticalGripVGM>垂直握把有助于使用者长时间保持战术姿势，减少抬枪反应时间</entitydescription.verticalGripVGM>
+  <entitydescription.verticalGripVGM>垂直握把有助于使用者长时间保持战术姿势，减少抬枪反应时间，适用于大多数武器</entitydescription.verticalGripVGM>
   <entityname.angleGripVGM>直角握把</entityname.angleGripVGM>
-  <entitydescription.angleGripVGM>直角握把有助于使用者长时间保持枪口向上的战术姿势，以减少抬枪反应时间</entitydescription.angleGripVGM>
+  <entitydescription.angleGripVGM>直角握把有助于使用者长时间保持枪口向上的战术姿势，以减少抬枪反应时间，适用于大多数武器</entitydescription.angleGripVGM>
   <entityname.smgDrummagVGM>冲锋枪弹鼓</entityname.smgDrummagVGM>
   <entitydescription.smgDrummagVGM>三倍弹容，不易携带</entitydescription.smgDrummagVGM>
   <entityname.smgLongmagVGM>冲锋枪延长弹匣</entityname.smgLongmagVGM>
@@ -93,5 +93,5 @@
   <entityname.thermalScannerVGM>紧凑型热成像仪</entityname.thermalScannerVGM>
   <entitydescription.thermalScannerVGM>可以安装在枪械上的热成像仪，需要右键举起枪才能生效</entitydescription.thermalScannerVGM>
   <entityname.lightSniperStockVGM>轻型射手枪托</entityname.lightSniperStockVGM>
-  <entitydescription.lightSniperStockVGM>为轻型武器准备的射手枪托，以略微影响机动性为代价减少瞄准散射，不适用于重型武器</entitydescription.lightSniperStockVGM>
+  <entitydescription.lightSniperStockVGM>轻型武器版本的人体工程学枪托，以略微影响机动性为代价减少瞄准散射 \n 仅适用于轻型武器</entitydescription.lightSniperStockVGM>
 </infotexts>

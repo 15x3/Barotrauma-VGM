@@ -229,15 +229,32 @@
     <!-- 我总觉得这个没有必要加上去，所以在Beta阶段我就没写了，因为再怎么说这游戏的交战距离大多是CQB，又不是ArmA那种300m起步的野外步战 -->
     
     <!-- 枪托逻辑 -->
-    <!-- 首先，把Holdable的SpeedMultiplier设置为1.1，这个是无托状态的速度，对于重机枪这种天生自带0.75的可以改成0.85 -->
-    <!-- 剩下的暂时不用动，因为接下来我们要写个原版武器的枪托。 -->
+    <!-- 之前，我是尝试将Holdable的SpeedMultiplier简单粗暴地设置为1.1，以为这样就能实现影响效果，但是很遗憾，事情往往不会这么简单。 -->
+    <!-- 我们先来看看原版武器的实现逻辑： -->
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="57,-5" handle1="-35,-10" handle2="26,10" holdangle="-30">
+        <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.9" setvalue="true" />
+    </Holdable>
+    <!-- 你可以看到，这其实是武器在被激活（手持）时，会控制角色的SpeedMultiplier属性。所以我们的思路也是这样，通过设置不同的限制来给角色施加不同的SpeedMultiplier -->
+    <!-- 这个其实可以和消音器一样，通过添加动态tag实现，不过我想在这里展示另一种方法：通过控制物品当中并不重要的属性值，来实现类似添加动态tag的效果。（相当于给游戏添加自定义变量，只是这个“自定义”变量是用很Hack的方式实现的） -->
+    
+    <!-- 首先，把Holdable的PickingTime设置为"-0.1"，默认是0.0，我们这里故意给它设置成负值-->
+    <Holdable ...blablabla="huh?..." PickingTime="-0.1">
+    <!-- 我们希望实现的思路是：在PickingTime为-0.1时，给武器会对角色的施加1.1的SpeedMultiplier，而当PickingTime=0时，施加1.0的SpeedMultiplier -->
+        <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
+            <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />
+        </StatusEffect>
+        <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.0" setvalue="true" duration="0.5" interval="0.4">
+            <Conditional PickingTime="0.0" TargetItemComponent="Holdable" />
+        </StatusEffect>
+    <!-- 你必须要写上target="Character,This"，Conditional默认会跟随StatusEffect的指定目标，而Character很明显没有PickingTime这个属性，所以我们在这里需要指定双目标，放心，武器也不会有SpeedMultiplier属性，所以在枪上这样写是没问题的 -->
+        <!-- 那么谁来负责控制这个PickingTime呢？当然是原版武器的枪托，接下来我们要写个原版武器的枪托。 -->
     
     <Item name="" identifier="assaultRifleStockVGM" category="Equipment" Tags="smallitem,tool" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light" >
         <InventoryIcon texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" origin="0.5,0.5" />
         <Sprite texture="%ModDir%/GunMods/vanillaStocks.png" sourcerect="1,174,78,46" depth="0.55" origin="1.0,0.5" />
         <Body width="78" height="46" density="15" />
         <Holdable slots="Any" msg="ItemMsgPickUpSelect" >
-            <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="16" SpeedMultiplier="1.00" setvalue="true" interval="1" >
+            <StatusEffect type="OnActive" target="Parent" spread="4" unskilledspread="16" PickingTime="0.0" setvalue="true" interval="1" >
                 <Conditional HasTag="assaultrifle" />
             </StatusEffect>
         </Holdable>
@@ -249,8 +266,17 @@
     </Item>
     
     <!-- 我想应该不用提醒你把原武器的贴图修改一下：枪托去掉，被去掉的枪托做成一个新贴图。枪托的核心逻辑在Holdable的StatusEffect当中：被插上时，它在被激活时会影响父容器（也就是突击步枪）的数据，对于原装枪托，我们只需要把速度和散布还原为正常值就可以了，顺带一提，其他大部分插件也是遵照这个逻辑去影响武器：通过给subcontainer增加“setactive”激活它们，然后插件被激活时会影响父容器的某些属性，顺带一提，这种影响你是可以指定哪个xml父标签的，具体请看官方文档。 -->
-    
-    <!-- 这个环节给枪托先设置默认值就行了（因为后面我们会给枪托写个默认原装枪托，用它来将武器的数值调整为原版数值） -->
+        
+    <!-- 至于移除，我们会在武器的子容器里写： -->
+        
+    <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true" >
+            <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" PickingTime="-0.1" setvaslue="true" disabledeltatime="true" />
+            <!-- 修改为武器的默认spread值，注意这里的“默认”指的是无托状态，无托状态默认为SpeedMultiplier="1.1"，散射比原版武器多2点或更多，无托武器请无视 -->
+        </Containable>
+    </SubContainer>
+        
+    <!-- 这样一来你就完成了无托机制的实现，至于其他枪托的实现，其实更简单：你根本不需要用到PickingTime，只需要判断武器容器当中是否存在这些插件即可，具体的实现请直接看guns_betaDev.xml的内容 -->
 
     <!-- 4 修改贴图 -->
         <!-- 这一部分我建议你使用我之前做的XML快速生成器，里面的贴图功能是我专门为这个环节做的，能让你省事情不少 -->
@@ -276,7 +302,7 @@
         </SubContainer>
         <SubContainer capacity="1" maxstacksize="1">
             <Containable items="bigStockVGM,assaultRifleStockVGM" hideitems="false" itempos="-15,2" setactive="true" >
-                <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" SpeedMultiplier="1.0" setvaslue="true" disabledeltatime="true" />
+                <StatusEffect type="OnRemoved" target="This" spread="6" unskilledspread="20" PickingTime="-0.1" setvaslue="true" disabledeltatime="true" />
                 <!-- 修改为武器的默认spread值，注意这里的“默认”指的是无托状态，无托状态默认为SpeedMultiplier="1.1"，散射比原版武器多2点或更多，无托武器请无视 -->
             </Containable>
         </SubContainer>
