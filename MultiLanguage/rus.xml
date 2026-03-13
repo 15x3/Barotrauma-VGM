@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Russian" nowhitespace="true" translatedname="Русский">
   <entityname.fabricatorVGM>Станок для модификации оружия</entityname.fabricatorVGM>
   <entitydescription.fabricatorVGM>В прошлом этот самосборный старый станок можно было встретить повсюду. С развитием технологий он стал непригоден для производства большинства изделий, но после небольшой модификации его все еще можно использовать для изготовления модификаций оружия. Конечно, требуется электричество.
     Разбирается монтировкой, для размещения нажмите и удерживайте правую кнопку мыши, а затем нажмите "E"</entitydescription.fabricatorVGM>
   <entityname.flashHiderMuzzleVGM>Пламегаситель</entityname.flashHiderMuzzleVGM>
-  <entitydescription.flashHiderMuzzleVGM>Эффективно уменьшает отдачу при непрерывной стрельбе и немного увеличивает урон. Обычно является предпочтительным выбором для скорострельного оружия. Совместим с большинством видов оружия, подходит для различных калибров</entitydescription.flashHiderMuzzleVGM>
+  <entitydescription.flashHiderMuzzleVGM>Эффективно снижает тряску при непрерывной стрельбе и даёт небольшой прирост урона. Обычно является предпочтительным выбором для автоматического оружия. Может использоваться на любом оружии с дульным слотом.</entitydescription.flashHiderMuzzleVGM>
   <entityname.longBarrelMuzzleVGM>Удлиненный ствол</entityname.longBarrelMuzzleVGM>
-  <entitydescription.longBarrelMuzzleVGM>Повышает начальную скорость пули, увеличивает урон и бронебойные характеристики оружия. Не подходит для компактного оружия. Примечание: слишком длинный ствол не подходит для ближнего боя</entitydescription.longBarrelMuzzleVGM>
+  <entitydescription.longBarrelMuzzleVGM>Увеличивает начальную скорость пули, повышая урон и бронебойность оружия. Однако слишком длинный ствол не подходит для ближнего боя. Применимо к лёгкому и тяжёлому оружию.</entitydescription.longBarrelMuzzleVGM>
   <entityname.longSilencerMuzzleVGM>Длинный глушитель</entityname.longSilencerMuzzleVGM>
-  <entitydescription.longSilencerMuzzleVGM>Этот глушитель, изготовленный из инопланетных материалов, обладает природным магнетизмом и может не только снизить шум выстрела, но и эффективно повысить начальную скорость пули, что приводит к значительному увеличению урона. Не подходит для компактного оружия</entitydescription.longSilencerMuzzleVGM>
+  <entitydescription.longSilencerMuzzleVGM>Этот глушитель, изготовленный из инопланетного материала, обладает естественным магнетизмом, что не только снижает шум выстрела, но и эффективно увеличивает начальную скорость пули, обеспечивая значительный прирост урона. Применимо к лёгкому и тяжёлому оружию.</entitydescription.longSilencerMuzzleVGM>
   <entityname.shortSilencerMuzzleVGM>Компактный глушитель</entityname.shortSilencerMuzzleVGM>
-  <entitydescription.shortSilencerMuzzleVGM>Базовый глушитель, который снижает шум выстрела, дает небольшой прирост урона и в некоторой степени уменьшает отдачу при стрельбе. Совместим с большинством видов оружия</entitydescription.shortSilencerMuzzleVGM>
+  <entitydescription.shortSilencerMuzzleVGM>Базовый глушитель. Снижает шум выстрела, даёт небольшой прирост урона и в некоторой степени уменьшает тряску при стрельбе. Может использоваться на любом оружии с дульным слотом.</entitydescription.shortSilencerMuzzleVGM>
   <entityname.deadeyeStockVGM>Оригинальный приклад винтовки "Мертвый глаз"</entityname.deadeyeStockVGM>
   <entitydescription.deadeyeStockVGM>Оригинальный приклад винтовки "Мертвый глаз". Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.deadeyeStockVGM>
   <entityname.boomStickStockVGM>Оригинальный приклад "Бумстика"</entityname.boomStickStockVGM>
@@ -27,12 +27,12 @@
   <entitydescription.nuclearGunStockVGM>Оригинальный приклад делительного ускорителя. Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.nuclearGunStockVGM>
   <entityname.scrapCannonStockVGM>Оригинальный приклад "Ломовой пушки"</entityname.scrapCannonStockVGM>
   <entitydescription.scrapCannonStockVGM>Оригинальный приклад "Ломовой пушки". Если оставить слот приклада пустым, оружие станет беcприкладным, что увеличит разброс, но даст 10% бонус к скорости передвижения</entitydescription.scrapCannonStockVGM>
-  <entityname.lightStockVGM>Легкий приклад</entityname.lightStockVGM>
-  <entitydescription.lightStockVGM>Приклад, изготовленный только из труб, может быть установлен на большинство легкого оружия. Помогает повысить мобильность, но не подходит для точного прицеливания, хотя все же лучше, чем отсутствие приклада</entitydescription.lightStockVGM>
-  <entityname.heavyStockVGM>Тяжелый приклад</entityname.heavyStockVGM>
-  <entitydescription.heavyStockVGM>Тяжелый приклад с регулируемыми грузиками, подходит только для штурмовых винтовок и тяжелых пулеметов. Эффективно уменьшает разброс при прицеливании, но влияет на мобильность</entitydescription.heavyStockVGM>
-  <entityname.sniperStockVGM>Тяжелый эргономичный приклад</entityname.sniperStockVGM>
-  <entitydescription.sniperStockVGM>Тяжелый эргономичный приклад, подходит только для штурмовых винтовок и тяжелых пулеметов. Максимально уменьшает разброс при прицеливании, но влияет на мобильность оружия</entitydescription.sniperStockVGM>
+  <entityname.lightStockVGM>Лёгкий трубчатый приклад</entityname.lightStockVGM>
+  <entitydescription.lightStockVGM>Приклад, изготовленный только из трубок. Это компромиссный вариант, когда вы хотите увеличить скорость передвижения, но не хотите переходить на компоновку буллпап. Применим только к лёгкому оружию.</entitydescription.lightStockVGM>
+  <entityname.heavyStockVGM>Тяжёлый балансировочный приклад</entityname.heavyStockVGM>
+  <entitydescription.heavyStockVGM>Тяжёлый приклад с регулируемыми противовесами. Эффективно уменьшает разброс при прицеливании, но снижает мобильность. Применим только к тяжёлому оружию.</entitydescription.heavyStockVGM>
+  <entityname.sniperStockVGM>Тяжёлый эргономичный приклад </entityname.sniperStockVGM>
+  <entitydescription.sniperStockVGM>Тяжёлый приклад, соответствующий всем нормам эргономики. Максимально уменьшает разброс при прицеливании, но серьёзно влияет на мобильность оружия. Применим только к тяжёлому оружию.</entitydescription.sniperStockVGM>
   <entityname.holoGraphicScopeVGM>Компактный голографический прицел</entityname.holoGraphicScopeVGM>
   <entitydescription.holoGraphicScopeVGM>Компактный голографический прицел, увеличивает видимую дальность оружия, подходит для большинства видов оружия</entitydescription.holoGraphicScopeVGM>
   <entityname.dotScopeVGM>Компактный коллиматорный прицел</entityname.dotScopeVGM>
@@ -71,4 +71,10 @@
   <entitydescription.thermalScannerVGM>Тепловизор, который можно установить на огнестрельное оружие. Для его работы нужно прицелиться, нажав правую кнопку мыши</entitydescription.thermalScannerVGM>
   <entityname.lightSniperStockVGM>Легкий снайперский приклад</entityname.lightSniperStockVGM>
   <entitydescription.lightSniperStockVGM>Снайперский приклад, предназначенный для легкого оружия. Уменьшает разброс при прицеливании за счет небольшого снижения мобильности. Не подходит для тяжелого оружия</entitydescription.lightSniperStockVGM>
+  <entityname.lightWrenchStockVGM>Лёгкий приклад-ключ</entityname.lightWrenchStockVGM>
+  <entitydescription.lightWrenchStockVGM>Не стоит многого ожидать от его эргономики; то, что этот обвес вообще не влияет на вашу мобильность, — уже чудо. Единственное его применение — снять его в критический момент, чтобы использовать в качестве настоящего гаечного ключа.
+
+</entitydescription.lightWrenchStockVGM>
+  <entityname.simpleSilencerMuzzleVGM>Глушитель из газового баллона</entityname.simpleSilencerMuzzleVGM>
+  <entitydescription.simpleSilencerMuzzleVGM>Это выбор, когда нет других вариантов. Он не даёт никакого улучшения характеристик оружия (скорее, надо благодарить судьбу, что он не влияет на баллистику). Его единственная функция — заглушать звук выстрела. Разумеется, этот баллон больше не может хранить кислород.</entitydescription.simpleSilencerMuzzleVGM>
 </infotexts>

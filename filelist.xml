@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="Vanilla Gun Modify" modversion="beta.prod.4" corepackage="False" steamworkshopid="3530165514" gameversion="1.9.8.0">
+<contentpackage name="Vanilla Gun Modify" modversion="beta.prod.4" corepackage="False" steamworkshopid="3530165514" gameversion="1.10.7.2" expectedhash="F782DFFA480A5277D8025323DB611F4A">
   <Item file="%ModDir%/Fabicator/FabVGM.xml" />
   <Item file="%ModDir%/GunMods/gunmods_alphaDev.xml" />
   <Item file="%ModDir%/GunMods/gunmods_betaDev.xml" />
