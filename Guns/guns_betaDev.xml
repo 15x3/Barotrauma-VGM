@@ -108,12 +108,12 @@
           <Conditional HasStatusTag="neq flashHided" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="This">
-          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
           <Conditional HasStatusTag="suppressed" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="This">
-          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
-          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" colormultiplier="255,200,200,200" />
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="1.0" />
+          <ParticleEmitter particle="impactfirearm" particleamount="1"  velocitymin="0" velocitymax="0" scalemultiplier="1.5,1.5" colormultiplier="255,200,200,200" copyentityangle="true"/>
           <Conditional HasStatusTag="flashHided" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="Contained">
@@ -691,11 +691,11 @@
       <Sprite texture="%ModDir%/Guns/weapons_new.png" sourcerect="270,295,107,49" depth="0.55" origin="0.5,0.5" />
       <Body width="100" height="44" density="25" />
       <Holdable slots="Any,RightHand,LeftHand" controlpose="true" aimpos="70,5" handle1="-25,-7" msg="ItemMsgPickUpSelect">
-        <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.05" setvalue="true">
-          <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
-        </StatusEffect>
-        <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.05" setvalue="true">
+        <StatusEffect type="OnSecondaryUse" target="This" tags="suppressed" duration="0.5" interval="0.4">
           <RequiredItem items="longSilencerMuzzleVGM,shortSilencerMuzzleVGM,simpleSilencerMuzzleVGM" type="Contained" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="This" tags="flashHided" duration="0.5" interval="0.4">
+          <RequiredItem items="flashHiderMuzzleVGM" type="Contained" />
         </StatusEffect>
       </Holdable>
       <RangedWeapon reload="0.175" weapondamagemodifier="0.8" holdtrigger="true" barrelpos="54,9" spread="10" unskilledspread="18" combatPriority="70" drawhudwhenequipped="true" crosshairscale="0.2" DualWieldAccuracyPenalty="10">
@@ -727,11 +727,11 @@
           <Conditional HasStatusTag="neq flashHided" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="This" conditional="and">
-          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
+          <Explosion range="150.0" force="0.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="1.0" />
           <Conditional HasStatusTag="flashHided" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="This" conditional="and">
-          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="6.0" />
+          <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="3.0" />
           <Conditional HasStatusTag="suppressed" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="This">
@@ -759,7 +759,7 @@
           </Containable>
         </SubContainer>
         <SubContainer capacity="1" maxstacksize="1">
-          <Containable items="smallScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="1,8" setactive="true">
+          <Containable items="smallScopeVGM,bigScopeVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hide="false" itempos="1,9" setactive="true">
             <StatusEffect type="OnRemoved" target="This" cameraaimoffset="0" crosshairscale="0.2" setvalue="true" drawhudwhenequipped="true" disabledeltatime="true" />
           </Containable>
         </SubContainer>
@@ -942,7 +942,9 @@
         <SlotIcon slotindex="3" texture="%ModDir%/UI/icons.png" sourcerect="128,0,64,64" />
         <SlotIcon slotindex="4" texture="%ModDir%/UI/icons_betadev.png" sourcerect="0,0,64,64" />
         <SubContainer capacity="1" maxstacksize="1">
-          <Containable items="bigAccessoryVGM,smallAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="20,0" setactive="true"></Containable>
+          <Containable items="bigAccessoryVGM,smallAccessoryVGM,flashlight,glowstick,flare,alienflare,redlazerVGM" hideitems="false" itempos="20,0" setactive="true">
+          <StatusEffect type="OnRemoved" target="This" holdangle="-40" setvalue="true" disabledeltatime="true" />  
+          </Containable>
         </SubContainer>
         <SubContainer capacity="1" maxstacksize="1">
           <Containable items="smallMuzzleVGM" hideitems="false" itempos="35,5" setactive="true">

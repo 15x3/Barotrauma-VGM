@@ -32,7 +32,7 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="0,0,16,8" depth="0.55" origin="0.0,0.5" />
     <Body width="16" height="8" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.40" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.45" setvalue="true" interval="1">
         <Conditional HasTag="smg" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" setvalue="true" interval="1" conditional="or">
@@ -45,7 +45,7 @@
       <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.60" setvalue="true" interval="1">
         <Conditional HasTag="smgunique" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.15" setvalue="true" interval="1">
         <Conditional HasTag="assaultrifle" />
       </StatusEffect>
     </Holdable>
@@ -111,7 +111,7 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="-1,0,61,12" depth="0.55" origin="0.0,0.5" />
     <Body width="60" height="12" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.2" barrelpos="150,0" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.25" barrelpos="150,0" setvalue="true" interval="1">
         <Conditional HasTag="rifle" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.7" barrelpos="128,19" setvalue="true" interval="1">
@@ -157,19 +157,19 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_betadev.png" sourcerect="0,14,36,12" depth="0.55" origin="0.0,0.5" />
     <Body width="36" height="12" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" barrelpos="94,9" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.30" barrelpos="94,9" setvalue="true" interval="1">
         <Conditional HasTag="smg" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" barrelpos="110,0" setvalue="true" interval="1">
         <Conditional HasTag="rifle" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.90" barrelpos="84,9" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="0.95" barrelpos="84,10" setvalue="true" interval="1">
         <Conditional HasTag="machinepistol" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" barrelpos="75,-20" setvalue="true" interval="1">
         <Conditional HasTag="hmg" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.10" barrelpos="130,20" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" weapondamagemodifier="1.20" barrelpos="130,20" setvalue="true" interval="1">
         <Conditional HasTag="assaultrifle" />
       </StatusEffect>
     </Holdable>
@@ -216,7 +216,7 @@
     <Sprite texture="%ModDir%/GunMods/gunMods_alphadev.png" sourcerect="2,102,16,32" depth="0.55" origin="0.5,0.0" />
     <Body width="16" height="32" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect">
-      <StatusEffect type="OnActive" target="Parent" holdangle="-15" setvalue="true" interval="1" />
+      <StatusEffect type="OnActive" target="Parent" holdangle="-5" setvalue="true" interval="1" />
     </Holdable>
     <Fabricate suitablefabricators="fabricatorVGM" requiredtime="30">
       <RequiredSkill identifier="weapons" level="50" />
@@ -460,7 +460,7 @@
         <RequiredItem items="mobilebattery" type="Contained" />
       </StatusEffect>
       <!-- the child LightComponent is only active when the Holdable is active, i.e. when the item is being held -->
-      <LightComponent canbeselected="true" LightColor="0.5,0.5,0.5,1.0" directional="true" Flicker="0.02" range="800" powerconsumption="10" IsOn="true">
+      <LightComponent canbeselected="true" LightColor="0.5,0.0,0.0,1.0" directional="true" Flicker="0.02" range="800" powerconsumption="10" IsOn="true">
         <LightTexture texture="%ModDir%/GunMods/laser.png" origin="0.0, 0.5" size="0.15,0.3" />
         <IsActive targetcontaineditem="true" condition="gt 1.0" />
       </LightComponent>

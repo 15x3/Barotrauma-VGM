@@ -238,7 +238,7 @@
     <!-- 这个其实可以和消音器一样，通过添加动态tag实现，不过我想在这里展示另一种方法：通过控制物品当中并不重要的属性值，来实现类似添加动态tag的效果。（相当于给游戏添加自定义变量，只是这个“自定义”变量是用很Hack的方式实现的） -->
     
     <!-- 首先，把Holdable的PickingTime设置为"-0.1"，默认是0.0，我们这里故意给它设置成负值-->
-    <Holdable ...blablabla="huh?..." PickingTime="-0.1">
+    <Holdable ...blablabla="huh?..." PickingTime="-0.1" />
     <!-- 我们希望实现的思路是：在PickingTime为-0.1时，给武器会对角色的施加1.1的SpeedMultiplier，而当PickingTime=0时，施加1.0的SpeedMultiplier -->
         <StatusEffect type="OnActive" target="Character,This" SpeedMultiplier="1.1" setvalue="true" duration="0.5" interval="0.4">
             <Conditional PickingTime="-0.1" TargetItemComponent="Holdable" />

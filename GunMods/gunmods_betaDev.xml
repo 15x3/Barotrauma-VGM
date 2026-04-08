@@ -327,7 +327,7 @@
   </Item>
   <Item name="" identifier="simpleSilencerMuzzleVGM" category="Equipment" Tags="smallitem,tool,bigMuzzleVGM,smallMuzzleVGM" cargocontaineridentifier="metalcrate" Scale="0.5" impactsoundtag="impact_metal_light">
     <InventoryIcon texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,201,65,23" origin="0.5,0.5" />
-    <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,201,65,23" depth="0.55" origin="0.0,0.5" />
+    <Sprite texture="%ModDir%/GunMods/gunMods_betadev2.png" sourcerect="2,199,65,23" depth="0.55" origin="0.0,0.5" />
     <Body width="65" height="23" density="15" />
     <Holdable slots="Any" msg="ItemMsgPickUpSelect">
       <StatusEffect type="OnActive" target="Parent" barrelpos="147,9" setvalue="true" interval="1">
@@ -336,7 +336,7 @@
       <StatusEffect type="OnActive" target="Parent" barrelpos="163,0" setvalue="true" interval="1">
         <Conditional HasTag="rifle" />
       </StatusEffect>
-      <StatusEffect type="OnActive" target="Parent" barrelpos="137,9" setvalue="true" interval="1">
+      <StatusEffect type="OnActive" target="Parent" barrelpos="115,11" setvalue="true" interval="1">
         <Conditional HasTag="machinepistol" />
       </StatusEffect>
       <StatusEffect type="OnActive" target="Parent" barrelpos="128,-20" setvalue="true" interval="1">
