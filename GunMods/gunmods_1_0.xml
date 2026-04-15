@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <Item name="" identifier="underbarrelshotgunVGM" maxstacksize="1" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,bigAccessoryVGM" impactsoundtag="impact_metal_light">
+        <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.01" />
+        <Deconstruct time="10">
+            <Item identifier="steel" />
+        </Deconstruct>
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_1_0.png" sourcerect="0,40,70,28" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_1_0.png" sourcerect="0,40,70,28" depth="0.54" origin="0.5,0.1" />
+        <Body width="70" height="25" density="25" />
+        <ItemContainer capacity="1" maxstacksize="4" drawinventory="true" canbeselected="false" removecontaineditemsondeconstruct="false" HideConditionBar="true">
+            <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true" />
+            <Containable items="shotgunammo" >
+                <StatusEffect type="OnContaining" target="This" condition="100" disabledeltatime="true"/>
+                <!-- <StatusEffect type="OnContaining" target="This" tags="assaultrifleammo" interval="1.1" >
+                    <Conditional hastag="weapon" TargetContainer="true"/>
+                </StatusEffect> -->
+                <StatusEffect type="OnUse" target="Contained" >
+                    <Use />
+                </StatusEffect>
+            </Containable>
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="448,448,64,64" origin="0.5,0.5" />
+        </ItemContainer>
+        <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+    <Item name="" identifier="underbarrelgrenadeslauncherVGM" maxstacksize="1" condition="-100" maxstacksizecharacterinventory="1" rotate="30" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags=",smallitem,shotgunammo,assaultrifleammo,smgammo,flashlight,handheldammo" impactsoundtag="impact_metal_light">
+        <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.01" />
+        <Deconstruct time="10">
+            <Item identifier="steel" />
+        </Deconstruct>
+        <InventoryIcon texture="%ModDir%/GunMods/gunMods_1_0.png" sourcerect="0,74,70,25" />
+        <Sprite texture="%ModDir%/GunMods/gunMods_1_0.png" sourcerect="0,74,70,25" depth="0.54" origin="0.5,0.1" />
+        <Body width="70" height="25" density="25" />
+        <ItemContainer capacity="1" maxstacksize="1" drawinventory="true" canbeselected="false" removecontaineditemsondeconstruct="false" HideConditionBar="true">
+            <StatusEffect type="OnUse" target="This" condition="-100" disabledeltatime="true">
+            </StatusEffect>
+            <Containable tags="grenade">
+                <StatusEffect type="OnContaining" target="this" condition="100" setvalue="true" />
+            </Containable>
+            <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="448,448,64,64" origin="0.5,0.5" />
+        </ItemContainer>
+        <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+        <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    </Item>
+</Items>

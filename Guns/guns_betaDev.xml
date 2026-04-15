@@ -98,10 +98,16 @@
           <Sound file="%ModDir%/Sounds/weapon_fire_suppressed_5.ogg" type="OnUse" range="1000" />
           <Conditional HasStatusTag="suppressed" />
         </StatusEffect>
-        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <StatusEffect type="OnUse" target="This" stackable="false" disabledeltatime="true" forceplaysounds="true">
+          <Conditional HasStatusTag="neq suppressed" />
+          <!-- <ParticleEmitter particle="muzzleflash_co" particleamount="1" velocitymin="10" velocitymax="90" distancemin="25" distancemax="25" colormultiplier="200,200,130,105" copyentityangle="true" anglemin="2" anglemax="2" /> -->
+          <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+          <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="10" velocitymax="90" distancemin="50" distancemax="50" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,200" copyentityangle="true" anglemin="2" anglemax="2"/>
+        </StatusEffect>
+        <!-- <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
         <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,200">
           <Conditional HasStatusTag="neq suppressed" />
-        </ParticleEmitter>
+        </ParticleEmitter> -->
         <StatusEffect type="OnUse" target="This" conditional="and">
           <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
           <Conditional HasStatusTag="neq suppressed" />

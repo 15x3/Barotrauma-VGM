@@ -210,7 +210,7 @@
       <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="3" />
       <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" amount="3" />
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" amount="3" />
-      <RequiredItem identifier="assaultrifleLongMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="assaultrifleDrumMagVGM" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
     <Deconstruct time="15">
       <Item identifier="steel" />
