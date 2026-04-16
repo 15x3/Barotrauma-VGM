@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- beta开发，取消将武器战术化的操作，改为直接在武器上修改 -->
 <!-- TODO： 
     1 给所有武器添加武器自身名字的标签 done
@@ -125,7 +125,7 @@
         <StatusEffect type="OnUse" target="Contained">
           <Use />
         </StatusEffect>
-        <RequiredItems tag="assaultrifleammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="assaultrifleammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="50" />
       </RangedWeapon>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
@@ -316,9 +316,7 @@
         <StatusEffect type="OnUse" target="Contained">
           <Use />
         </StatusEffect>
-        <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
-        <StatusEffect type="OnUse" target="This" reload="0.7" setvalue="true" delay="0.2" />
-        <StatusEffect type="OnUse" target="This" reload="0.1" setvalue="true" delay="0.7" />
+        <RequiredItems items="smgammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="50" />
         <StatusEffect type="OnUse" target="This" conditional="and">
           <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="20.0" />
@@ -499,7 +497,7 @@
           <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_1.ogg" type="OnUse" range="500" selectionmode="Random" />
           <Sound file="Content/Items/Weapons/WEAPON_rifleReload0-20_2.ogg" type="OnUse" range="500" />
         </StatusEffect>
-        <RequiredItems items="rifleammo,grenade" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="rifleammo,grenade,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="60" />
       </RangedWeapon>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorstyle="bullet" containedstateindicatorslot="1" containedspritedepth="0.56">
@@ -937,7 +935,7 @@
         <StatusEffect type="OnUse" target="Contained">
           <Use />
         </StatusEffect>
-        <RequiredItems items="smgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="smgammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="50" />
       </RangedWeapon>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
@@ -1088,11 +1086,11 @@
         <StatusEffect type="OnUse" target="Contained">
           <Use />
         </StatusEffect>
-        <RequiredItems items="hmgammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="hmgammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="90" />
       </RangedWeapon>
       <Propulsion force="-30" usablein="both" ApplyToHands="false">
-        <RequiredItems items="hmgammo" type="Contained" />
+        <RequiredItems items="hmgammo,underbarrelshotgunVGM" type="Contained" />
       </Propulsion>
       <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
         <Containable items="hmgammo" hide="false" itempos="0,-10" />
@@ -1184,7 +1182,7 @@
         </StatusEffect>
         <StatusEffect type="OnUse" target="This" reload="1.0" setvalue="true" delay="0.2" />
         <StatusEffect type="OnUse" target="This" reload="0.1" setvalue="true" delay="1.0" />
-        <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="shotgunammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="50" />
       </RangedWeapon>
       <ItemContainer capacity="1" maxstacksize="2" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
@@ -1281,7 +1279,7 @@
           <ParticleEmitter particle="casingfirearm" particleamount="1" colormultiplier="0.5,0.5,0.5,1" ScaleMultiplier="1.5,1.5" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
           <Explosion range="150.0" force="2" shockwave="false" smoke="false" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
         </StatusEffect>
-        <RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="shotgunammo,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="75" />
       </RangedWeapon>
       <ItemContainer capacity="2" maxstacksize="12" hideitems="false" containedstateindicatorstyle="bullet" ShowTotalStackCapacityInContainedStateIndicator="true" containedstateindicatorslot="0" containedspritedepth="0.56">
@@ -1382,7 +1380,7 @@
         <StatusEffect type="OnUse" target="Contained">
           <Use />
         </StatusEffect>
-        <RequiredItems items="reactorfuel" type="Contained" msg="ItemMsgAmmoRequired" />
+        <RequiredItems items="reactorfuel,underbarrelshotgunVGM" type="Contained" msg="ItemMsgAmmoRequired" />
         <RequiredSkill identifier="weapons" level="25" />
         <RequiredSkill identifier="electrical" level="45" />
       </RangedWeapon>
@@ -1500,7 +1498,7 @@
           <Explosion range="250.0" force="3" shockwave="false" smoke="true" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
         </StatusEffect>
         <StatusEffect type="OnUse" target="Contained" Condition="-12.5" targetslot="1" disabledeltatime="true" />
-        <RequiredItems items="scrapcannonammo" type="Contained" msg="itemmsgammorequired" />
+        <RequiredItems items="scrapcannonammo,underbarrelshotgunVGM" type="Contained" msg="itemmsgammorequired" />
         <RequiredItems items="mobilebattery" type="Contained" msg="itemmsgbatterycellrequired" />
         <RequiredSkill identifier="weapons" level="25" />
         <RequiredSkill identifier="mechanical" level="45" />
